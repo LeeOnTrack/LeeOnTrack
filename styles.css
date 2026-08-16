@@ -34,20 +34,22 @@ body {
 
 /* TOP MENU CLICK AREAS */
 
-.about {
-  left: 62%;.hotspots {
-    position: absolute;
-    inset: 0;
-    z-index: 10;
-    pointer-events: none;
+.hotspots {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .hotspots a {
-    position: absolute;
-    display: block;
-    pointer-events: auto;
-    z-index: 11;
+  position: absolute;
+  display: block;
+  pointer-events: auto;
+  z-index: 11;
 }
+
+.about {
+  left: 62%;
   top: 3.2%;
   width: 5%;
   height: 5%;
@@ -81,12 +83,8 @@ body {
   height: 5%;
 }
 
-/* MAIN BUTTONS */
 
-.league-btn {
-  left: 2.2%;
-  top: 88%;
-  /* MAIN BUTTONS */
+/* MAIN BUTTONS */
 
 .league-btn {
   left: 2.2%;
