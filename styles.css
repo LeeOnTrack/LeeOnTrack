@@ -25,12 +25,17 @@ body {
   width: 100%;
   height: auto;
 }
-
+.hotspots {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+}
 .hotspots a {
   position: absolute;
   display: block;
   pointer-events: auto;
-}
+z-index: 11;
 
 .hotspots a:hover {
   outline: 2px solid rgba(42, 235, 95, 0.45);
