@@ -223,7 +223,7 @@ body {
   .hotspots {
   display: block;
 }
-  }
+  
 
   .cards {
     grid-template-columns: 1fr;
