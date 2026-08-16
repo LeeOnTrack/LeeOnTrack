@@ -1,7 +1,206 @@
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#080b0a;color:#f3f6f4;font-family:Inter,Arial,sans-serif;line-height:1.6}.wrap{width:min(1160px,92%);margin:auto}.green{color:#37e572}.site-header{position:sticky;top:0;z-index:50;background:rgba(8,11,10,.92);backdrop-filter:blur(14px);border-bottom:1px solid #1c2721}.nav-wrap{height:78px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;gap:12px;align-items:center;color:#fff;text-decoration:none;font-family:"Barlow Condensed",sans-serif;font-size:28px;font-weight:800;letter-spacing:.5px}.brand-mark{display:grid;place-items:center;width:42px;height:42px;background:#37e572;color:#051008;clip-path:polygon(12% 0,100% 0,88% 100%,0 100%);font-weight:800}.nav{display:flex;gap:30px}.nav a{color:#cbd4ce;text-decoration:none;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.7px}.nav a:hover{color:#37e572}.menu-btn{display:none;background:none;border:1px solid #2b3830;color:white;font-size:25px;border-radius:8px;padding:4px 10px}.hero{min-height:720px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 75% 30%,rgba(55,229,114,.13),transparent 30%),linear-gradient(135deg,#090c0b,#0d1511 55%,#080b0a)}.speed-lines{position:absolute;inset:0;background:repeating-linear-gradient(165deg,transparent 0 70px,rgba(255,255,255,.018) 71px 72px);pointer-events:none}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;padding:75px 0}.eyebrow{color:#37e572;text-transform:uppercase;font-size:13px;letter-spacing:2.5px;font-weight:800;margin:0 0 14px}.hero h1,.section h2{font-family:"Barlow Condensed",sans-serif;line-height:.9;text-transform:uppercase;margin:0}.hero h1{font-size:clamp(66px,9vw,124px);letter-spacing:-2px}.hero h1 span{color:#37e572}.lead{font-size:18px;color:#c5cec8;max-width:630px;margin:28px 0 30px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:6px;text-decoration:none;text-transform:uppercase;font-size:13px;font-weight:800;letter-spacing:.7px}.btn.primary{background:#37e572;color:#061009}.btn.primary:hover{background:#67f394}.btn.ghost{border:1px solid #3d4a42;color:#fff;background:#111713}.mini-stats{display:flex;gap:35px;margin-top:44px}.mini-stats div{display:flex;flex-direction:column}.mini-stats strong{font-family:"Barlow Condensed";font-size:30px;color:#fff}.mini-stats span{font-size:11px;color:#87948c;text-transform:uppercase;letter-spacing:1px}.hero-card{border:1px solid #2b3930;background:linear-gradient(180deg,#111914,#0b100d);box-shadow:0 30px 80px rgba(0,0,0,.35);transform:skewY(-1deg)}.car-art{height:310px;position:relative;overflow:hidden;background:linear-gradient(145deg,#17221b,#0c120e)}.car-art:before{content:"";position:absolute;left:-20%;right:-20%;bottom:25px;height:115px;background:linear-gradient(90deg,#111,#37e572 45%,#0b3219 68%,#121712);clip-path:polygon(4% 58%,22% 47%,35% 18%,72% 20%,87% 44%,98% 52%,95% 74%,82% 80%,74% 70%,29% 73%,21% 85%,9% 81%)}.number{position:absolute;right:25px;top:15px;font:800 100px/1 "Barlow Condensed";color:rgba(55,229,114,.2)}.car-silhouette{position:absolute;left:38px;bottom:77px;z-index:2;font:800 26px "Barlow Condensed";color:white;letter-spacing:1px}.car-silhouette span{color:#37e572}.track-stripe{position:absolute;left:0;right:0;bottom:0;height:12px;background:repeating-linear-gradient(90deg,#37e572 0 38px,#fff 38px 76px,#111 76px 114px)}.next-race{padding:26px 30px 30px}.tag{font-size:11px;color:#37e572;font-weight:800;letter-spacing:1.8px}.next-race h2{font:800 38px "Barlow Condensed";margin:5px 0 0;text-transform:uppercase}.next-race p{margin:3px 0;color:#a9b4ad}.next-race .time{color:white;font-weight:700}.section{padding:105px 0}.section h2{font-size:clamp(48px,6vw,78px)}.two-col{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}.copy{font-size:18px;color:#bbc5bf}.copy p:first-child{margin-top:0}.panel-section{background:#0d1210;border-top:1px solid #18221c;border-bottom:1px solid #18221c}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}.card{background:#111814;border:1px solid #243029;padding:32px;min-height:230px}.card-num{font:800 17px "Barlow Condensed";color:#37e572}.card h3{font:800 43px "Barlow Condensed";margin:24px 0 5px}.card p{color:#9eaaa2;margin:0}.league-banner{margin-top:20px;background:#17261c;border-left:4px solid #37e572;padding:26px 30px;display:flex;justify-content:space-between;align-items:center;gap:30px}.league-banner strong{display:block;font:800 27px "Barlow Condensed";text-transform:uppercase}.league-banner span{color:#a9b4ad}.timeline{margin-top:45px;border-top:1px solid #27322b}.timeline-item{display:grid;grid-template-columns:100px 1fr;padding:28px 0;border-bottom:1px solid #27322b;align-items:center}.timeline-item>span{font:800 34px "Barlow Condensed";color:#37e572}.timeline-item h3{font:800 34px "Barlow Condensed";margin:0;text-transform:uppercase}.timeline-item p{margin:2px 0;color:#99a59d}.schedule-note,.gallery-note{color:#7f8d84;margin-top:22px;font-size:14px}.gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr 1.2fr;grid-auto-rows:285px;gap:12px;margin-top:44px}.gallery-tile{position:relative;overflow:hidden;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid #28342c;background:#151c18}.gallery-tile:before{content:"";position:absolute;inset:0;opacity:.8}.gallery-tile>*{position:relative;z-index:2}.gallery-tile span{color:#37e572;font-size:11px;font-weight:800;letter-spacing:2px}.gallery-tile b{font:800 28px "Barlow Condensed";letter-spacing:.5px}.gt3:before{background:linear-gradient(145deg,transparent 30%,rgba(55,229,114,.25)),repeating-linear-gradient(155deg,transparent 0 35px,rgba(255,255,255,.025) 36px 37px)}.green55:before{background:radial-gradient(circle at 70% 30%,rgba(55,229,114,.28),transparent 40%)}.battle:before{background:linear-gradient(30deg,rgba(55,229,114,.2),transparent 60%)}.podium:before{background:repeating-linear-gradient(45deg,rgba(55,229,114,.07) 0 18px,transparent 18px 36px)}.join{background:linear-gradient(120deg,#0d1610,#080b0a)}.join-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.join p:not(.eyebrow){color:#aeb8b1;font-size:17px;max-width:580px}.social-box{border:1px solid #28342c;background:#101612;padding:28px}.social-box h3{font:800 30px "Barlow Condensed";text-transform:uppercase;margin:0 0 12px}.social-box a{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid #28342c;text-decoration:none;color:white}.social-box a:last-child{border-bottom:0}.social-box a span{font-weight:800}.social-box a b{color:#37e572;font-size:13px}footer{padding:28px 0;border-top:1px solid #1f2b24;background:#060807}.footer-wrap{display:flex;justify-content:space-between;align-items:center;gap:25px}.footer-wrap .brand{font-size:20px}.footer-wrap .brand-mark{width:32px;height:32px;font-size:16px}.footer-wrap p{color:#758179;font-size:12px}.hero,.section{scroll-margin-top:76px}@media(max-width:900px){.nav{display:none;position:absolute;top:78px;left:0;right:0;background:#0b0f0d;border-bottom:1px solid #223027;flex-direction:column;padding:22px 4%;gap:18px}.nav.open{display:flex}.menu-btn{display:block}.hero{min-height:auto}.hero-grid,.two-col,.join-grid{grid-template-columns:1fr;gap:45px}.hero-grid{padding:70px 0}.hero-card{max-width:620px}.cards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.league-banner{align-items:flex-start;flex-direction:column}.section{padding:80px 0}}@media(max-width:560px){.hero h1{font-size:64px}.mini-stats{gap:18px}.gallery{grid-template-columns:1fr;grid-auto-rows:220px}.timeline-item{grid-template-columns:60px 1fr}.footer-wrap{flex-direction:column;align-items:flex-start}.car-art{height:250px}.section h2{font-size:50px}}
-.hero {
-background-image: url("new web site logo.png");
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: 52% auto;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #050806;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.homepage-hero {
+  position: relative;
+  width: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+.homepage-hero > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hotspots a {
+  position: absolute;
+  display: block;
+  z-index: 5;
+}
+
+.hotspots a:hover {
+  outline: 2px solid rgba(42, 235, 95, 0.45);
+  border-radius: 4px;
+}
+
+/* TOP MENU CLICK AREAS */
+
+.about {
+  left: 62%;
+  top: 3.2%;
+  width: 5%;
+  height: 5%;
+}
+
+.league {
+  left: 68%;
+  top: 3.2%;
+  width: 6%;
+  height: 5%;
+}
+
+.schedule {
+  left: 75%;
+  top: 3.2%;
+  width: 7.3%;
+  height: 5%;
+}
+
+.gallery {
+  left: 83.2%;
+  top: 3.2%;
+  width: 6.2%;
+  height: 5%;
+}
+
+.join {
+  left: 91%;
+  top: 3.2%;
+  width: 4.8%;
+  height: 5%;
+}
+
+/* MAIN BUTTONS */
+
+.league-btn {
+  left: 2.55%;
+  top: 65%;
+  width: 15.1%;
+  height: 6.2%;
+}
+
+.youtube-btn {
+  left: 18.1%;
+  top: 65%;
+  width: 14.2%;
+  height: 6.2%;
+}
+
+/* SOCIAL ICONS */
+
+.youtube-icon {
+  left: 2.4%;
+  top: 78.4%;
+  width: 3.2%;
+  height: 5.5%;
+}
+
+.tiktok-icon {
+  left: 6.8%;
+  top: 78.4%;
+  width: 3.2%;
+  height: 5.5%;
+}
+
+.discord-icon {
+  left: 11.3%;
+  top: 78.4%;
+  width: 3.2%;
+  height: 5.5%;
+}
+
+/* SECTIONS BELOW HOMEPAGE */
+
+.content-section {
+  padding: 90px 5%;
+  background: #080c09;
+  border-top: 1px solid #17331f;
+}
+
+.content-section.alt {
+  background: #0d130f;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: auto;
+}
+
+.eyebrow {
+  color: #28e564;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.content-section h2 {
+  font-size: clamp(44px, 6vw, 80px);
+  margin: 8px 0 20px;
+  line-height: 0.95;
+}
+
+.content-section h2 span {
+  color: #28e564;
+}
+
+.content-section p {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #c8d1cb;
+  max-width: 850px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.cards div {
+  padding: 28px;
+  background: #121a14;
+  border: 1px solid #223529;
+}
+
+.cards strong {
+  font-size: 34px;
+  color: #28e564;
+}
+
+.real-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 16px 24px;
+  background: #28e564;
+  color: #061009;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .homepage-hero > img {
+    width: 165%;
+    max-width: none;
+    transform: translateX(-30%);
+  }
+
+  .hotspots {
+    display: none;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .content-section {
+    padding: 65px 6%;
+  }
 }
