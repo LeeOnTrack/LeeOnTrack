@@ -204,3 +204,89 @@ body {
     padding: 65px 6%;
   }
 }
+/* VISIBLE BUTTONS */
+
+.league-btn,
+.youtube-btn,
+.tiktok-icon,
+.discord-icon {
+  position: absolute;
+  top: auto;
+  bottom: 3%;
+  width: auto;
+  height: auto;
+  padding: 14px 22px;
+  background: #28e564;
+  color: #061009;
+  border: 2px solid #28e564;
+  border-radius: 6px;
+  font-weight: 900;
+  font-size: 16px;
+  text-decoration: none;
+  z-index: 20;
+}
+.league-btn {
+  left: 3%;
+}
+
+.youtube-btn {
+  left: 20%;
+}
+
+.tiktok-icon {
+  left: 34%;
+}
+
+.discord-icon {
+  left: 46%;
+}
+.league-btn::after {
+  content: "LEAGUE RACING";
+}
+
+.youtube-btn::after {
+  content: "YOUTUBE";
+}
+
+.tiktok-icon::after {
+  content: "TIKTOK";
+}
+
+.discord-icon::after {
+  content: "DISCORD";
+}
+.league-btn:hover,
+.youtube-btn:hover,
+.tiktok-icon:hover,
+.discord-icon:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-3px);
+}
+@media (max-width: 800px) {
+  .hotspots {
+    display: block;
+  }
+
+  .about,
+  .league,
+  .schedule,
+  .gallery,
+  .join {
+    display: none;
+  }
+
+  .league-btn,
+  .youtube-btn,
+  .tiktok-icon,
+  .discord-icon {
+    font-size: 10px;
+    padding: 8px 10px;
+    bottom: 2%;
+  }
+    .league-btn { left: 2%; }
+  .youtube-btn { left: 29%; }
+  .tiktok-icon { left: 51%; }
+  .discord-icon { left: 70%; }
+}
+
