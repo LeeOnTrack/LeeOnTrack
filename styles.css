@@ -5,10 +5,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
 }
+  
 html {
   scroll-behavior: smooth;
 }
@@ -32,29 +30,8 @@ body {
   width: 100%;
   height: auto;
 }
-.application-btn {
-  position: absolute;
-  left: 75.5%;
-  top: 76.5%;
-  width: 22%;
-  height: 8.5%;
-  z-index: 50;
-  display: block;
-  pointer-events: auto;
-  cursor: pointer;
-  outline: 3px solid red;
-}
-.application-btn {
-  position: absolute;
-  left: 75.5%;
-  top: 76.5%;
-  width: 22%;
-  height: 8.5%;
-  z-index: 50;
-  display: block;
-  pointer-events: auto;
-  cursor: pointer;outline: 3px solid red;
-}
+
+
 .hotspots a:hover {
   outline: 2px solid rgba(42, 235, 95, 0.45);
   border-radius: 4px;
