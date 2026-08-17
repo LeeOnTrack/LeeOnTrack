@@ -26,7 +26,15 @@ body {
   height: auto;
 }
 
-
+.application-btn {
+  position: absolute;
+  left: 73%;
+  top: 72%;
+  width: 23%;
+  height: 9%;
+  z-index: 20;
+  display: block;
+}
 .hotspots a:hover {
   outline: 2px solid rgba(42, 235, 95, 0.45);
   border-radius: 4px;
