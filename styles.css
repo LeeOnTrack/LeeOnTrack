@@ -236,5 +236,26 @@ body {
     padding: 65px 6%;
   }
 }
+.rig-image-wrap {
+  position: relative;
+  width: 100%;
+}
 
+.rig-image-wrap .about-rig-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.rig-application-link {
+  position: absolute;
+  left: 75%;
+  top: 69%;
+  width: 23%;
+  height: 11%;
+  z-index: 50;
+  display: block;
+  cursor: pointer;
+  outline: 3px solid red;
+}
 
