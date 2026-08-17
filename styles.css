@@ -35,9 +35,7 @@ body {
 .hotspots a:hover {
   outline: 2px solid rgba(42, 235, 95, 0.45);
   border-radius: 4px;
-}
 
-/* TOP MENU CLICK AREAS */
 
 .hotspots {
   position: absolute;
