@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeeOnTrack League Application</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #090d0f;
+  color: white;
+}
+
+.application-wrap {
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.application-card {
+  background: #111718;
+  border: 1px solid #82b91b;
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.green {
+  color: #9bd51b;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  color: #9bd51b;
+  margin-top: 30px;
+}
+
+p {
+  line-height: 1.6;
+  color: #ddd;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #424b4d;
+  background: #0b1011;
+  color: white;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+.check-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 16px;
+  font-weight: normal;
+}
+
+.check-row input {
+  width: auto;
+}
+
+.submit-btn {
+  margin-top: 30px;
+  width: 100%;
+  padding: 17px;
+  border: none;
+  border-radius: 14px;
+  background: #9bd51b;
+  color: #111;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #9bd51b;
+  text-decoration: none;
+}
+
+.small {
+  font-size: 14px;
+  color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<div class="application-wrap">
+
+<a class="back-link" href="index.html">← Back to LeeOnTrack</a>
+
+<div class="application-card">
+
+<div class="green">🏁 JOIN LEEONTRACK</div>
+
+<h1>League Driver Application</h1>
+
+<p>
+LeeOnTrack League Racing is for newer and lower-iRating drivers
+under 2000 iRating who want friendly, competitive racing while
+learning and improving together.
+</p>
+
+<form>
+
+<label>First Name *</label>
+<input type="text" required>
+
+<label>Last Name *</label>
+<input type="text" required>
+
+<label>iRacing Driver Name *</label>
+<input type="text" required>
+
+<label>Current Safety Rating *</label>
+<input type="text" placeholder="Example: C 3.50" required>
+
+<label>Current iRating *</label>
+<input type="number" max="1999" required>
+
+<p class="small">You must be under 2000 iRating when applying.</p>
+
+<label>iRacing Customer ID *</label>
+<input type="text" required>
+
+<label>Email Address *</label>
+<input type="email" required>
+
+<label>Discord Username *</label>
+<input type="text" required>
+
+<label>How long have you been racing on iRacing? *</label>
+<input type="text" required>
+
+<label>What are you looking for from the league?</label>
+<textarea placeholder="Tell us a little about yourself and what you would like to improve."></textarea>
+
+<h2>Permission & Agreement</h2>
+
+<label class="check-row">
+<input type="checkbox" required>
+<span>I confirm that my current iRating is under 2000.</span>
+</label>
+
+<label class="check-row">
+<input type="checkbox" required>
+<span>I have read the LeeOnTrack League Racing Rules & Regulations.</span>
+</label>
+
+<label class="check-row">
+<input type="checkbox" required>
+<span>I agree to follow the league rules and race fairly and respectfully.</span>
+</label>
+
+<label class="check-row">
+<input type="checkbox" required>
+<span>I understand that LeeOnTrack is a friendly league for newer and lower-iRating drivers, where the aim is to race, learn and improve together.</span>
+</label>
+
+<label class="check-row">
+<input type="checkbox" required>
+<span>I understand that decisions made by the LeeOnTrack league organisers regarding league matters are final.</span>
+</label>
+
+<button class="submit-btn" type="submit">
+SUBMIT APPLICATION
+</button>
+
+</form>
+
+</div>
+</div>
+
+</body>
+</html>
