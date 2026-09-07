@@ -1,0 +1,39 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and caches
+*.log
+.cache/
+
+# Dependencies (if a build step is ever added)
+node_modules/
+dist/
+
+# Environment and secrets
+.env
+.env.*
+!/.env.example
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+
+# Directories
+_archive/
+assets/unused/  
+ws_template/
+
+# Agent/tooling config
+.devin/
+.windsurf/
+.windsurfrules
+
+# Local test files
+website-test.txt
+
+# Markdown docs (except README and beginner guide)
+*.md
+!README.md
+!BEGINNER_GUIDE.md
