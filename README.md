@@ -81,7 +81,7 @@ Each gallery item in `index.html` is a `<button class="gallery__card">`. For eac
 Social media links are in the footer and hero of `index.html`. They currently use the following placeholder URLs:
 
 - **Discord:** `https://discord.gg/DKzfz8Q8Pd`
-- **Facebook:** `https://www.facebook.com/LeeOnTrack`
+- **Facebook:** `https://www.facebook.com/profile.php?id=61584474686132`
 - **YouTube:** `https://www.youtube.com/@LeeOnTrack-j9v`
 - **TikTok:** `https://www.tiktok.com/@leeontrack?_r=1&_t=ZN-93EGUP48d8g`
 
