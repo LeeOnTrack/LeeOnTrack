@@ -727,7 +727,103 @@ a:focus-visible {
 .race-night__card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-self: start;
+}
+
+.race-night__card--wide {
+  grid-column: 1 / -1;
+}
+
+.race-night__card--result {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 100%;
+  max-width: 36rem;
+}
+
+.race-night__card--wide h4 {
+  margin: var(--space-md) 0 var(--space-sm);
+}
+
+.race-night__schedule {
+  margin: 0 0 var(--space-md);
+  padding-left: var(--space-md);
+  color: var(--text);
+}
+
+.race-night__schedule li {
+  margin-bottom: var(--space-sm);
+}
+
+.race-night__meta {
+  margin: var(--space-sm) 0 var(--space-md);
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.race-night__podium {
+  list-style: none;
+  margin: var(--space-md) 0 0;
+  padding: var(--space-md);
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.race-night__podium li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.race-night__podium li:last-child {
+  border-bottom: none;
+}
+
+.race-night__pos {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  min-width: 2.25rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.85rem;
+  background-color: var(--border);
+  color: var(--text);
+}
+
+.race-night__pos--p1 {
+  background-color: #d4af37;
+  color: #1a1a1a;
+}
+
+.race-night__pos--p2 {
+  background-color: #c0c0c0;
+  color: #1a1a1a;
+}
+
+.race-night__pos--p3 {
+  background-color: #cd7f32;
+  color: #1a1a1a;
+}
+
+.race-night__driver {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.race-night__time {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
 }
 
 .race-night__details {

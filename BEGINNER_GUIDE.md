@@ -21,14 +21,14 @@ Find this text near the top of the file (around line 25):
 ```html
 <p class="next-race-message">
   <span class="next-race-message__label">Next Race:</span>
-  <span class="next-race-message__date">Sunday 13th September 2026, 19:00 BST</span>
+  <span class="next-race-message__date">Sunday 13th September 2026, 19:00 UK</span>
 </p>
 ```
 
 Change the date/time text inside this span:
 
 ```html
-<span class="next-race-message__date">Sunday 13th September 2026, 19:00 BST</span>
+<span class="next-race-message__date">Sunday 13th September 2026, 19:00 UK</span>
 ```
 
 ### B. Desktop banner
@@ -40,7 +40,7 @@ Find this text a little further down (around line 60):
   <div class="container">
     <p class="next-race-banner__text">
       <span class="next-race-banner__label">Next Race:</span>
-      <span class="next-race-banner__date">Sunday 13th September 2026, 19:00 BST</span>
+      <span class="next-race-banner__date">Sunday 13th September 2026, 19:00 UK</span>
     </p>
   </div>
 </section>
@@ -49,7 +49,7 @@ Find this text a little further down (around line 60):
 Change the date/time text inside this span:
 
 ```html
-<span class="next-race-banner__date">Sunday 13th September 2026, 19:00 BST</span>
+<span class="next-race-banner__date">Sunday 13th September 2026, 19:00 UK</span>
 ```
 
 > **Important:** Make sure the time here matches the "Next Race" card in the Race Night section below.
@@ -67,7 +67,7 @@ Find the section with `id="race-night"` (around line 276). Inside it, look for t
     <dt>Date</dt>
     <dd>13th September 2026</dd>
     <dt>Time</dt>
-    <dd>19:00 BST</dd>
+    <dd>19:00 UK</dd>
     <dt>Track</dt>
     <dd>TBC</dd>
   </dl>
@@ -78,7 +78,7 @@ Edit the text between the `<dd>` and `</dd>` tags:
 
 - **Day** — e.g. `Sunday`
 - **Date** — e.g. `13th September 2026`
-- **Time** — e.g. `19:00 BST`
+- **Time** — e.g. `19:00 UK`
 - **Track** — e.g. `Silverstone` or `TBC`
 
 Only change the text; do not remove the `<dd>` tags.

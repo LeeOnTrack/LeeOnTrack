@@ -24,7 +24,7 @@
       <a class="logo" href="#home">Lee<span class="on-red">OnTrack</span></a>
       <p class="next-race-message">
         <span class="next-race-message__label">Next Race:</span>
-        <span class="next-race-message__date">Sunday 13th September 2026, 19:00 BST</span>
+        <span class="next-race-message__date">Sunday 13th September 2026, 19:00 UK</span>
       </p>
       <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
         <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -61,7 +61,7 @@
     <div class="container">
       <p class="next-race-banner__text">
         <span class="next-race-banner__label">Next Race:</span>
-        <span class="next-race-banner__date">Sunday 13th September 2026, 19:00 BST</span>
+        <span class="next-race-banner__date">Sunday 13th September 2026, 19:00 UK</span>
       </p>
     </div>
   </section>
@@ -279,33 +279,50 @@ My rig includes a Fanatec ClubSport DD+ wheel base, GSI Formula Pro Elite V2 whe
           <h2>Race Night</h2>
           <p>Practice • Qualifying • Race — UK evening events. Exact track and car details are announced before each event.</p>
           <div class="race-night__grid">
-            <div class="card race-night__card">
-              <h3>Next Race</h3>
+            <div class="card race-night__card race-night__card--wide">
+              <h3>Next Race — NC Racing 4 Week Mini Championship</h3>
               <dl class="race-night__details">
                 <dt>Day</dt>
                 <dd>Sunday</dd>
                 <dt>Date</dt>
                 <dd>13th September 2026</dd>
                 <dt>Time</dt>
-                <dd>19:00 BST</dd>
-                <dt>Track</dt>
-                <dd>TBC</dd>
+                <dd>19:00 UK</dd>
+                <dt>Car / Track</dt>
+                <dd>GR86 / Summit Point</dd>
+                <dt>Format</dt>
+                <dd>2 × 20 min, Race 2 reverse grid 25 min</dd>
               </dl>
+              <h4>Championship Schedule</h4>
+              <ul class="race-night__schedule">
+                <li><strong>WK1</strong> 13.09.2026 7PM UK — GR86 / Summit Point — 2 × 20 min, Race 2 reverse grid 25 min</li>
+                <li><strong>WK2</strong> 20.09.2026 7PM UK — GT3 / Silverstone — 45 min, mandatory pit stop</li>
+                <li><strong>WK3</strong> 27.09.2026 7PM UK — Mazda / Lime Rock — 2 × 20 min, Race 2 reverse grid 25 min</li>
+                <li><strong>WK4</strong> 4.10.2026 7PM UK — GT3 / TBC — 90 min finale, restricted fuel</li>
+              </ul>
+              <p><strong>Drop rule:</strong> Drop the lowest total from WK1, WK2 or WK3. WK4 is mandatory and cannot be dropped.</p>
+              <p><strong>Note:</strong> The points tables are designed for direct entry into iRacing's custom League Event scoring.</p>
             </div>
-            <div class="card race-night__card">
+            <div class="card race-night__card race-night__card--result">
               <h3>Last Race Result</h3>
-              <dl class="race-night__details">
-                <dt>Date</dt>
-                <dd>Race Date</dd>
-                <dt>Track</dt>
-                <dd>Track Name</dd>
-                <dt>Winner</dt>
-                <dd>Driver Name — 00:00.000</dd>
-                <dt>Second</dt>
-                <dd>Driver Name — 00:00.000</dd>
-                <dt>Third</dt>
-                <dd>Driver Name — 00:00.000</dd>
-              </dl>
+              <p class="race-night__meta">Race Date — Track Name</p>
+              <ol class="race-night__podium">
+                <li>
+                  <span class="race-night__pos race-night__pos--p1">P1</span>
+                  <span class="race-night__driver">Driver Name</span>
+                  <span class="race-night__time">00:00.000</span>
+                </li>
+                <li>
+                  <span class="race-night__pos race-night__pos--p2">P2</span>
+                  <span class="race-night__driver">Driver Name</span>
+                  <span class="race-night__time">+0.000</span>
+                </li>
+                <li>
+                  <span class="race-night__pos race-night__pos--p3">P3</span>
+                  <span class="race-night__driver">Driver Name</span>
+                  <span class="race-night__time">+0.000</span>
+                </li>
+              </ol>
             </div>
           </div>
         </div>
