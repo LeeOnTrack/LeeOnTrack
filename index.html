@@ -278,6 +278,13 @@ My rig includes a Fanatec ClubSport DD+ wheel base, GSI Formula Pro Elite V2 whe
         <div class="race-night__panel">
           <h2>Race Night</h2>
           <p>Practice • Qualifying • Race — UK evening events. Exact track and car details are announced before each event.</p>
+          <ul class="race-night__info">
+            <li>Pre-race briefing or any questions — 10 minutes before the lobby opens, in Discord chat.</li>
+            <li>Lobby opens for the race at 19:00 UK time, unless notified of a time change.</li>
+            <li>There will be Practice / Qualifying / Race(s).</li>
+            <li>Debrief after the race in Discord chat for 10 mins.</li>
+            <li>Sessions are normally 1 hour long, but can be longer for an endurance race — this will be stated in the iRacing League details.</li>
+          </ul>
           <div class="race-night__grid">
             <div class="card race-night__card race-night__card--wide">
               <h3>Next Race — NC Racing 4 Week Mini Championship</h3>
@@ -303,26 +310,109 @@ My rig includes a Fanatec ClubSport DD+ wheel base, GSI Formula Pro Elite V2 whe
               <p><strong>Drop rule:</strong> Drop the lowest total from WK1, WK2 or WK3. WK4 is mandatory and cannot be dropped.</p>
               <p><strong>Note:</strong> The points tables are designed for direct entry into iRacing's custom League Event scoring.</p>
             </div>
-            <div class="card race-night__card race-night__card--result">
-              <h3>Last Race Result</h3>
-              <p class="race-night__meta">Race Date — Track Name</p>
-              <ol class="race-night__podium">
-                <li>
-                  <span class="race-night__pos race-night__pos--p1">P1</span>
-                  <span class="race-night__driver">Driver Name</span>
-                  <span class="race-night__time">00:00.000</span>
-                </li>
-                <li>
-                  <span class="race-night__pos race-night__pos--p2">P2</span>
-                  <span class="race-night__driver">Driver Name</span>
-                  <span class="race-night__time">+0.000</span>
-                </li>
-                <li>
-                  <span class="race-night__pos race-night__pos--p3">P3</span>
-                  <span class="race-night__driver">Driver Name</span>
-                  <span class="race-night__time">+0.000</span>
-                </li>
-              </ol>
+            <div class="card race-night__card race-night__card--standings">
+              <h3>Sports Cars Championship — 2026 S1</h3>
+              <p class="race-night__meta">Championship Standings</p>
+              <div class="standings">
+                <table class="standings__table">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="standings__cell--pos">Pos</th>
+                      <th scope="col">Driver</th>
+                      <th scope="col" class="standings__cell--num">Points</th>
+                      <th scope="col" class="standings__cell--num">Wins</th>
+                      <th scope="col" class="standings__cell--num">Avg Start</th>
+                      <th scope="col" class="standings__cell--num">Avg Finish</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p1">1</span></td>
+                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#f5b942"></span>Naven C</span></td>
+                      <td class="standings__cell--num standings__points">36</td>
+                      <td class="standings__cell--num">1</td>
+                      <td class="standings__cell--num">9</td>
+                      <td class="standings__cell--num">1</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p2">2</span></td>
+                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#e0aaff"></span>Sasha B</span></td>
+                      <td class="standings__cell--num standings__points">28</td>
+                      <td class="standings__cell--num">0</td>
+                      <td class="standings__cell--num">8</td>
+                      <td class="standings__cell--num">3</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p3">3</span></td>
+                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#7aa2f7"></span>Fil W</span></td>
+                      <td class="standings__cell--num standings__points">26</td>
+                      <td class="standings__cell--num">0</td>
+                      <td class="standings__cell--num">7</td>
+                      <td class="standings__cell--num">2</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos">4</span></td>
+                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#f7768e"></span>Daniel T</span></td>
+                      <td class="standings__cell--num standings__points">21</td>
+                      <td class="standings__cell--num">0</td>
+                      <td class="standings__cell--num">6</td>
+                      <td class="standings__cell--num">4</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos">5</span></td>
+                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#9ece6a"></span>Lee H</span></td>
+                      <td class="standings__cell--num standings__points">19</td>
+                      <td class="standings__cell--num">0</td>
+                      <td class="standings__cell--num">5</td>
+                      <td class="standings__cell--num">5</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos">6</span></td>
+                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#73daca"></span>Tony G</span></td>
+                      <td class="standings__cell--num standings__points">10</td>
+                      <td class="standings__cell--num">0</td>
+                      <td class="standings__cell--num">3</td>
+                      <td class="standings__cell--num">6</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos">7</span></td>
+                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#ff9e64"></span>Myles G</span></td>
+                      <td class="standings__cell--num standings__points">7</td>
+                      <td class="standings__cell--num">0</td>
+                      <td class="standings__cell--num">2</td>
+                      <td class="standings__cell--num">7</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos">8</span></td>
+                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#b4f9f8"></span>Paul B</span></td>
+                      <td class="standings__cell--num standings__points">6</td>
+                      <td class="standings__cell--num">0</td>
+                      <td class="standings__cell--num">4</td>
+                      <td class="standings__cell--num">9</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos">9</span></td>
+                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#bb9af7"></span>Alex M</span></td>
+                      <td class="standings__cell--num standings__points">4</td>
+                      <td class="standings__cell--num">0</td>
+                      <td class="standings__cell--num">1</td>
+                      <td class="standings__cell--num">8</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos">10</span></td>
+                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#565f89"></span>TBC</span></td>
+                      <td class="standings__cell--num standings__points">—</td>
+                      <td class="standings__cell--num">—</td>
+                      <td class="standings__cell--num">—</td>
+                      <td class="standings__cell--num">—</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <a class="button standings__link" href="race_night_13-09-26.html">
+                FULL RACE DETAILS
+                <i class="fa-solid fa-flag-checkered" aria-hidden="true"></i>
+              </a>
             </div>
           </div>
         </div>

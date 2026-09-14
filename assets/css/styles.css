@@ -735,21 +735,25 @@ a:focus-visible {
   grid-column: 1 / -1;
 }
 
-.race-night__card--result {
+.race-night__card--standings {
   grid-column: 1 / -1;
-  justify-self: center;
   width: 100%;
-  max-width: 36rem;
 }
 
 .race-night__card--wide h4 {
   margin: var(--space-md) 0 var(--space-sm);
 }
 
-.race-night__schedule {
+.race-night__schedule,
+.race-night__info {
   margin: 0 0 var(--space-md);
   padding-left: var(--space-md);
   color: var(--text);
+}
+
+.race-night__info li {
+  margin-bottom: var(--space-xs);
+  color: var(--muted);
 }
 
 .race-night__schedule li {
@@ -764,26 +768,189 @@ a:focus-visible {
   letter-spacing: 0.05em;
 }
 
-.race-night__podium {
-  list-style: none;
-  margin: var(--space-md) 0 0;
-  padding: var(--space-md);
+.standings {
+  margin-top: var(--space-md);
+  overflow-x: auto;
   background-color: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
 
-.race-night__podium li {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-sm) var(--space-md);
-  padding: var(--space-sm) 0;
+.standings__table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.standings__table th,
+.standings__table td {
+  padding: var(--space-xs) var(--space-sm);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.standings__table thead th {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   border-bottom: 1px solid var(--border);
 }
 
-.race-night__podium li:last-child {
+
+.standings__table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.15s ease;
+}
+
+.standings__table tbody tr:last-child {
   border-bottom: none;
+}
+
+.standings__table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.standings__cell--pos {
+  width: 1%;
+}
+
+.standings__cell--num {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.standings__points {
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.standings__driver {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.standings__dot {
+  flex: none;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background-color: var(--dot, var(--accent));
+}
+
+.standings__driver .standings__dot + span {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.standings__sub {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.standings__fl {
+  color: #bb9af7;
+  font-weight: 700;
+}
+
+.standings__table--results {
+  min-width: 62rem;
+}
+
+.standings__link {
+  align-self: stretch;
+  margin-top: var(--space-md);
+  text-align: center;
+}
+
+.standings__link i {
+  margin-left: var(--space-xs);
+}
+
+@media (min-width: 40rem) {
+  .standings__link {
+    align-self: center;
+    margin-top: var(--space-lg);
+  }
+}
+
+.race-night__card--standings + .race-night__card--standings {
+  margin-top: var(--space-lg);
+}
+
+.results-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: var(--space-md) 0 var(--space-lg);
+}
+
+.results-nav a {
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.results-nav a:hover,
+.results-nav a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.accordion__content h3 {
+  margin: var(--space-md) 0 var(--space-sm);
+  color: var(--accent);
+}
+
+.accordion__content .standings + h3 {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+}
+
+.accordion__content .standings {
+  margin-top: var(--space-sm);
+}
+
+.accordion__item {
+  scroll-margin-top: 6rem;
+}
+
+/* Desktop: more breathing room around result tables */
+@media (min-width: 64rem) {
+  .standings__table th,
+  .standings__table td {
+    padding: var(--space-sm);
+  }
+
+  .accordion__content {
+    padding: 0 var(--space-lg) var(--space-lg);
+  }
+
+  .accordion__content h3 {
+    margin-top: var(--space-lg);
+  }
+
+  .accordion__content .standings {
+    margin-top: var(--space-md);
+  }
+
+  .accordion {
+    gap: var(--space-md);
+  }
 }
 
 .race-night__pos {
@@ -812,18 +979,6 @@ a:focus-visible {
 .race-night__pos--p3 {
   background-color: #cd7f32;
   color: #1a1a1a;
-}
-
-.race-night__driver {
-  flex: 1 1 auto;
-  min-width: 0;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.race-night__time {
-  font-variant-numeric: tabular-nums;
-  color: var(--muted);
 }
 
 .race-night__details {

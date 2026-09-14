@@ -166,6 +166,53 @@
     });
   }
 
+  // Single-open accordion groups: opening one item closes the rest.
+  document.querySelectorAll('.accordion--single').forEach(function (group) {
+    group.addEventListener('toggle', function (event) {
+      const item = event.target;
+      if (item.tagName !== 'DETAILS' || !item.open) {
+        return;
+      }
+      group.querySelectorAll('details').forEach(function (other) {
+        if (other !== item) {
+          other.open = false;
+        }
+      });
+    }, true);
+  });
+
+  function openHashDetails() {
+    if (!location.hash) {
+      return;
+    }
+    const target = document.getElementById(location.hash.slice(1));
+    if (target && target.tagName === 'DETAILS') {
+      target.open = true;
+    }
+  }
+
+  window.addEventListener('hashchange', openHashDetails);
+  openHashDetails();
+
+  // Week links open the accordion and scroll to it without adding a
+  // hash to the URL, so a page refresh starts with all weeks closed.
+  document.querySelectorAll('.results-nav a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      const target = document.getElementById(link.getAttribute('href').slice(1));
+      if (!target) {
+        return;
+      }
+      event.preventDefault();
+      if (target.tagName === 'DETAILS') {
+        target.open = true;
+      }
+      target.scrollIntoView({
+        behavior: reducedMotion.matches ? 'auto' : 'smooth',
+        block: 'start'
+      });
+    });
+  });
+
   const promoModal = document.getElementById('promo-modal');
   const promoKey = 'lot-promo-seen';
 

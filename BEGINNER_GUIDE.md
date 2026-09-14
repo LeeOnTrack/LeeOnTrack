@@ -85,37 +85,41 @@ Only change the text; do not remove the `<dd>` tags.
 
 ---
 
-## 2. Update the "Last Race Result" top 3 positions
+## 2. Update the "Championship Standings" table
 
-In the same `#race-night` section, find the second card:
+In the same `#race-night` section, find the second card. It shows the top 10 championship positions in a table:
 
 ```html
-<div class="card race-night__card">
-  <h3>Last Race Result</h3>
-  <dl class="race-night__details">
-    <dt>Date</dt>
-    <dd>Race Date</dd>
-    <dt>Track</dt>
-    <dd>Track Name</dd>
-    <dt>Winner</dt>
-    <dd>Driver Name — 00:00.000</dd>
-    <dt>Second</dt>
-    <dd>Driver Name — 00:00.000</dd>
-    <dt>Third</dt>
-    <dd>Driver Name — 00:00.000</dd>
-  </dl>
+<div class="card race-night__card race-night__card--standings">
+  <h3>Sports Cars Championship — 2026 S1</h3>
+  <p class="race-night__meta">Championship Standings</p>
+  <div class="standings">
+    <table class="standings__table">
+      ...
+      <tbody>
+        <tr>
+          <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p1">1</span></td>
+          <td><span class="standings__driver"><span class="standings__dot" style="--dot:#f5b942"></span>Naven C</span></td>
+          <td class="standings__cell--num standings__points">36</td>
+          <td class="standings__cell--num">1</td>
+          <td class="standings__cell--num">9</td>
+          <td class="standings__cell--num">1</td>
+        </tr>
+        ...
+      </tbody>
+    </table>
+  </div>
 </div>
 ```
 
-Edit the text between the `<dd>` tags:
+Each driver is one `<tr>...</tr>` row. The columns, in order, are:
 
-- **Date** — the date the race happened, e.g. `6th September 2026`
-- **Track** — the track name, e.g. `Oran Park`
-- **Winner** — e.g. `Lee Heard — 01:23.456`
-- **Second** — e.g. `Naven Chettiar — 01:23.789`
-- **Third** — e.g. `Driver Name — 01:24.012`
+- **Position chip** — the number inside `<span class="race-night__pos ...">`. Keep `race-night__pos--p1`, `--p2` and `--p3` on the top 3 rows for the gold, silver and bronze chips.
+- **Driver name** — the text after `standings__dot` span, e.g. `Naven C`
+- **Points** — the cell with `standings__points`
+- **Wins**, **Avg Start**, **Avg Finish** — the remaining cells, in that order
 
-The `—` dash and lap time are optional, but keep the same format for consistency.
+To update a driver, only change the numbers and the name between the `>` and `<` tags. To add or remove a driver, copy or delete a whole `<tr>...</tr>` block.
 
 ---
 
@@ -135,7 +139,7 @@ The `—` dash and lap time are optional, but keep the same format for consisten
 | Next race (mobile header) | `<span class="next-race-message__date">` |
 | Next race (desktop banner) | `<span class="next-race-banner__date">` |
 | Next race (Race Night card) | `#race-night` first card `<dd>` values |
-| Last race top 3 | `#race-night` second card `<dd>` values |
+| Championship standings | `#race-night` second card — one `<tr>` row per driver |
 
 ---
 
