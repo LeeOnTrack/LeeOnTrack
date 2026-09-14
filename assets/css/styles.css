@@ -985,7 +985,8 @@ a:focus-visible {
     padding: 0 var(--space-lg) var(--space-lg);
   }
 
-  .accordion__content h3 {
+  .accordion__content h3,
+  .accordion__content .results-heading {
     margin-top: var(--space-lg);
   }
 
@@ -1943,4 +1944,47 @@ a:focus-visible {
   .animate-fade-in--delayed {
     animation: none;
   }
+}
+
+/* Skip link — first focusable element, only visible on focus */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+}
+
+.skip-link:focus-visible {
+  left: 0;
+}
+
+/* Visually hidden but available to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Results sub-headings: promoted to h2 for a correct heading
+   outline but keep the original h3 visual size */
+.accordion__content .results-heading {
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  margin: var(--space-md) 0 var(--space-sm);
+  color: var(--accent);
+}
+
+.accordion__content .standings + .results-heading {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
 }

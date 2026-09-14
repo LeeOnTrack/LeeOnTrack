@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="assets/css/styles.css?v=20260914-5">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">Lee<span class="on-red">OnTrack</span></a>
@@ -53,7 +54,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <section class="section section--surface">
       <div class="container container--narrow">
         <a class="application__back" href="index.html">
@@ -77,12 +78,12 @@
 
           <div class="application__field">
             <label class="application__label" for="firstName">First Name *</label>
-            <input class="application__input" id="firstName" type="text" name="First Name" required>
+            <input class="application__input" id="firstName" type="text" name="First Name" autocomplete="given-name" required>
           </div>
 
           <div class="application__field">
             <label class="application__label" for="lastName">Last Name *</label>
-            <input class="application__input" id="lastName" type="text" name="Last Name" required>
+            <input class="application__input" id="lastName" type="text" name="Last Name" autocomplete="family-name" required>
           </div>
 
           <div class="application__field">
@@ -108,7 +109,7 @@
 
           <div class="application__field">
             <label class="application__label" for="email">Email Address *</label>
-            <input class="application__input" id="email" type="email" name="Email Address" required>
+            <input class="application__input" id="email" type="email" name="Email Address" autocomplete="email" required>
           </div>
 
           <div class="application__field">

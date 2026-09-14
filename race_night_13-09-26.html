@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="assets/css/styles.css?v=20260914-5">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">Lee<span class="on-red">OnTrack</span></a>
@@ -53,7 +54,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <section class="section section--surface">
       <div class="container">
         <a class="application__back" href="index.html#race-night">
@@ -77,9 +78,10 @@
             <div class="accordion__content">
               <p class="race-night__meta">2 × 20 min, Race 2 reverse grid 25 min — 7PM UK</p>
 
-              <h3>Race 1 — Heat Results</h3>
+              <h2 class="results-heading">Race 1 — Heat Results</h2>
               <div class="standings">
                 <table class="standings__table standings__table--results">
+                  <caption class="sr-only">Race 1 — Heat Results</caption>
                   <thead>
                     <tr>
                       <th scope="col" class="standings__cell--pos">Pos</th>
@@ -100,7 +102,7 @@
                   <tbody>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p1">1</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#f5b942"></span><span>Naven C<span class="standings__sub">South Africa</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#f5b942"></span><span>Naven C<span class="standings__sub">South Africa</span></span></span></th>
                       <td class="standings__cell--num">25</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -115,7 +117,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p2">2</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#e0aaff"></span><span>Sasha B<span class="standings__sub">Canada</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#e0aaff"></span><span>Sasha B<span class="standings__sub">Canada</span></span></span></th>
                       <td class="standings__cell--num">44</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -130,7 +132,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p3">3</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#7aa2f7"></span><span>Fil W<span class="standings__sub">United Kingdom</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#7aa2f7"></span><span>Fil W<span class="standings__sub">United Kingdom</span></span></span></th>
                       <td class="standings__cell--num">007</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -145,7 +147,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">4</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#f7768e"></span><span>Daniel T<span class="standings__sub">United Kingdom</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#f7768e"></span><span>Daniel T<span class="standings__sub">United Kingdom</span></span></span></th>
                       <td class="standings__cell--num">666</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -160,7 +162,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">5</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#9ece6a"></span><span>Lee H<span class="standings__sub">United Kingdom</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#9ece6a"></span><span>Lee H<span class="standings__sub">United Kingdom</span></span></span></th>
                       <td class="standings__cell--num">55</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -175,7 +177,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">6</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#b4f9f8"></span><span>Paul B<span class="standings__sub">United Kingdom</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#b4f9f8"></span><span>Paul B<span class="standings__sub">United Kingdom</span></span></span></th>
                       <td class="standings__cell--num">59</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -190,7 +192,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">7</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#73daca"></span><span>Tony G<span class="standings__sub">United States</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#73daca"></span><span>Tony G<span class="standings__sub">United States</span></span></span></th>
                       <td class="standings__cell--num">49</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -205,7 +207,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">8</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#ff9e64"></span><span>Myles G<span class="standings__sub">United States</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#ff9e64"></span><span>Myles G<span class="standings__sub">United States</span></span></span></th>
                       <td class="standings__cell--num">058</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -220,7 +222,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">9</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#bb9af7"></span><span>Alex M<span class="standings__sub">United States</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#bb9af7"></span><span>Alex M<span class="standings__sub">United States</span></span></span></th>
                       <td class="standings__cell--num">8</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -237,9 +239,10 @@
                 </table>
               </div>
 
-              <h3>Race 2 — Reverse Grid Results</h3>
+              <h2 class="results-heading">Race 2 — Reverse Grid Results</h2>
               <div class="standings">
                 <table class="standings__table standings__table--results">
+                  <caption class="sr-only">Race 2 — Reverse Grid Results</caption>
                   <thead>
                     <tr>
                       <th scope="col" class="standings__cell--pos">Pos</th>
@@ -260,7 +263,7 @@
                   <tbody>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p1">1</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#f5b942"></span><span>Naven C<span class="standings__sub">South Africa</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#f5b942"></span><span>Naven C<span class="standings__sub">South Africa</span></span></span></th>
                       <td class="standings__cell--num">25</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -275,7 +278,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p2">2</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#7aa2f7"></span><span>Fil W<span class="standings__sub">United Kingdom</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#7aa2f7"></span><span>Fil W<span class="standings__sub">United Kingdom</span></span></span></th>
                       <td class="standings__cell--num">007</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -290,7 +293,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p3">3</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#e0aaff"></span><span>Sasha B<span class="standings__sub">Canada</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#e0aaff"></span><span>Sasha B<span class="standings__sub">Canada</span></span></span></th>
                       <td class="standings__cell--num">44</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -305,7 +308,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">4</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#f7768e"></span><span>Daniel T<span class="standings__sub">United Kingdom</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#f7768e"></span><span>Daniel T<span class="standings__sub">United Kingdom</span></span></span></th>
                       <td class="standings__cell--num">666</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -320,7 +323,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">5</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#9ece6a"></span><span>Lee H<span class="standings__sub">United Kingdom</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#9ece6a"></span><span>Lee H<span class="standings__sub">United Kingdom</span></span></span></th>
                       <td class="standings__cell--num">55</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -335,7 +338,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">6</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#73daca"></span><span>Tony G<span class="standings__sub">United States</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#73daca"></span><span>Tony G<span class="standings__sub">United States</span></span></span></th>
                       <td class="standings__cell--num">49</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -350,7 +353,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">7</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#ff9e64"></span><span>Myles G<span class="standings__sub">United States</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#ff9e64"></span><span>Myles G<span class="standings__sub">United States</span></span></span></th>
                       <td class="standings__cell--num">058</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -365,7 +368,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">8</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#bb9af7"></span><span>Alex M<span class="standings__sub">United States</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#bb9af7"></span><span>Alex M<span class="standings__sub">United States</span></span></span></th>
                       <td class="standings__cell--num">8</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -380,7 +383,7 @@
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">9</span></td>
-                      <td><span class="standings__driver"><span class="standings__dot" style="--dot:#b4f9f8"></span><span>Paul B<span class="standings__sub">United Kingdom</span></span></span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#b4f9f8"></span><span>Paul B<span class="standings__sub">United Kingdom</span></span></span></th>
                       <td class="standings__cell--num">59</td>
                       <td>GR86</td>
                       <td>Hosted All Cars</td>
@@ -405,9 +408,10 @@
               <p class="race-night__meta">45 min, mandatory pit stop — 7PM UK</p>
               <p>Results will be added after race night.</p>
 
-              <h3>Race Results</h3>
+              <h2 class="results-heading">Race Results</h2>
               <div class="standings">
                 <table class="standings__table standings__table--results">
+                  <caption class="sr-only">Race Results</caption>
                   <thead>
                     <tr>
                       <th scope="col" class="standings__cell--pos">Pos</th>
@@ -426,15 +430,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">1</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">2</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">3</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">4</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">5</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">6</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">7</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">8</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">9</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">1</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">2</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">3</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">4</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">5</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">6</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">7</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">8</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">9</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -447,9 +451,10 @@
               <p class="race-night__meta">2 × 20 min, Race 2 reverse grid 25 min — 7PM UK</p>
               <p>Results will be added after race night.</p>
 
-              <h3>Race 1 — Heat Results</h3>
+              <h2 class="results-heading">Race 1 — Heat Results</h2>
               <div class="standings">
                 <table class="standings__table standings__table--results">
+                  <caption class="sr-only">Race 1 — Heat Results</caption>
                   <thead>
                     <tr>
                       <th scope="col" class="standings__cell--pos">Pos</th>
@@ -468,22 +473,23 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">1</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">2</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">3</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">4</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">5</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">6</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">7</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">8</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">9</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">1</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">2</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">3</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">4</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">5</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">6</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">7</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">8</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">9</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
                   </tbody>
                 </table>
               </div>
 
-              <h3>Race 2 — Reverse Grid Results</h3>
+              <h2 class="results-heading">Race 2 — Reverse Grid Results</h2>
               <div class="standings">
                 <table class="standings__table standings__table--results">
+                  <caption class="sr-only">Race 2 — Reverse Grid Results</caption>
                   <thead>
                     <tr>
                       <th scope="col" class="standings__cell--pos">Pos</th>
@@ -502,15 +508,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">1</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">2</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">3</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">4</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">5</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">6</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">7</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">8</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">9</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">1</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">2</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">3</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">4</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">5</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">6</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">7</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">8</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">9</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -523,9 +529,10 @@
               <p class="race-night__meta">90 min finale, restricted fuel — 7PM UK</p>
               <p>Results will be added after race night.</p>
 
-              <h3>Race Results</h3>
+              <h2 class="results-heading">Race Results</h2>
               <div class="standings">
                 <table class="standings__table standings__table--results">
+                  <caption class="sr-only">Race Results</caption>
                   <thead>
                     <tr>
                       <th scope="col" class="standings__cell--pos">Pos</th>
@@ -544,15 +551,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">1</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">2</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">3</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">4</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">5</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">6</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">7</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">8</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
-                    <tr><td class="standings__cell--pos"><span class="race-night__pos">9</span></td><td><span class="standings__driver"><span class="standings__dot"></span>TBC</span></td><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">1</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">2</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">3</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">4</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">5</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">6</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">7</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">8</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
+                    <tr><td class="standings__cell--pos"><span class="race-night__pos">9</span></td><th scope="row"><span class="standings__driver"><span class="standings__dot"></span>TBC</span></th><td class="standings__cell--num">—</td><td>—</td><td>—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td><td class="standings__cell--num">—</td></tr>
                   </tbody>
                 </table>
               </div>

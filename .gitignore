@@ -29,9 +29,14 @@ ws_template/
 .devin/
 .windsurf/
 .windsurfrules
+.agents/
 
 # Local test files
 website-test.txt
+SECURITY_AUDIT.txt
+GDPR_AUDIT.txt
+ACCESSIBILITY_AUDIT.txt
+aria-edits.txt
 
 # Markdown docs (except README and beginner guide)
 *.md
