@@ -1124,14 +1124,11 @@ a:focus-visible {
 .gallery__media {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   background-color: var(--surface);
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
   transition: transform 0.3s ease;
-}
-
-.gallery__media--pitstop {
-  background-image: url('../images/pit-stop.png');
 }
 
 .gallery__card:hover .gallery__media,
