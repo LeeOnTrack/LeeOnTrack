@@ -226,11 +226,13 @@
 
   const promoModal = document.getElementById('promo-modal');
   const promoKey = 'lot-promo-seen';
+  // Set to true to show the promo modal on a visitor's first visit.
+  const promoEnabled = false;
 
   if (promoModal) {
     try {
       const hasSeen = localStorage.getItem(promoKey);
-      if (!hasSeen) {
+      if (promoEnabled && !hasSeen) {
         promoModal.showModal();
       }
     } catch (e) {
