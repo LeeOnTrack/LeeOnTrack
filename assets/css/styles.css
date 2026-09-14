@@ -784,6 +784,7 @@ a:focus-visible {
 
 .standings__table--champ {
   table-layout: fixed;
+  min-width: 22rem;
 }
 
 .standings__table--champ .standings__cell--pos {
