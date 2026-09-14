@@ -181,6 +181,17 @@
     }, true);
   });
 
+  // Gallery: collapsible accordion on mobile/tablet, always open on desktop.
+  const galleryAccordion = document.getElementById('gallery-accordion');
+  if (galleryAccordion) {
+    const galleryDesktop = window.matchMedia('(min-width: 64rem)');
+    function syncGalleryAccordion() {
+      galleryAccordion.open = galleryDesktop.matches;
+    }
+    galleryDesktop.addEventListener('change', syncGalleryAccordion);
+    syncGalleryAccordion();
+  }
+
   function openHashDetails() {
     if (!location.hash) {
       return;

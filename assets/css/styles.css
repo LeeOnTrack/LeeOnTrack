@@ -937,6 +937,23 @@ a:focus-visible {
   scroll-margin-top: 6rem;
 }
 
+/* Desktop: gallery accordion becomes invisible chrome — always open,
+   summary hidden so it looks like the normal gallery section */
+@media (min-width: 64rem) {
+  .gallery__accordion {
+    background: none;
+    border: none;
+  }
+
+  .gallery__accordion > summary {
+    display: none;
+  }
+
+  .gallery__accordion .accordion__content {
+    padding: 0;
+  }
+}
+
 /* Desktop: more breathing room around result tables */
 @media (min-width: 64rem) {
   .standings__table--champ {

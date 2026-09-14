@@ -16,7 +16,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260914-2">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260914-3">
 </head>
 <body>
   <header class="site-header">
@@ -397,7 +397,10 @@ GALLERY SECTION - edit images here
       <div class="container">
         <h2>Gallery</h2>
         <p>Racing Action!</p>
-        <div class="grid grid--gallery">
+        <details class="accordion__item gallery__accordion" id="gallery-accordion" open>
+          <summary>View Gallery</summary>
+          <div class="accordion__content gallery__accordion-content">
+            <div class="grid grid--gallery">
           <button class="gallery__card" type="button" data-title="Race Screenshot 1" data-desc="Close battle at Oran Park." data-src="assets/images/pit-stop.png" aria-haspopup="dialog">
             <span class="gallery__media gallery__media--pitstop" role="img" aria-label="Race screenshot 1"></span>
             <span class="gallery__content">
@@ -440,7 +443,9 @@ GALLERY SECTION - edit images here
               <span class="gallery__desc">Podium celebration shot.</span>
             </span>
           </button>
-        </div>
+            </div>
+          </div>
+        </details>
       </div>
     </section>
 <!-- ====================================
