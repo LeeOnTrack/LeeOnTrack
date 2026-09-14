@@ -937,6 +937,21 @@ a:focus-visible {
   scroll-margin-top: 6rem;
 }
 
+/* Mobile/tablet: sticky table headers — rows scroll under the
+   column headings inside the .standings box */
+@media (max-width: 63.99rem) {
+  .standings {
+    max-height: 65vh;
+  }
+
+  .standings__table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: var(--card);
+  }
+}
+
 /* Desktop: gallery accordion becomes invisible chrome — always open,
    summary hidden so it looks like the normal gallery section */
 @media (min-width: 64rem) {
