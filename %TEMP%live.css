@@ -938,11 +938,6 @@ a:focus-visible {
 
 /* Desktop: more breathing room around result tables */
 @media (min-width: 64rem) {
-  .standings__table--champ {
-    max-width: 54rem;
-    margin-inline: auto;
-  }
-
   .standings__table th,
   .standings__table td {
     padding: var(--space-sm);
