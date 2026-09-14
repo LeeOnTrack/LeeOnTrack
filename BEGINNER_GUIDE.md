@@ -87,22 +87,20 @@ Only change the text; do not remove the `<dd>` tags.
 
 ## 2. Update the "Championship Standings" table
 
-In the same `#race-night` section, find the second card. It shows the top 10 championship positions in a table:
+In the same `#race-night` section, find the second card. It shows the championship positions in a table, one row per driver:
 
 ```html
 <div class="card race-night__card race-night__card--standings">
   <h3>Sports Cars Championship — 2026 S1</h3>
   <p class="race-night__meta">Championship Standings</p>
   <div class="standings">
-    <table class="standings__table">
+    <table class="standings__table standings__table--champ">
       ...
       <tbody>
         <tr>
           <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p1">1</span></td>
           <td><span class="standings__driver"><span class="standings__dot" style="--dot:#f5b942"></span>Naven C</span></td>
           <td class="standings__cell--num standings__points">36</td>
-          <td class="standings__cell--num">1</td>
-          <td class="standings__cell--num">9</td>
           <td class="standings__cell--num">1</td>
         </tr>
         ...
@@ -117,7 +115,7 @@ Each driver is one `<tr>...</tr>` row. The columns, in order, are:
 - **Position chip** — the number inside `<span class="race-night__pos ...">`. Keep `race-night__pos--p1`, `--p2` and `--p3` on the top 3 rows for the gold, silver and bronze chips.
 - **Driver name** — the text after `standings__dot` span, e.g. `Naven C`
 - **Points** — the cell with `standings__points`
-- **Wins**, **Avg Start**, **Avg Finish** — the remaining cells, in that order
+- **Wins** — the last cell in the row
 
 To update a driver, only change the numbers and the name between the `>` and `<` tags. To add or remove a driver, copy or delete a whole `<tr>...</tr>` block.
 

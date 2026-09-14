@@ -778,9 +778,16 @@ a:focus-visible {
 
 .standings__table {
   width: 100%;
-  min-width: 34rem;
   border-collapse: collapse;
   font-size: 0.95rem;
+}
+
+.standings__table--champ {
+  table-layout: fixed;
+}
+
+.standings__table--champ .standings__cell--pos {
+  width: 4rem;
 }
 
 .standings__table th,
@@ -1009,6 +1016,30 @@ a:focus-visible {
 .race-night__details dd {
   margin: 0;
   color: var(--text);
+}
+
+/* Desktop: roomier race night panel and cards */
+@media (min-width: 64rem) {
+  .race-night__panel {
+    padding: var(--space-lg);
+  }
+
+  .race-night__grid {
+    gap: var(--space-lg);
+  }
+
+  .race-night__card {
+    padding: var(--space-lg);
+  }
+
+  .race-night__details {
+    gap: var(--space-sm) var(--space-lg);
+  }
+
+  .race-night__schedule li,
+  .race-night__info li {
+    margin-bottom: var(--space-sm);
+  }
 }
 
 .card__media {
