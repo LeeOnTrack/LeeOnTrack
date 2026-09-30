@@ -253,4 +253,78 @@
       }
     });
   }
+
+  // Application form handling for Google Apps Script backend
+  const applicationForm = document.querySelector('.application__form');
+  if (applicationForm) {
+    const submitBtn = applicationForm.querySelector('.application__submit');
+    const statusMsg = document.getElementById('application-status');
+
+    applicationForm.addEventListener('submit', async function (event) {
+      const scriptUrl = applicationForm.getAttribute('action');
+
+      // Check if URL is configured or still placeholder
+      if (!scriptUrl || scriptUrl.indexOf('YOUR_APPS_SCRIPT_WEB_APP_URL') !== -1) {
+        event.preventDefault();
+        if (statusMsg) {
+          statusMsg.hidden = false;
+          statusMsg.className = 'application__status application__status--error';
+          statusMsg.innerHTML = '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> The application backend is being configured. Please email your details directly to <a href="mailto:leeontrack5@gmail.com" style="color: inherit; text-decoration: underline; font-weight: 700;">leeontrack5@gmail.com</a>.';
+          statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        return;
+      }
+
+      // If pointing to Google Apps Script, handle asynchronously with fetch
+      if (scriptUrl.indexOf('script.google.com') !== -1) {
+        event.preventDefault();
+
+        if (!applicationForm.checkValidity()) {
+          applicationForm.reportValidity();
+          return;
+        }
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'Submitting Application... <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>';
+        }
+        if (statusMsg) {
+          statusMsg.hidden = true;
+        }
+
+        try {
+          const formData = new FormData(applicationForm);
+          const params = new URLSearchParams();
+          for (const [key, value] of formData.entries()) {
+            params.append(key, value);
+          }
+
+          // Use mode: 'no-cors' so Google's 302 redirect doesn't trigger a browser CORS block
+          await fetch(scriptUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            body: params.toString(),
+            mode: 'no-cors'
+          });
+
+          // Redirect to thank-you page on completed submission
+          window.location.href = 'thank-you.html';
+        } catch (err) {
+          console.error('Submission failed:', err);
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'SUBMIT APPLICATION <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>';
+          }
+          if (statusMsg) {
+            statusMsg.hidden = false;
+            statusMsg.className = 'application__status application__status--error';
+            statusMsg.innerHTML = '<i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> Something went wrong submitting your application. Please check your connection or email your details directly to <a href="mailto:leeontrack5@gmail.com" style="color: inherit; text-decoration: underline; font-weight: 700;">leeontrack5@gmail.com</a>.';
+            statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }
+      }
+    });
+  }
 })();

@@ -1965,8 +1965,41 @@ a:focus-visible {
   margin-top: var(--space-md);
 }
 
+.application__submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .application__submit i {
   margin-left: var(--space-xs);
+}
+
+.application__status {
+  padding: var(--space-sm);
+  border-radius: var(--radius);
+  margin-top: var(--space-md);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.application__status[hidden] {
+  display: none;
+}
+
+.application__status--error {
+  background-color: rgba(239, 68, 68, 0.15);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+}
+
+.application__status--success {
+  background-color: rgba(40, 229, 100, 0.15);
+  border: 1px solid var(--accent);
+  color: var(--accent);
 }
 
 .application__back {
