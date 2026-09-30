@@ -284,6 +284,13 @@
           return;
         }
 
+        // Fast client-side honeypot trap check
+        const trapField = applicationForm.querySelector('[name="league_ref"]');
+        if (trapField && trapField.value.trim() !== '') {
+          window.location.href = 'thank-you.html';
+          return;
+        }
+
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.innerHTML = 'Submitting Application... <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>';

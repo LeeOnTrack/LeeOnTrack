@@ -1,15 +1,17 @@
-# Google Sheets & Gmail Form Backend Setup Guide
+# Google Sheets & Gmail Form Backend Setup Guide (Hardened)
 
 This backend connects the **LeeOnTrack** driver application form ([application.html](file:///c:/Users/liamo/OneDrive/Desktop/PROJECTS/leeontrack-versions/leeontrack/LeeOnTrack/application.html)) directly to a private **Google Sheet** and sends instant notification emails via **Gmail** (`leeontrack5@gmail.com`).
 
 ---
 
-## Why this is better than FormSubmit.co
-- **100% Reliability:** Runs on Google's cloud infrastructure (no missed or dropped submissions).
-- **Driver Database:** Every application is safely recorded in a Google Sheet with timestamp, stats, and answers.
-- **Instant Admin Alerts:** Sends a formatted HTML alert email directly to `leeontrack5@gmail.com` with a 1-click reply button.
-- **Applicant Receipt:** Automatically emails the driver confirming their application was received, with a link to the LeeOnTrack Discord server.
-- **Zero Cost & Free Forever:** Uses standard Google Apps Script included with every Google account.
+## Built-In Security Protections
+
+1. **Honeypot Anti-Spam Trap:** Hidden form field (`league_ref`) traps automated spam bots and silently discards bot submissions without sending emails or polluting your spreadsheet.
+2. **Formula Injection Defense:** Prevents CSV/Spreadsheet formula injection by sanitizing characters (`=`, `+`, `-`, `@`) before writing to Google Sheets.
+3. **HTML Sanitization (Anti-XSS):** Automatically escapes all user input before generating emails, preventing malicious HTML or link injections.
+4. **Rate Limiting & Flood Protection:** Google Apps Script cache blocks rapid repetitive submissions from the same email address (configurable, default 5 minutes).
+5. **Length Truncation:** Fields are capped at reasonable lengths to stop payload bloat attacks.
+6. **Configurable Email Flags:** Toggle `SEND_APPLICANT_CONFIRMATION = false` if you only want admin alerts and no emails sent to applicants.
 
 ---
 
@@ -32,15 +34,15 @@ This backend connects the **LeeOnTrack** driver application form ([application.h
 
 ---
 
-### 3. Test the Script & Authorize Permissions (Optional but Recommended)
+### 3. Test the Script & Authorize Permissions (Required First Step)
 1. In the Apps Script toolbar, locate the function dropdown (next to "Debug" and "Run").
 2. Select **`testSubmission`** from the dropdown list.
 3. Click **Run**.
 4. A popup will appear saying *"Authorization required"*. Click **Review permissions**.
 5. Select your `leeontrack5@gmail.com` account.
-6. If Google shows *"Google hasn't verified this app"*, click **Advanced** (bottom left), then click **Go to Untitled project (unsafe)**.
+6. When Google shows *"Google hasn't verified this app"*, click **Advanced** (bottom left), then click **Go to Untitled project (unsafe)**.
 7. Click **Allow**.
-8. Check your Google Sheet tab "Applications" and your Gmail inbox — you should see a test submission from "Lewis Hamilton"!
+8. Check your Google Sheet tab "Applications" and your Gmail inbox — you should see a sanitized test submission from "Lewis Hamilton"!
 
 ---
 
@@ -48,7 +50,7 @@ This backend connects the **LeeOnTrack** driver application form ([application.h
 1. At the top right of the Apps Script page, click the blue **Deploy** button &rarr; **New deployment**.
 2. Click the gear icon next to "Select type" and choose **Web app**.
 3. Fill in the deployment settings:
-   - **Description**: `LeeOnTrack Backend v1`
+   - **Description**: `LeeOnTrack Backend v2 (Hardened)`
    - **Execute as**: `Me (leeontrack5@gmail.com)`
    - **Who has access**: **`Anyone`**  
      *(⚠️ Critical: This must be set to "Anyone" so that drivers visiting the website can submit the form without needing to sign into Google).*
@@ -61,6 +63,6 @@ This backend connects the **LeeOnTrack** driver application form ([application.h
 1. Open [application.html](file:///c:/Users/liamo/OneDrive/Desktop/PROJECTS/leeontrack-versions/leeontrack/LeeOnTrack/application.html).
 2. Find the form element and set `action` to your copied Web App URL:
    ```html
-   <form class="application__form" action="https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec" method="POST">
+   <form class="application__form animate-fade-in--delayed" id="applicationForm" action="https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec" method="POST">
    ```
-3. Commit and push to GitHub. You're all set!
+3. Commit and push to GitHub. You're ready to receive applications safely!

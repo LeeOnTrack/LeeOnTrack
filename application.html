@@ -74,6 +74,12 @@
 
         <form class="application__form animate-fade-in--delayed" id="applicationForm" action="https://script.google.com/macros/s/YOUR_APPS_SCRIPT_WEB_APP_URL/exec" method="POST">
 
+          <!-- Anti-spam Honeypot field (hidden from real users, traps automated bots) -->
+          <div class="application__trap" aria-hidden="true">
+            <label for="league_ref">Do not fill this out if human</label>
+            <input type="text" id="league_ref" name="league_ref" tabindex="-1" autocomplete="off">
+          </div>
+
           <div class="application__field">
             <label class="application__label" for="firstName">First Name *</label>
             <input class="application__input" id="firstName" type="text" name="First Name" autocomplete="given-name" required>
