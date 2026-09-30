@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LeeOnTrack - iRacing sim racing league.">
+  <meta name="author" content="LeeOnTrack">
+  <meta property="og:title" content="LeeOnTrack | League Racing">
+  <meta property="og:description" content="LeeOnTrack - iRacing sim racing league.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.leeontrack.co.uk/">
+  <meta property="og:image" content="https://www.leeontrack.co.uk/assets/images/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>LeeOnTrack | League Racing</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://cdnjs.cloudflare.com; font-src https://cdnjs.cloudflare.com; img-src 'self' data:; script-src 'self'; connect-src 'self'; form-action 'self' https://formsubmit.co;">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260914-6">
+</head>
+<body>
+  <a class="skip-link" href="#home">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home">Lee<span class="on-red">OnTrack</span></a>
+      <p class="next-race-message">
+        <span class="next-race-message__label">Next Race:</span>
+        <span class="next-race-message__date">Sunday 4th October 2026, 19:00 UK</span>
+      </p>
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav id="nav-menu" class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li class="site-nav__item--submenu">
+            <details class="site-nav__details">
+              <summary class="site-nav__summary">League</summary>
+              <ul class="site-nav__submenu">
+                <li><a href="#league">League Overview</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#code-of-conduct">Code of Conduct</a></li>
+                <li><a href="application.html">Join</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="#race-night">Race Night</a></li>
+          <li><a class="nav-cta" href="application.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================
+       NEXT RACE BANNER (DESKTOP)
+       EDIT DATE / TIME HERE
+  ======================================== -->
+  <section class="next-race-banner next-race-banner--desktop" aria-label="Next race">
+    <div class="container">
+      <p class="next-race-banner__text">
+        <span class="next-race-banner__label">Next Race:</span>
+        <span class="next-race-banner__date">Sunday 4th October 2026, 19:00 UK</span>
+      </p>
+    </div>
+  </section>
+
+  <main id="home" tabindex="-1">
+    <section class="hero" aria-label="Welcome">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container">
+        <h1>Lee<span class="on-red">OnTrack</span></h1>
+        <p class="hero__eyebrow">Welcome to LeeOnTrack</p>
+        <p class="hero-tagline">iRacing league racing, sim rig content and close battles.</p>
+        <div class="hero__actions">
+          <a class="button" href="application.html">Get on the Grid</a>
+          <a class="button button--secondary" href="#about">Learn More</a>
+        </div>
+        <nav class="hero__socials" aria-label="Social media">
+          <ul>
+            <li>
+              <a class="socials__link" href="https://discord.gg/DKzfz8Q8Pd" aria-label="LeeOnTrack on Discord" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-discord" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="socials__link" href="https://www.facebook.com/profile.php?id=61584474686132" aria-label="LeeOnTrack on Facebook" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="socials__link" href="https://www.youtube.com/@LeeOnTrack-j9v" aria-label="LeeOnTrack on YouTube" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="socials__link" href="https://www.tiktok.com/@leeontrack?_r=1&_t=ZN-93EGUP48d8g" aria-label="LeeOnTrack on TikTok" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="socials__link" href="mailto:leeontrack5@gmail.com" aria-label="Email LeeOnTrack">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!---- Racing Banner -->
+
+    <section class="racing-banner" aria-label="Racing banner">
+      <div class="container">
+        <div class="racing-banner__content">
+          <div class="racing-banner__text">
+            <p class="racing-banner__line racing-banner__line--green">SUNDAY NIGHT RACING<span class="racing-banner__dot" aria-hidden="true">•</span></p>
+            <p class="racing-banner__line">
+              <span class="racing-banner__line--white">RACE HARD.</span>
+              <span class="racing-banner__line--white">RACE FAIR<span class="racing-banner__dot" aria-hidden="true">•</span></span>
+            </p>
+            <p class="racing-banner__line racing-banner__line--green">iRACING LEAGUE</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Lee<span class="on-red">OnTrack</span></h2>
+        <div class="grid grid--cards">
+          <div class="card">
+            <img class="card__logo" src="assets/images/lot-logo.svg" alt="" loading="lazy" aria-hidden="true">
+            <h3>Lee Heard</h3>
+            <p>League Organiser &amp; Website Owner</p>
+          </div>
+          <div class="card">
+            <img class="card__logo" src="assets/images/lot-logo.svg" alt="" loading="lazy" aria-hidden="true">
+            <h3>Naven Chettiar</h3>
+            <p>League Organiser</p>
+          </div>
+        </div>
+        <h3>Lee<span class="on-red">OnTrack</span> League Racing</h3>
+        <p>Racing Together. Improving Together.</p>
+        <p>LeeOnTrack League Racing was created for like-minded sim racers who want to enjoy competitive racing while improving their race craft and helping others improve theirs.</p>
+        <p>The league is specifically aimed at drivers with an iRating under 2000. You don’t need to be an alien, and you don’t need to be the fastest driver on the grid. What matters to us is that you want to learn, improve and race fairly.</p>
+        <div class="accordion">
+          <details class="accordion__item">
+            <summary>A League for Developing Drivers</summary>
+            <div class="accordion__content">
+              <p>We know that racing in public sessions can sometimes be intimidating, especially when you’re still developing your race craft.</p>
+              <p>LeeOnTrack gives drivers a place where they can gain experience racing regularly with the same group of people.</p>
+              <p>It’s an opportunity to work on:</p>
+              <ul>
+                <li>Clean overtaking and defending</li>
+                <li>Racing safely side-by-side</li>
+                <li>Race starts and first-lap awareness</li>
+                <li>Consistency and car control</li>
+                <li>Pit stops and race strategy</li>
+                <li>Dealing with traffic and blue flags</li>
+                <li>Learning when to attack — and when to be patient</li>
+              </ul>
+              <p>Most importantly, it’s about gaining real racing experience in a friendly environment.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Help Each Other Improve</summary>
+            <div class="accordion__content">
+              <p>The league isn’t just about your own results.</p>
+              <p>We encourage drivers to share advice, give constructive feedback and help each other improve.</p>
+              <p>If someone makes a mistake, we’d rather help them understand what happened than simply criticise them.</p>
+              <p>More experienced drivers within the league are encouraged to pass on what they’ve learned, while newer drivers should never be afraid to ask questions.</p>
+              <p>We all improve by racing together.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Competitive — But Friendly</summary>
+            <div class="accordion__content">
+              <p>We still want proper racing.</p>
+              <p>There are positions to fight for, races to win and championships to compete for.</p>
+              <p>But winning should never come at the expense of respect for another driver.</p>
+              <p>We want drivers to finish a race thinking:</p>
+              <p>“That was a great battle.”</p>
+              <p>Whether they finished 1st, 10th or last.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Under 2000 iRating</summary>
+            <div class="accordion__content">
+              <p>LeeOnTrack League Racing is designed primarily for drivers with an iRating below 2000.</p>
+              <p>This helps create a grid where developing and intermediate racers can compete against drivers of broadly similar ability.</p>
+              <p>It isn’t about judging anyone by their iRating.</p>
+              <p>It’s about creating the right environment for drivers to build confidence, improve their race craft and become better racers.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Be Part of the Community</summary>
+            <div class="accordion__content">
+              <p>Discord and communication are a big part of the league.</p>
+              <p>Talk to the other drivers.</p>
+              <p>Share setups and advice.</p>
+              <p>Help somebody who’s struggling with a track.</p>
+              <p>Congratulate somebody after a good battle.</p>
+              <p>And if something goes wrong on track, talk about it respectfully and learn from it.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>The LeeOnTrack Philosophy</summary>
+            <div class="accordion__content">
+              <p>You don’t have to be the fastest.</p>
+              <p>You don’t have to win.</p>
+              <p>You just need to want to race fairly, improve your driving and help create enjoyable racing for everyone on the grid.</p>
+            </div>
+          </details>
+        </div>
+        <p class="about-tagline">Race. Learn. Improve. Together.</p>
+        <p class="about-signoff">LeeOnTrack League Racing</p>
+      </div>
+    </section>
+
+    <section id="rig" class="section section--surface">
+      <div class="container">
+        <div class="rig__panel">
+          <h2>My Rig</h2>
+          <p>Lee's sim racing rig.</p>
+          <!-- ========================================
+               MY RIG IMAGE
+               Image: assets/images/rig.png
+          ======================================== -->
+          <img class="rig__media" src="assets/images/rig.png" alt="Lee's sim racing rig" width="1536" height="1024" loading="lazy" decoding="async">
+          <div class="accordion">
+            <details class="accordion__item">
+              <summary>Lee's sim racing rig</summary>
+              <div class="accordion__content">
+                <p>
+
+My rig includes a Fanatec ClubSport DD+ wheel base, GSI Formula Pro Elite V2 wheel, SimNet SP Pro pedals, Qubic QS-BT1 active belt tensioner and a high-performance gaming PC built around an RTX 5080.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="league" class="section">
+      <div class="container">
+        <h2>Sunday Night League</h2>
+        <p>GT3, GR86 and MX-5 racing every Sunday evening. Schedules and car details are announced before each round.</p>
+        <div class="grid grid--cards">
+          <article id="gt3" class="card">
+            <div class="card__media" role="img" aria-label="GT3 class image">
+              <img src="assets/images/pit-stop.png" alt="" width="1184" height="864" loading="lazy" decoding="async">
+            </div>
+            <h3>GT3</h3>
+            <p>Fast racing, strategy and pit stops.</p>
+          </article>
+          <article id="gr86" class="card">
+            <div class="card__media" role="img" aria-label="GR86 class image">
+              <img src="assets/images/pit-stop.png" alt="" width="1184" height="864" loading="lazy" decoding="async">
+            </div>
+            <h3>GR86</h3>
+            <p>Momentum racing and close battles.</p>
+          </article>
+          <article id="mx5" class="card">
+            <div class="card__media" role="img" aria-label="MX-5 class image">
+              <img src="assets/images/pit-stop.png" alt="" width="1184" height="864" loading="lazy" decoding="async">
+            </div>
+            <h3>MX-5</h3>
+            <p>Door-to-door racing and racecraft.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="race-night" class="section section--surface">
+      <div class="container">
+        <div class="race-night__panel">
+          <h2>Race Night</h2>
+          <p>Practice • Qualifying • Race — UK evening events. Exact track and car details are announced before each event.</p>
+          <ul class="race-night__info">
+            <li>Pre-race briefing or any questions — 10 minutes before the lobby opens, in Discord chat.</li>
+            <li>Lobby opens for the race at 19:00 UK time, unless notified of a time change.</li>
+            <li>There will be Practice / Qualifying / Race(s).</li>
+            <li>Debrief after the race in Discord chat for 10 mins.</li>
+            <li>Sessions are normally 1 hour long, but can be longer for an endurance race — this will be stated in the iRacing League details.</li>
+          </ul>
+          <div class="race-night__grid">
+            <div class="card race-night__card race-night__card--wide">
+              <h3>Next Race — Sports Car Championship — 2026 S1</h3>
+              <dl class="race-night__details">
+                <dt>Day</dt>
+                <dd>Sunday</dd>
+                <dt>Date</dt>
+                <dd>4th October 2026</dd>
+                <dt>Time</dt>
+                <dd>19:00 UK</dd>
+                <dt>Car / Track</dt>
+                <dd>Watkins Glen International with Boot</dd>
+                <dt>Format</dt>
+                <dd>90 min finale, restricted fuel</dd>
+              </dl>
+              <h4>Championship Schedule</h4>
+              <ul class="race-night__schedule">
+                <li><strong>WK4</strong> 4.10.2026 7PM UK — Watkins Glen International with Boot — 90 min finale, restricted fuel</li>
+              </ul>
+              <p><strong>Drop rule:</strong> Drop the lowest total from WK1, WK2 or WK3. WK4 is mandatory and cannot be dropped.</p>
+              <p><strong>Note:</strong> The points tables are designed for direct entry into iRacing's custom League Event scoring.</p>
+            </div>
+            <div class="card race-night__card race-night__card--standings">
+              <h3>Sports Cars Championship — 2026 S1</h3>
+              <p class="race-night__meta">Championship Standings</p>
+              <div class="standings">
+                <table class="standings__table standings__table--champ">
+                  <caption class="sr-only">Sports Cars Championship 2026 S1 — Standings</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="standings__cell--pos">Pos</th>
+                      <th scope="col">Driver</th>
+                      <th scope="col" class="standings__cell--num">Points</th>
+                      <th scope="col" class="standings__cell--num">Wins</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p1">1</span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#f5b942"></span>Naven C</span></th>
+                      <td class="standings__cell--num standings__points">98</td>
+                      <td class="standings__cell--num">3</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p2">2</span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#e0aaff"></span>Shaun T</span></th>
+                      <td class="standings__cell--num standings__points">56</td>
+                      <td class="standings__cell--num">1</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p3">3</span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#7aa2f7"></span>Fil W</span></th>
+                      <td class="standings__cell--num standings__points">49</td>
+                      <td class="standings__cell--num">0</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos">4</span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#9ece6a"></span>Sasha B</span></th>
+                      <td class="standings__cell--num standings__points">33</td>
+                      <td class="standings__cell--num">0</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos">5</span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#f7768e"></span>Lee H</span></th>
+                      <td class="standings__cell--num standings__points">32</td>
+                      <td class="standings__cell--num">0</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos">6</span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#73daca"></span>Daniel T</span></th>
+                      <td class="standings__cell--num standings__points">29</td>
+                      <td class="standings__cell--num">0</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos">7</span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#b4f9f8"></span>Neil B</span></th>
+                      <td class="standings__cell--num standings__points">25</td>
+                      <td class="standings__cell--num">0</td>
+                    </tr>
+                    <tr>
+                      <td class="standings__cell--pos"><span class="race-night__pos">8</span></td>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#ff9e64"></span>Scott E</span></th>
+                      <td class="standings__cell--num standings__points">19</td>
+                      <td class="standings__cell--num">0</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <details class="accordion__item">
+                  <summary>Show more standings</summary>
+                  <div class="accordion__content">
+                    <table class="standings__table standings__table--champ">
+                      <tbody>
+                        <tr>
+                          <td class="standings__cell--pos"><span class="race-night__pos">9</span></td>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#9ece6a"></span>Tom J B</span></th>
+                          <td class="standings__cell--num standings__points">18</td>
+                          <td class="standings__cell--num">0</td>
+                        </tr>
+                        <tr>
+                          <td class="standings__cell--pos"><span class="race-night__pos">10</span></td>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#73daca"></span>Scott L</span></th>
+                          <td class="standings__cell--num standings__points">16</td>
+                          <td class="standings__cell--num">0</td>
+                        </tr>
+                        <tr>
+                          <td class="standings__cell--pos"><span class="race-night__pos">11</span></td>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#b4f9f8"></span>Erick I</span></th>
+                          <td class="standings__cell--num standings__points">12</td>
+                          <td class="standings__cell--num">0</td>
+                        </tr>
+                        <tr>
+                          <td class="standings__cell--pos"><span class="race-night__pos">12</span></td>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#ff9e64"></span>Alex M</span></th>
+                          <td class="standings__cell--num standings__points">11</td>
+                          <td class="standings__cell--num">0</td>
+                        </tr>
+                        <tr>
+                          <td class="standings__cell--pos"><span class="race-night__pos">13</span></td>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#f7768e"></span>Tony G</span></th>
+                          <td class="standings__cell--num standings__points">10</td>
+                          <td class="standings__cell--num">0</td>
+                        </tr>
+                        <tr>
+                          <td class="standings__cell--pos"><span class="race-night__pos">14</span></td>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#e0aaff"></span>Kevin L</span></th>
+                          <td class="standings__cell--num standings__points">8</td>
+                          <td class="standings__cell--num">0</td>
+                        </tr>
+                        <tr>
+                          <td class="standings__cell--pos"><span class="race-night__pos">14</span></td>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#bb9af7"></span>Rafal K</span></th>
+                          <td class="standings__cell--num standings__points">8</td>
+                          <td class="standings__cell--num">0</td>
+                        </tr>
+                        <tr>
+                          <td class="standings__cell--pos"><span class="race-night__pos">16</span></td>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#73daca"></span>Myles G</span></th>
+                          <td class="standings__cell--num standings__points">7</td>
+                          <td class="standings__cell--num">0</td>
+                        </tr>
+                        <tr>
+                          <td class="standings__cell--pos"><span class="race-night__pos">17</span></td>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#b4f9f8"></span>Paul B</span></th>
+                          <td class="standings__cell--num standings__points">6</td>
+                          <td class="standings__cell--num">0</td>
+                        </tr>
+                        <tr>
+                          <td class="standings__cell--pos"><span class="race-night__pos">18</span></td>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot" style="--dot:#ff9e64"></span>Charlie L</span></th>
+                          <td class="standings__cell--num standings__points">0</td>
+                          <td class="standings__cell--num">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </details>
+              </div>
+              <a class="button standings__link" href="race_night_13-09-26.html">
+                FULL RACE DETAILS
+                <i class="fa-solid fa-flag-checkered" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- ====================================
+GALLERY SECTION - edit images here 
+===================================== -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2>Gallery</h2>
+        <p>Racing Action!</p>
+        <details class="accordion__item gallery__accordion" id="gallery-accordion" open>
+          <summary>View Gallery</summary>
+          <div class="accordion__content gallery__accordion-content">
+            <div class="grid grid--gallery">
+          <button class="gallery__card" type="button" data-title="GR86 Cornering at Summit Point" data-desc="Green GR86 powering through the right-hander." data-src="assets/images/gallery/leeontrack_cornering.webp" aria-haspopup="dialog">
+            <img class="gallery__media" src="assets/images/gallery/leeontrack_cornering.webp" alt="GR86 Cornering at Summit Point - Green GR86 powering through the right-hander" loading="lazy" decoding="async">
+            <span class="gallery__content">
+              <span class="gallery__title">GR86 Cornering at Summit Point</span>
+              <span class="gallery__desc">Green GR86 powering through the right-hander.</span>
+            </span>
+          </button>
+          <button class="gallery__card" type="button" data-title="GR86 Pack Battle" data-desc="Five cars fighting for position through the corner." data-src="assets/images/gallery/leeontrack_great_racing.webp" aria-haspopup="dialog">
+            <img class="gallery__media" src="assets/images/gallery/leeontrack_great_racing.webp" alt="GR86 Pack Battle - Five cars fighting for position through the corner" loading="lazy" decoding="async">
+            <span class="gallery__content">
+              <span class="gallery__title">GR86 Pack Battle</span>
+              <span class="gallery__desc">Five cars fighting for position through the corner.</span>
+            </span>
+          </button>
+          <button class="gallery__card" type="button" data-title="GR86 Off Track Excursion" data-desc="Sliding into the gravel trap at Summit Point." data-src="assets/images/gallery/leeontrack_off_track.webp" aria-haspopup="dialog">
+            <img class="gallery__media" src="assets/images/gallery/leeontrack_off_track.webp" alt="GR86 Off Track Excursion - Sliding into the gravel trap at Summit Point" loading="lazy" decoding="async">
+            <span class="gallery__content">
+              <span class="gallery__title">GR86 Off Track Excursion</span>
+              <span class="gallery__desc">Sliding into the gravel trap at Summit Point.</span>
+            </span>
+          </button>
+          <button class="gallery__card" type="button" data-title="GR86 Overtaking Move" data-desc="Green GR86 alongside the purple car on the straight." data-src="assets/images/gallery/leeontrack_overtaking.webp" aria-haspopup="dialog">
+            <img class="gallery__media" src="assets/images/gallery/leeontrack_overtaking.webp" alt="GR86 Overtaking Move - Green GR86 alongside the purple car on the straight" loading="lazy" decoding="async">
+            <span class="gallery__content">
+              <span class="gallery__title">GR86 Overtaking Move</span>
+              <span class="gallery__desc">Green GR86 alongside the purple car on the straight.</span>
+            </span>
+          </button>
+          <button class="gallery__card" type="button" data-title="GR86 Race Action" data-desc="Four-car battle past the tyre wall." data-src="assets/images/gallery/leeontrack_race_action.webp" aria-haspopup="dialog">
+            <img class="gallery__media" src="assets/images/gallery/leeontrack_race_action.webp" alt="GR86 Race Action - Four-car battle past the tyre wall" loading="lazy" decoding="async">
+            <span class="gallery__content">
+              <span class="gallery__title">GR86 Race Action</span>
+              <span class="gallery__desc">Four-car battle past the tyre wall.</span>
+            </span>
+          </button>
+          <button class="gallery__card" type="button" data-title="GR86 Close Battle" data-desc="Defending the lead under pressure at Summit Point." data-src="assets/images/gallery/leeontrack_race_challenge.webp" aria-haspopup="dialog">
+            <img class="gallery__media" src="assets/images/gallery/leeontrack_race_challenge.webp" alt="GR86 Close Battle - Defending the lead under pressure at Summit Point" loading="lazy" decoding="async">
+            <span class="gallery__content">
+              <span class="gallery__title">GR86 Close Battle</span>
+              <span class="gallery__desc">Defending the lead under pressure at Summit Point.</span>
+            </span>
+          </button>
+          <button class="gallery__card" type="button" data-title="GR86 Field in Action" data-desc="Eight GR86s charging through the corner together." data-src="assets/images/gallery/leeontrack_racing.webp" aria-haspopup="dialog">
+            <img class="gallery__media" src="assets/images/gallery/leeontrack_racing.webp" alt="GR86 Field in Action - Eight GR86s charging through the corner together" loading="lazy" decoding="async">
+            <span class="gallery__content">
+              <span class="gallery__title">GR86 Field in Action</span>
+              <span class="gallery__desc">Eight GR86s charging through the corner together.</span>
+            </span>
+          </button>
+          <button class="gallery__card" type="button" data-title="GR86 Side-by-Side" data-desc="Door-to-door racing out of the corner." data-src="assets/images/gallery/leeontrack_racing_dual.webp" aria-haspopup="dialog">
+            <img class="gallery__media" src="assets/images/gallery/leeontrack_racing_dual.webp" alt="GR86 Side-by-Side - Door-to-door racing out of the corner" loading="lazy" decoding="async">
+            <span class="gallery__content">
+              <span class="gallery__title">GR86 Side-by-Side</span>
+              <span class="gallery__desc">Door-to-door racing out of the corner.</span>
+            </span>
+          </button>
+          <button class="gallery__card" type="button" data-title="GR86 Racing Lines" data-desc="Different approaches through the sweeper." data-src="assets/images/gallery/leeontrack_racing_lines.webp" aria-haspopup="dialog">
+            <img class="gallery__media" src="assets/images/gallery/leeontrack_racing_lines.webp" alt="GR86 Racing Lines - Different approaches through the sweeper" loading="lazy" decoding="async">
+            <span class="gallery__content">
+              <span class="gallery__title">GR86 Racing Lines</span>
+              <span class="gallery__desc">Different approaches through the sweeper.</span>
+            </span>
+          </button>
+          <button class="gallery__card" type="button" data-title="GR86s Down the Straight" data-desc="A train of GR86s at full speed." data-src="assets/images/gallery/leeontrack_strait_racing.webp" aria-haspopup="dialog">
+            <img class="gallery__media" src="assets/images/gallery/leeontrack_strait_racing.webp" alt="GR86s Down the Straight - A train of GR86s at full speed" loading="lazy" decoding="async">
+            <span class="gallery__content">
+              <span class="gallery__title">GR86s Down the Straight</span>
+              <span class="gallery__desc">A train of GR86s at full speed.</span>
+            </span>
+          </button>
+            </div>
+            <div class="gallery__back">
+              <a class="button" href="gallery.html">
+                View Full Gallery
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+<!-- ====================================
+CODE OF CONDUCT SECTION
+===================================== -->
+    <section id="code-of-conduct" class="section section--surface">
+      <div class="container">
+        <div class="code-of-conduct__intro">
+          <h2>Code of Conduct</h2>
+          <p>LeeOnTrack League Racing</p>
+          <p>Driver Code of Conduct</p>
+          <p>Our league is about clean, competitive and enjoyable racing.</p>
+          <p>We all make mistakes, and accidents will happen. What we expect from every driver is respect, common sense and fair racing.</p>
+          <p>By taking part in a LeeOnTrack League race, drivers agree to follow this Racing Code.</p>
+        </div>
+        <div class="accordion">
+          <details class="accordion__item">
+            <summary>General Driving Standards</summary>
+            <div class="accordion__content">
+              <ul>
+                <li>Race hard, but race fairly.</li>
+                <li>Treat other drivers with respect both on and off the track.</li>
+                <li>Deliberately hitting, blocking, wrecking or retaliating against another driver is not acceptable.</li>
+                <li>Drivers must make reasonable efforts to avoid contact.</li>
+                <li>If you make a mistake that causes another driver to lose a position, giving the position back is encouraged where it can be done safely.</li>
+                <li>Remember: the race cannot be won on Lap 1, but it can certainly be lost there.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Race Starts &amp; Lap 1</summary>
+            <div class="accordion__content">
+              <p>Extra care is expected at the start of every race.</p>
+              <ul>
+                <li>Give other cars racing room.</li>
+                <li>Expect cars to be alongside you into the opening corners.</li>
+                <li>Avoid desperate moves into Turn 1.</li>
+                <li>Do not force another driver off the circuit.</li>
+                <li>Cold tyres, heavy fuel and close racing mean braking distances may be longer than expected.</li>
+              </ul>
+              <p>Lap 1 is about getting everyone into the race — not winning it at the first corner.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Racing Alongside Another Car</summary>
+            <div class="accordion__content">
+              <p>When cars are genuinely racing side-by-side:</p>
+              <ul>
+                <li>Both drivers should leave sufficient racing room.</li>
+                <li>Do not squeeze another car off the track.</li>
+                <li>Do not deliberately make contact to complete an overtake.</li>
+                <li>Be aware of your spotter and surroundings.</li>
+                <li>If another car has established meaningful overlap, respect that the car is there.</li>
+              </ul>
+              <p>Clean side-by-side racing is what we want to see.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Braking &amp; Dive Bombs</summary>
+            <div class="accordion__content">
+              <p>The overtaking driver is responsible for attempting a safe pass.</p>
+              <p>A driver should not:</p>
+              <ul>
+                <li>Launch from an unrealistic distance into a corner.</li>
+                <li>Use another car to slow themselves down.</li>
+                <li>Force another driver off the circuit because they have entered the corner too quickly.</li>
+                <li>Make a move where contact is the only realistic way of completing the pass.</li>
+              </ul>
+              <p>Being able to reach the inside of a corner does not automatically mean the move was safe.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Defending</summary>
+            <div class="accordion__content">
+              <p>Drivers are allowed to defend their position, but it must be fair and predictable.</p>
+              <ul>
+                <li>Do not weave repeatedly to stop another driver passing.</li>
+                <li>Do not move under braking in reaction to the car behind.</li>
+                <li>Once committed to a defensive line, be predictable.</li>
+                <li>Leave racing room when another car is legitimately alongside.</li>
+              </ul>
+              <p>Aggressive defending is allowed. Dangerous blocking is not.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Blue Flags &amp; Lapped Cars</summary>
+            <div class="accordion__content">
+              <p>When you are shown a blue flag because a faster car behind is lapping you, the LeeOnTrack League rule is that you should safely allow the lapping car to pass as soon as reasonably possible.</p>
+              <p><strong>WHAT YOU SHOULD DO:</strong></p>
+              <ul>
+                <li>Safely move off the normal racing line and allow the faster car through.</li>
+                <li>Wait until the next suitable straight and allow the car to pass safely.</li>
+                <li>Avoid sudden braking, unpredictable movements or changing direction at the last moment.</li>
+              </ul>
+              <p><strong>COMMUNICATE YOUR INTENTIONS:</strong></p>
+              <ul>
+                <li>Whenever possible, please tell the faster driver what you intend to do. This can be done through Discord voice chat or iRacing race chat, for example by letting them know that you will move over or allow them through on the next straight.</li>
+              </ul>
+              <p><strong>SHARED RESPONSIBILITY:</strong></p>
+              <ul>
+                <li>The responsibility is on both drivers to make the pass safely. The lapped driver should cooperate and the faster driver should remain patient until there is a safe opportunity.</li>
+              </ul>
+              <p><strong>THE AIM IS SIMPLE:</strong></p>
+              <ul>
+                <li>BE PREDICTABLE</li>
+                <li>COMMUNICATE</li>
+                <li>LET THE FASTER CAR THROUGH SAFELY</li>
+                <li>KEEP EVERYONE RACING</li>
+              </ul>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>After-Race Driver Discussion</summary>
+            <div class="accordion__content">
+              <p>After each LeeOnTrack League race, we will hold an open driver chat to discuss any driving incidents, concerns or other issues that anyone would like to raise.</p>
+              <ul>
+                <li>This is not intended to be a blame session or an argument.</li>
+                <li>The purpose is to help everyone improve their driving and make our league racing cleaner, fairer and more enjoyable.</li>
+                <li>RESPECTFUL, CONSTRUCTIVE, FOCUSED ON IMPROVEMENT</li>
+              </ul>
+              <p><strong>DRIVERS ARE ENCOURAGED TO DISCUSS INCIDENTS CONSTRUCTIVELY.</strong></p>
+              <p>Other drivers can offer advice about:</p>
+              <ul>
+                <li>What could have been done differently.</li>
+                <li>Whether an incident could have been avoided.</li>
+                <li>When it may have been better to attack, defend, yield or wait.</li>
+                <li>Positioning, awareness and communication.</li>
+                <li>How similar situations can be handled better in future races.</li>
+              </ul>
+              <ul>
+                <li>Everyone should be able to give their point of view respectfully.</li>
+                <li>We may also review race replays where this helps explain what happened.</li>
+                <li>The LeeOnTrack League is about learning from each other as well as competing against each other. Mistakes will happen, but we want to use them as an opportunity to improve.</li>
+              </ul>
+              <p>RACE HARD • RACE FAIR • LEARN TOGETHER</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Rejoining the Track</summary>
+            <div class="accordion__content">
+              <p>If you spin, crash or leave the circuit:</p>
+              <p>Do not immediately drive back onto the racing line.</p>
+              <p>Before rejoining:</p>
+              <ul>
+                <li>Check your relative/spotter.</li>
+                <li>Wait for approaching traffic where necessary.</li>
+                <li>Rejoin in a controlled and predictable manner.</li>
+                <li>Do not reverse across the racing line.</li>
+                <li>Do not perform a dangerous U-turn in front of approaching cars.</li>
+              </ul>
+              <p>A bad rejoin can turn one driver’s mistake into a multi-car accident.</p>
+              <p>Safe rejoining takes priority over getting back into the race quickly.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Yellow Flags &amp; Incidents Ahead</summary>
+            <div class="accordion__content">
+              <p>When approaching an accident:</p>
+              <ul>
+                <li>Be prepared to slow down.</li>
+                <li>Watch for cars stopped or rejoining.</li>
+                <li>Do not blindly drive through an incident at full speed.</li>
+                <li>Give yourself enough room to react.</li>
+              </ul>
+              <p>Drivers involved in an incident should remain as predictable as possible.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Overtaking</summary>
+            <div class="accordion__content">
+              <p>When attempting an overtake:</p>
+              <ul>
+                <li>Make your intentions clear.</li>
+                <li>Be under control when entering the braking zone.</li>
+                <li>Leave room for the other driver where appropriate.</li>
+                <li>Do not rely on contact to complete the move.</li>
+                <li>Consider whether the move can realistically be completed safely.</li>
+              </ul>
+              <p>Both drivers have a responsibility to avoid unnecessary contact.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Pit Entry &amp; Exit</summary>
+            <div class="accordion__content">
+              <p>Drivers must:</p>
+              <ul>
+                <li>Enter the pits safely and predictably.</li>
+                <li>Avoid suddenly crossing the circuit to make pit entry.</li>
+                <li>Respect the pit-lane speed limit.</li>
+                <li>Stay within the pit exit procedure.</li>
+                <li>Be aware of cars approaching at racing speed when leaving the pits.</li>
+              </ul>
+              <p>Where possible, communicate your intention to pit if another driver is immediately behind you.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Damaged Cars</summary>
+            <div class="accordion__content">
+              <p>If your car is badly damaged:</p>
+              <ul>
+                <li>Stay off the racing line where reasonably possible.</li>
+                <li>Do not attempt to race normally if the car cannot be controlled safely.</li>
+                <li>Allow faster traffic to pass.</li>
+                <li>Tow or return to the pits if continuing would create an unnecessary danger.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Voice &amp; Discord Conduct</summary>
+            <div class="accordion__content">
+              <p>Friendly chat and banter are part of the league, but respect comes first.</p>
+              <ul>
+                <li>No personal abuse or bullying.</li>
+                <li>Do not start arguments over voice chat during the race.</li>
+                <li>Do not repeatedly shout at another driver following an incident.</li>
+                <li>If there is a disagreement, finish the race first and discuss it afterwards.</li>
+                <li>Admin decisions must be respected.</li>
+              </ul>
+              <p>Race first. Discuss incidents afterwards.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Retaliation &amp; Deliberate Wrecking</summary>
+            <div class="accordion__content">
+              <p>There is zero tolerance for deliberate retaliation.</p>
+              <p>This includes:</p>
+              <ul>
+                <li>Intentionally wrecking another driver.</li>
+                <li>Brake-checking another driver.</li>
+                <li>Waiting for another driver in order to hit them.</li>
+                <li>Deliberately pushing someone off the circuit.</li>
+                <li>Using the car as retaliation for an earlier incident.</li>
+              </ul>
+              <p>Serious or deliberate incidents may result in immediate removal from the event or league.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Incident Reviews</summary>
+            <div class="accordion__content">
+              <p>Where an incident is reported, league admins may review available replay footage.</p>
+              <p>Admin will consider:</p>
+              <ul>
+                <li>Driver positioning.</li>
+                <li>Racing overlap.</li>
+                <li>Braking points.</li>
+                <li>Whether sufficient racing room was provided.</li>
+                <li>Whether contact was avoidable.</li>
+                <li>Whether either driver behaved recklessly.</li>
+                <li>Whether the incident appears deliberate.</li>
+              </ul>
+              <p>Drivers are expected to provide their side calmly and respectfully.</p>
+              <p>An accident does not automatically mean somebody must be punished.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>Penalties</summary>
+            <div class="accordion__content">
+              <p>Depending on the seriousness or frequency of an offence, league administration may use:</p>
+              <ul>
+                <li>Verbal/written warning.</li>
+                <li>Position or points penalty.</li>
+                <li>Post-race time penalty.</li>
+                <li>Qualifying restriction.</li>
+                <li>Start-from-the-back penalty.</li>
+                <li>Drive-through or other race penalty where appropriate.</li>
+                <li>Race suspension.</li>
+                <li>Removal from the league for serious or repeated misconduct.</li>
+              </ul>
+              <p>Repeated incidents may result in stronger penalties even where an individual incident would normally receive only a warning.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary>The LeeOnTrack Standard</summary>
+            <div class="accordion__content">
+              <p>We want drivers of different abilities to feel welcome racing with us.</p>
+              <p>You don’t have to be the fastest driver.</p>
+              <p>You do have to race with respect.</p>
+              <p>Race hard. Race fair. Leave room. Have fun.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+<!-- ====================================
+JOIN SECTION
+===================================== -->
+    <section id="join" class="section">
+      <div class="join__bg" role="img" aria-label="" aria-hidden="true"></div>
+      <div class="container container--narrow">
+        <h2>Join Lee<span class="on-red">OnTrack</span></h2>
+        <p>Ready to race? Apply through the form and we'll get you on the grid for the next round.</p>
+        <a class="button" href="application.html">Get on the Grid</a>
+      </div>
+    </section>
+  </main>
+<!-- ====================================
+FOOTER SECTION
+===================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="footer__brand-name" href="#home">Lee<span class="on-red">OnTrack</span></a>
+          <p>iRacing league racing.</p>
+          <img class="footer__logo" src="assets/images/lot-logo.svg" alt="LeeOnTrack logo" loading="lazy" width="150">
+        </div>
+        <nav class="footer__nav" aria-label="Footer">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#league">League</a></li>
+            <li><a href="#race-night">Race Night</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#code-of-conduct">Code of Conduct</a></li>
+            <li><a href="application.html">Join</a></li>
+          </ul>
+        </nav>
+        <nav class="socials" aria-label="Social media">
+          <ul>
+            <li><a class="socials__link" href="https://discord.gg/DKzfz8Q8Pd" aria-label="LeeOnTrack on Discord" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord" aria-hidden="true"></i></a></li>
+            <li><a class="socials__link" href="https://www.facebook.com/profile.php?id=61584474686132" aria-label="LeeOnTrack on Facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a class="socials__link" href="https://www.youtube.com/@LeeOnTrack-j9v" aria-label="LeeOnTrack on YouTube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
+            <li><a class="socials__link" href="https://www.tiktok.com/@leeontrack?_r=1&_t=ZN-93EGUP48d8g" aria-label="LeeOnTrack on TikTok" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a></li>
+            <li><a class="socials__link" href="mailto:leeontrack5@gmail.com" aria-label="Email LeeOnTrack"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
+          </ul>
+        </nav>
+        <div class="footer__legal">
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+          </ul>
+          <p>&copy; 2026 Lee<span class="on-red">OnTrack</span>. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="gallery-modal" class="gallery-modal" aria-modal="true" aria-label="Image preview">
+    <form class="gallery-modal__close-form" method="dialog">
+      <button class="gallery-modal__close" type="submit" aria-label="Close image preview">×</button>
+    </form>
+    <img class="gallery-modal__image" src="" alt="" loading="lazy">
+    <span class="gallery-modal__title" aria-live="polite"></span>
+    <span class="gallery-modal__desc"></span>
+  </dialog>
+
+  <button class="scroll-top" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <div class="consent-banner" id="consent-banner" role="region" aria-label="Cookie consent" hidden>
+    <div class="container">
+      <p class="consent-banner__text">This site does not use tracking cookies. We only load essential icons and fonts needed to display the site.</p>
+      <div class="consent-banner__actions">
+        <button class="button" type="button" data-consent="accept">Accept</button>
+        <button class="button button--secondary" type="button" data-consent="reject">Reject</button>
+      </div>
+    </div>
+  </div>
+
+  <dialog id="promo-modal" class="promo-modal" aria-modal="true" aria-label="New session announcement">
+    <form class="promo-modal__close-form" method="dialog">
+      <button class="promo-modal__close" type="submit" aria-label="Close announcement">×</button>
+    </form>
+    <img class="promo-modal__image" src="assets/images/modal_1.jpg" alt="New sports car championship starts 13th September" loading="eager">
+  </dialog>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/standingsUtils.js"></script>
+</body>
+</html>
