@@ -25,7 +25,7 @@ _archive/
 assets/unused/  
 ws_template/
 LeeOnTrack/
-Backend/
+backend/
 
 # Agent/tooling config
 .devin/
