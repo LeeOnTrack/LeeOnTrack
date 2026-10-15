@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260914-6">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261015-1">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
       <a class="logo" href="#home">Lee<span class="on-red">OnTrack</span></a>
       <p class="next-race-message">
         <span class="next-race-message__label">Next Race:</span>
-        <span class="next-race-message__date">Sunday 4th October 2026, 19:00 UK</span>
+        <span class="next-race-message__date">Sunday 18th October 2026, 19:00 UK</span>
       </p>
       <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
         <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -314,29 +314,142 @@
               iRacing League details.</li>
           </ul>
           <div class="race-night__grid">
-            <div class="card race-night__card race-night__card--wide">
-              <h3>Next Race — Sports Car Championship — 2026 S1</h3>
-              <dl class="race-night__details">
-                <dt>Day</dt>
-                <dd>Sunday</dd>
-                <dt>Date</dt>
-                <dd>4th October 2026</dd>
-                <dt>Time</dt>
-                <dd>19:00 UK</dd>
-                <dt>Car / Track</dt>
-                <dd>Watkins Glen International with Boot</dd>
-                <dt>Format</dt>
-                <dd>90 min finale, restricted fuel</dd>
-              </dl>
-              <h4>Championship Schedule</h4>
-              <ul class="race-night__schedule">
-                <li><strong>WK4</strong> 4.10.2026 7PM UK — Watkins Glen International with Boot — 90 min finale,
-                  restricted fuel</li>
-              </ul>
-              <p><strong>Drop rule:</strong> Drop the lowest total from WK1, WK2 or WK3. WK4 is mandatory and cannot be
-                dropped.</p>
-              <p><strong>Note:</strong> The points tables are designed for direct entry into iRacing's custom League
-                Event scoring.</p>
+            <!-- ============================================== -->
+            <!-- THIS WEEKEND'S RACE (ROUND 1 SPOTLIGHT)       -->
+            <!-- ============================================== -->
+            <div class="card race-night__card race-night__card--wide race-night__card--featured" id="this-weekend">
+              <div class="race-featured__header">
+                <span class="race-badge race-badge--live"><span class="race-badge__pulse" aria-hidden="true"></span> This Weekend's Race</span>
+                <span class="race-badge race-badge--gold">🏆 90-Min Endurance</span>
+              </div>
+              <div class="race-featured__main">
+                <div class="race-featured__title-wrap">
+                  <h3 class="race-featured__title">ROUND 1 — SPA GRAND PRIX</h3>
+                </div>
+                <dl class="race-night__details">
+                  <dt>Car Class</dt>
+                  <dd><span class="car-badge">GT3</span></dd>
+                  <dt>Day &amp; Date</dt>
+                  <dd>Sunday 18th October 2026</dd>
+                  <dt>Time</dt>
+                  <dd>19:00 UK (7:00 PM)</dd>
+                  <dt>Format</dt>
+                  <dd>90-minute endurance race</dd>
+                  <dt>Driver Rating</dt>
+                  <dd><span class="car-badge" style="border-color: rgba(40, 229, 100, 0.5); color: var(--accent);">🟢 Under 2000 iRating</span></dd>
+                  <dt>Briefing</dt>
+                  <dd>Pre-race briefing on Discord (10 mins before lobby opens)</dd>
+                </dl>
+                <div class="race-featured__footer">
+                  <p class="race-callout">🏁 RACE FAIR • RACE HARD — Build confidence, improve your race craft and enjoy the racing!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- FOLLOWING RACES (SEASON 2 SCHEDULE)           -->
+            <!-- ============================================== -->
+            <div class="card race-night__card race-night__card--wide race-night__card--season">
+              <div class="season-header">
+                <span class="season-badge">LeeOnTrack — Season 2</span>
+                <h3>Season 2 Championship Schedule</h3>
+                <p class="season-tagline">
+                  🔥 <strong>Let the racing begin!</strong> Six rounds, five car classes and a mix of double headers and endurance racing — all designed to test and improve your race craft!
+                </p>
+              </div>
+
+              <!-- Round 2: Immediate Following Race -->
+              <div class="race-round-item race-round-item--next">
+                <div class="race-round-item__header">
+                  <span class="race-round-tag">Round 2</span>
+                  <h4 class="race-round-item__track">Summit Point Full</h4>
+                  <span class="car-badge">Mazda MX-5</span>
+                  <span class="format-badge">Double Header</span>
+                </div>
+                <dl class="race-night__details race-night__details--compact">
+                  <dt>Date &amp; Time</dt>
+                  <dd>Sunday 25th October 2026 • 19:00 UK</dd>
+                  <dt>Format</dt>
+                  <dd>Race 1: 15 minutes • Race 2: 30 minutes</dd>
+                </dl>
+              </div>
+
+              <!-- Final 4 Races Accordion -->
+              <details class="accordion__item race-schedule__accordion">
+                <summary>Rounds 3 – 6: View Remaining Season 2 Races</summary>
+                <div class="accordion__content">
+                  <div class="race-schedule-list">
+                    <!-- Round 3 -->
+                    <div class="race-round-item">
+                      <div class="race-round-item__header">
+                        <span class="race-round-tag">Round 3</span>
+                        <h4 class="race-round-item__track">Brands Hatch Grand Prix</h4>
+                        <span class="car-badge">Ray FF1600</span>
+                        <span class="format-badge">Double Header</span>
+                      </div>
+                      <dl class="race-night__details race-night__details--compact">
+                        <dt>Date &amp; Time</dt>
+                        <dd>Sunday 1st November 2026 • 19:00 UK</dd>
+                        <dt>Format</dt>
+                        <dd>Race 1: 15 minutes • Race 2: 30 minutes</dd>
+                      </dl>
+                    </div>
+
+                    <!-- Round 4 -->
+                    <div class="race-round-item">
+                      <div class="race-round-item__header">
+                        <span class="race-round-tag">Round 4</span>
+                        <h4 class="race-round-item__track">Sebring Full</h4>
+                        <span class="car-badge">GT3</span>
+                        <span class="format-badge">Sprint</span>
+                      </div>
+                      <dl class="race-night__details race-night__details--compact">
+                        <dt>Date &amp; Time</dt>
+                        <dd>Sunday 8th November 2026 • 19:00 UK</dd>
+                        <dt>Format</dt>
+                        <dd>45-minute race</dd>
+                      </dl>
+                    </div>
+
+                    <!-- Round 5 -->
+                    <div class="race-round-item">
+                      <div class="race-round-item__header">
+                        <span class="race-round-tag">Round 5</span>
+                        <h4 class="race-round-item__track">Okayama Grand Prix</h4>
+                        <span class="car-badge">Toyota GR86</span>
+                        <span class="format-badge">Double Header</span>
+                      </div>
+                      <dl class="race-night__details race-night__details--compact">
+                        <dt>Date &amp; Time</dt>
+                        <dd>Sunday 15th November 2026 • 19:00 UK</dd>
+                        <dt>Format</dt>
+                        <dd>Race 1: 15 minutes • Race 2: 30 minutes</dd>
+                      </dl>
+                    </div>
+
+                    <!-- Round 6 -->
+                    <div class="race-round-item race-round-item--finale">
+                      <div class="race-round-item__header">
+                        <span class="race-round-tag race-round-tag--gold">Round 6</span>
+                        <h4 class="race-round-item__track">Daytona Road Course</h4>
+                        <span class="car-badge car-badge--gold">GT3</span>
+                        <span class="format-badge format-badge--gold">🏆 Endurance Finale</span>
+                      </div>
+                      <dl class="race-night__details race-night__details--compact">
+                        <dt>Date &amp; Time</dt>
+                        <dd>Sunday 22nd November 2026 • 19:00 UK</dd>
+                        <dt>Format</dt>
+                        <dd>90-minute endurance race</dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <div class="season-signoff">
+                <p class="season-quote">"Build confidence, improve your race craft and enjoy the racing! <strong>RACE FAIR • RACE HARD</strong>"</p>
+                <p class="season-founders">See you on the grid! <strong>— Lee &amp; Naven</strong></p>
+              </div>
             </div>
             <div class="card race-night__card race-night__card--standings">
               <h3>FINAL STANDINGS | SEASON 1</h3>
