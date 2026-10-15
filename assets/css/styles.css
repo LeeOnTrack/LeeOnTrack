@@ -2200,10 +2200,13 @@ a:focus-visible {
   color: #f5b942;
 }
 
+.card h3.race-featured__title,
+.card .race-featured__title,
+.race-night__card .race-featured__title,
 .race-featured__title {
   font-size: clamp(1.6rem, 5vw, 2.2rem);
   margin-bottom: 0;
-  color: #ffffff;
+  color: #ffffff !important;
   letter-spacing: 0.06em;
   paint-order: stroke fill;
   -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.95);
@@ -2269,10 +2272,11 @@ a:focus-visible {
   margin-bottom: var(--space-xs);
 }
 
+.card .season-header h3,
 .season-header h3,
 #race-night h2 {
   letter-spacing: 0.06em;
-  color: #ffffff;
+  color: #ffffff !important;
   paint-order: stroke fill;
   -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.95);
   text-shadow:
