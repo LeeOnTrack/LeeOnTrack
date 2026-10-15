@@ -1056,9 +1056,9 @@ a:focus-visible {
 }
 
 .race-night__details {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: var(--space-sm) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
   margin: 0;
 }
 
@@ -1074,15 +1074,26 @@ a:focus-visible {
 }
 
 .race-night__details dt {
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
   color: var(--accent);
+  margin: 0 0 0.15rem;
 }
 
 .race-night__details dd {
   margin: 0;
-  color: var(--text);
+  color: #ffffff;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.race-night__details dd:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 /* Desktop: roomier race night panel and cards */
@@ -2394,11 +2405,103 @@ a:focus-visible {
 }
 
 .race-night__details--compact {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.25rem var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
   margin: 0;
   font-size: 0.9rem;
+}
+
+.race-night__details--compact dt {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  color: var(--accent);
+  margin: 0 0 0.1rem;
+}
+
+.race-night__details--compact dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.92rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.race-night__details--compact dd:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Tablet & Desktop: Side-by-side key/value rows */
+@media (min-width: 44rem) {
+  .race-night__details {
+    display: grid;
+    grid-template-columns: minmax(8.5rem, auto) 1fr;
+    gap: var(--space-sm) var(--space-md);
+  }
+
+  .race-night__details dt {
+    font-size: 0.85rem;
+    margin: 0;
+    align-self: center;
+  }
+
+  .race-night__details dd {
+    font-size: 0.98rem;
+    padding-bottom: 0;
+    border-bottom: none;
+    align-self: center;
+  }
+
+  .race-night__details--compact {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25rem var(--space-md);
+  }
+
+  .race-night__details--compact dt {
+    font-size: 0.82rem;
+    margin: 0;
+    align-self: center;
+  }
+
+  .race-night__details--compact dd {
+    font-size: 0.9rem;
+    padding-bottom: 0;
+    border-bottom: none;
+    align-self: center;
+  }
+}
+
+/* Mobile Screen Padding & Header Alignment Optimizations */
+@media (max-width: 39.99rem) {
+  .race-night__panel {
+    padding: var(--space-sm);
+  }
+
+  .race-night__card {
+    padding: var(--space-sm);
+  }
+
+  .race-featured__header {
+    justify-content: flex-start;
+    gap: 0.4rem;
+  }
+
+  .race-badge {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+  }
+
+  .race-title-banner {
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .race-round-item {
+    padding: var(--space-xs) var(--space-sm);
+  }
 }
 
 .race-schedule__accordion {
