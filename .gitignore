@@ -31,7 +31,8 @@ backend/
 .devin/
 .windsurf/
 .windsurfrules
-.agents/
+.agents/*
+!.agents/skills/
 
 # Local test files
 website-test.txt
@@ -44,3 +45,4 @@ aria-edits.txt
 *.md
 !README.md
 !BEGINNER_GUIDE.md
+!.agents/**/*.md

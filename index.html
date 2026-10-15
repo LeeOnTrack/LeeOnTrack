@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261015-2">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261015-3">
 </head>
 
 <body>
@@ -323,9 +323,13 @@
                 <span class="race-badge race-badge--gold">🏆 90-Min Endurance</span>
               </div>
               <div class="race-featured__main">
-                <div class="race-featured__title-wrap">
-                  <span class="race-round-tag">ROUND 1</span>
-                  <h3 class="race-featured__title">SPA GRAND PRIX</h3>
+                <div class="race-title-banner">
+                  <div class="race-title-banner__meta">
+                    <span class="race-round-tag">ROUND 1</span>
+                    <span class="car-badge">GT3</span>
+                    <span class="format-badge format-badge--gold">90-Min Endurance</span>
+                  </div>
+                  <h3 class="race-title-banner__title">SPA GRAND PRIX</h3>
                 </div>
                 <dl class="race-night__details">
                   <dt>Car Class</dt>
@@ -351,9 +355,9 @@
             <!-- FOLLOWING RACES (SEASON 2 SCHEDULE)           -->
             <!-- ============================================== -->
             <div class="card race-night__card race-night__card--wide race-night__card--season">
-              <div class="season-header">
+              <div class="season-header-banner">
                 <span class="season-badge">LeeOnTrack — Season 2</span>
-                <h3>Season 2 Championship Schedule</h3>
+                <h3 class="season-header-banner__title">Season 2 Championship Schedule</h3>
                 <p class="season-tagline">
                   🔥 <strong>Let the racing begin!</strong> Six rounds, five car classes and a mix of double headers and endurance racing — all designed to test and improve your race craft!
                 </p>
@@ -453,8 +457,11 @@
               </div>
             </div>
             <div class="card race-night__card race-night__card--standings">
-              <h3>FINAL STANDINGS | SEASON 1</h3>
-              <p class="race-night__meta">Sports Cars Championship — 2026 S1</p>
+              <div class="standings-header-banner">
+                <span class="race-round-tag race-round-tag--gold">🏆 Archive</span>
+                <h3 class="standings-header-banner__title">FINAL STANDINGS | SEASON 1</h3>
+                <p class="race-night__meta">Sports Cars Championship — 2026 S1</p>
+              </div>
               <div class="standings">
                 <table class="standings__table standings__table--champ">
                   <caption class="sr-only">Final Standings | Season 1 — Sports Cars Championship 2026 S1</caption>
@@ -598,8 +605,8 @@
                   </div>
                 </details>
               </div>
-              <a class="button standings__link" href="race_night_13-09-26.html">
-                FULL RACE DETAILS
+              <a class="button standings__link" href="race-info.html">
+                FULL RACE INFO &amp; RESULTS
                 <i class="fa-solid fa-flag-checkered" aria-hidden="true"></i>
               </a>
             </div>

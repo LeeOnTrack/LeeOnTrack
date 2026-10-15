@@ -1,0 +1,101 @@
+{
+  "season": 2,
+  "round": 2,
+  "track": "Summit Point Full",
+  "carClass": "Mazda MX-5",
+  "format": "Double Header",
+  "races": [
+    {
+      "raceNumber": 1,
+      "title": "Race 1 — Heat Results (15 Mins)",
+      "results": [
+        {
+          "pos": 1,
+          "driver": "Lee H",
+          "country": "United Kingdom",
+          "dotColor": "#9ece6a",
+          "carNumber": "55",
+          "car": "Mazda MX-5 Cup",
+          "carClass": "Mazda MX-5",
+          "start": 1,
+          "interval": "—",
+          "avgLap": "1:24.310",
+          "bestLap": "1:23.820",
+          "bestLapNum": 5,
+          "isFastestLap": true,
+          "laps": 11,
+          "lapsLed": 11,
+          "inc": 0,
+          "champPts": 15,
+          "aggPts": 15
+        },
+        {
+          "pos": 2,
+          "driver": "Naven C",
+          "country": "South Africa",
+          "dotColor": "#f5b942",
+          "carNumber": "25",
+          "car": "Mazda MX-5 Cup",
+          "carClass": "Mazda MX-5",
+          "start": 3,
+          "interval": "-0:01.120",
+          "avgLap": "1:24.450",
+          "bestLap": "1:23.950",
+          "bestLapNum": 8,
+          "isFastestLap": false,
+          "laps": 11,
+          "lapsLed": 0,
+          "inc": 1,
+          "champPts": 12,
+          "aggPts": 12
+        }
+      ]
+    },
+    {
+      "raceNumber": 2,
+      "title": "Race 2 — Feature Results (30 Mins)",
+      "results": [
+        {
+          "pos": 1,
+          "driver": "Naven C",
+          "country": "South Africa",
+          "dotColor": "#f5b942",
+          "carNumber": "25",
+          "car": "Mazda MX-5 Cup",
+          "carClass": "Mazda MX-5",
+          "start": 2,
+          "interval": "—",
+          "avgLap": "1:24.210",
+          "bestLap": "1:23.750",
+          "bestLapNum": 14,
+          "isFastestLap": true,
+          "laps": 21,
+          "lapsLed": 15,
+          "inc": 2,
+          "champPts": 25,
+          "aggPts": 37
+        },
+        {
+          "pos": 2,
+          "driver": "Lee H",
+          "country": "United Kingdom",
+          "dotColor": "#9ece6a",
+          "carNumber": "55",
+          "car": "Mazda MX-5 Cup",
+          "carClass": "Mazda MX-5",
+          "start": 1,
+          "interval": "-0:02.430",
+          "avgLap": "1:24.380",
+          "bestLap": "1:23.910",
+          "bestLapNum": 11,
+          "isFastestLap": false,
+          "laps": 21,
+          "lapsLed": 6,
+          "inc": 1,
+          "champPts": 18,
+          "aggPts": 33
+        }
+      ]
+    }
+  ]
+}

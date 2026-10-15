@@ -2200,22 +2200,40 @@ a:focus-visible {
   color: #f5b942;
 }
 
+.race-title-banner {
+  background: linear-gradient(90deg, rgba(40, 229, 100, 0.12) 0%, rgba(13, 19, 15, 0.95) 100%);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-md);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.race-title-banner__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-sm);
+  margin-bottom: 0.35rem;
+}
+
+.card h3.race-title-banner__title,
+.race-title-banner__title,
 .card h3.race-featured__title,
 .card .race-featured__title,
 .race-night__card .race-featured__title,
 .race-featured__title {
-  font-size: clamp(1.6rem, 5vw, 2.2rem);
-  margin-bottom: 0;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  margin: 0;
   color: #ffffff !important;
-  letter-spacing: 0.06em;
-  paint-order: stroke fill;
-  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.95);
-  text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000,
-     0 2px 4px rgba(0, 0, 0, 0.9);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
 }
 
 .car-badge {
@@ -2261,7 +2279,17 @@ a:focus-visible {
   font-size: 0.95rem;
 }
 
-/* Season Schedule Card */
+/* Season Schedule Card & Banners */
+.season-header-banner {
+  background: linear-gradient(90deg, rgba(34, 53, 41, 0.6) 0%, rgba(13, 19, 15, 0.95) 100%);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--secondary);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
 .season-badge {
   display: inline-block;
   font-size: 0.8rem;
@@ -2272,25 +2300,54 @@ a:focus-visible {
   margin-bottom: var(--space-xs);
 }
 
+.season-badge--gold {
+  color: #f5b942;
+}
+
 .card .season-header h3,
 .season-header h3,
-#race-night h2 {
-  letter-spacing: 0.06em;
+.season-header-banner__title {
+  font-size: clamp(1.4rem, 4vw, 1.85rem);
+  letter-spacing: 0.05em;
   color: #ffffff !important;
-  paint-order: stroke fill;
-  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.95);
-  text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000,
-     0 2px 4px rgba(0, 0, 0, 0.9);
+  margin: 0 0 0.35rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
 }
 
 .season-tagline {
   color: var(--muted);
-  margin-bottom: var(--space-md);
+  margin-bottom: 0;
   line-height: 1.5;
+}
+
+/* Standings Card Banner */
+.standings-header-banner {
+  background: linear-gradient(90deg, rgba(245, 185, 66, 0.12) 0%, rgba(13, 19, 15, 0.95) 100%);
+  border: 1px solid var(--border);
+  border-left: 4px solid #f5b942;
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.standings-header-banner__title {
+  font-size: clamp(1.3rem, 3.5vw, 1.65rem);
+  margin: 0.25rem 0 0.2rem;
+  color: #ffffff !important;
+  letter-spacing: 0.05em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+}
+
+.standings-header-banner .race-night__meta {
+  margin: 0;
 }
 
 .race-round-item {
@@ -2328,17 +2385,12 @@ a:focus-visible {
 .race-round-item__track {
   font-size: 1.2rem;
   margin: 0;
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   letter-spacing: 0.05em;
-  paint-order: stroke fill;
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.95);
-  text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000,
-     0 1px 3px rgba(0, 0, 0, 0.85);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .race-night__details--compact {
@@ -2377,5 +2429,112 @@ a:focus-visible {
   color: var(--text);
   margin: 0;
   font-size: 0.95rem;
+}
+
+/* ===================================================
+   RACE RESULTS TABLE CONTAINERS (race-info.html)
+   =================================================== */
+.results-table-container {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.results-table-container:hover {
+  border-color: rgba(40, 229, 100, 0.4);
+  border-left-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.results-table-container--gold {
+  border-left-color: #f5b942;
+}
+
+.results-table-container--gold:hover {
+  border-color: rgba(245, 185, 66, 0.4);
+  border-left-color: #f5b942;
+}
+
+.results-table-container__header {
+  padding: var(--space-sm) var(--space-md);
+  background: linear-gradient(90deg, rgba(40, 229, 100, 0.08) 0%, rgba(0, 0, 0, 0.45) 100%);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-sm);
+}
+
+.results-table-container--gold .results-table-container__header {
+  background: linear-gradient(90deg, rgba(245, 185, 66, 0.08) 0%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+.results-table-container__header .results-heading,
+.accordion__content .results-table-container .results-heading {
+  margin: 0;
+  font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+  color: #ffffff !important;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.results-table-container__meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.results-table-container .standings {
+  margin-top: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Season Results Page Header Banners */
+.results-season-header--container {
+  background: linear-gradient(90deg, rgba(40, 229, 100, 0.08) 0%, rgba(13, 19, 15, 0.95) 100%);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.results-season-header--container h2 {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  margin: 0.2rem 0 0.25rem;
+  color: #ffffff !important;
+  letter-spacing: 0.05em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.results-season-header--container .race-night__meta,
+.results-season-header--container p {
+  margin: 0;
+}
+
+.results-season-header--archive {
+  background: linear-gradient(90deg, rgba(245, 185, 66, 0.08) 0%, rgba(13, 19, 15, 0.95) 100%);
+  border-left-color: #f5b942;
 }
 
