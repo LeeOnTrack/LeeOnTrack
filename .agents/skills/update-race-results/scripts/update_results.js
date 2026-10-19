@@ -61,6 +61,16 @@ if (!roundNum || roundNum < 1 || roundNum > 6) {
   process.exit(1);
 }
 
+function formatDriverName(name) {
+  if (!name || name === '—') return '—';
+  const cleaned = name.replace(/\d+$/, '').trim();
+  const parts = cleaned.split(/\s+/);
+  if (parts.length <= 1) return cleaned;
+  const first = parts[0];
+  const initials = parts.slice(1).map(p => p[0].toUpperCase()).join(' ');
+  return `${first} ${initials}`;
+}
+
 function generateRows(resultsList) {
   if (!Array.isArray(resultsList) || resultsList.length === 0) {
     return '<!-- No results data available -->';
@@ -76,30 +86,34 @@ function generateRows(resultsList) {
     else if (pos === 3) posClass += ' race-night__pos--p3';
 
     const dot = entry.dotColor || defaultDots[(pos - 1) % defaultDots.length];
-    const driver = entry.driver || '—';
+    const rawDriver = entry.driver || '—';
+    const driver = formatDriverName(rawDriver);
     const country = entry.country ? `<span class="standings__sub">${entry.country}</span>` : '';
-    const carNumber = entry.carNumber || entry.number || '—';
+    const carNumber = entry.carNumber || entry.number || entry.car_number || '—';
     const car = entry.car || '—';
-    const carClass = entry.carClass || entry.class || 'Hosted All Cars';
-    const start = entry.start != null ? entry.start : '—';
-    const interval = entry.interval || '—';
-    const avgLap = entry.avgLap || '—';
+    const carClass = entry.carClass || entry.class || entry.car_class || 'Hosted All Cars';
+    const start = entry.start != null ? entry.start : (entry.start_pos != null ? entry.start_pos : '—');
+    const interval = (entry.interval && entry.interval !== 'LEADER') ? entry.interval : '—';
+    const avgLap = entry.avgLap || entry.avg_lap || '—';
 
-    let bestLapContent = entry.bestLap || '—';
-    if (entry.bestLap && entry.bestLap !== '—') {
-      const flSpan = entry.isFastestLap ? `<span class="standings__fl">${entry.bestLap}</span>` : entry.bestLap;
-      const lapSub = entry.bestLapNum ? `<span class="standings__sub">Lap ${entry.bestLapNum}</span>` : '';
+    const bestLap = entry.bestLap || entry.best_lap;
+    const bestLapNum = entry.bestLapNum || entry.best_lap_num;
+    let bestLapContent = bestLap || '—';
+    if (bestLap && bestLap !== '—') {
+      const flSpan = entry.isFastestLap ? `<span class="standings__fl">${bestLap}</span>` : bestLap;
+      const lapSub = bestLapNum ? `<span class="standings__sub">Lap ${bestLapNum}</span>` : '';
       bestLapContent = `<span>${flSpan}${lapSub}</span>`;
     }
 
+    const lapsLed = entry.lapsLed != null ? entry.lapsLed : entry.led_laps;
     let lapsContent = entry.laps != null ? `${entry.laps}L` : '—';
-    if (entry.laps != null && entry.lapsLed != null) {
-      lapsContent = `<span>${entry.laps}L<span class="standings__sub">Led ${entry.lapsLed}L</span></span>`;
+    if (entry.laps != null && lapsLed != null) {
+      lapsContent = `<span>${entry.laps}L<span class="standings__sub">Led ${lapsLed}L</span></span>`;
     }
 
     const inc = entry.inc != null ? entry.inc : '—';
-    const champPts = entry.champPts != null ? entry.champPts : '—';
-    const aggPts = entry.aggPts != null ? entry.aggPts : '—';
+    const champPts = entry.champPts != null ? entry.champPts : (entry.champ_pts != null ? entry.champ_pts : '—');
+    const aggPts = entry.aggPts != null ? entry.aggPts : (entry.agg_pts != null ? entry.agg_pts : '—');
 
     return `                    <tr>
                       <td class="standings__cell--pos"><span class="${posClass}">${pos}</span></td>
@@ -132,27 +146,49 @@ if (!match) {
 
 let detailsBlock = match[1];
 
+const resultsArray = raceData.results || raceData.standings;
+
 if (raceData.races && Array.isArray(raceData.races)) {
   // Double header (multiple races)
   const tbodyRegex = /(<tbody[^>]*>)([\s\S]*?)(<\/tbody>)/gi;
   let raceIndex = 0;
   detailsBlock = detailsBlock.replace(tbodyRegex, (fullMatch, openTag, oldBody, closeTag) => {
     if (raceIndex < raceData.races.length) {
-      const newRows = generateRows(raceData.races[raceIndex].results);
+      const newRows = generateRows(raceData.races[raceIndex].results || raceData.races[raceIndex].standings);
       raceIndex++;
       return `${openTag}\n${newRows}\n                  ${closeTag}`;
     }
     return fullMatch;
   });
   console.log(`Updated ${raceIndex} race tables in Round ${roundNum}.`);
-} else if (raceData.results && Array.isArray(raceData.results)) {
+} else if (resultsArray && Array.isArray(resultsArray)) {
   // Single race
+  // Auto-detect fastest lap if not explicitly marked
+  let bestTimeMs = Infinity;
+  let bestIndex = -1;
+  resultsArray.forEach((r, idx) => {
+    const lap = r.bestLap || r.best_lap;
+    if (lap && lap !== '—') {
+      const parts = lap.split(':');
+      if (parts.length === 2) {
+        const ms = (parseFloat(parts[0]) * 60 + parseFloat(parts[1])) * 1000;
+        if (ms < bestTimeMs) {
+          bestTimeMs = ms;
+          bestIndex = idx;
+        }
+      }
+    }
+  });
+  if (bestIndex !== -1 && resultsArray[bestIndex].isFastestLap == null) {
+    resultsArray[bestIndex].isFastestLap = true;
+  }
+
   const tbodyRegex = /(<tbody[^>]*>)([\s\S]*?)(<\/tbody>)/i;
-  const newRows = generateRows(raceData.results);
+  const newRows = generateRows(resultsArray);
   detailsBlock = detailsBlock.replace(tbodyRegex, `$1\n${newRows}\n                  $3`);
-  console.log(`Updated single race table in Round ${roundNum} with ${raceData.results.length} rows.`);
+  console.log(`Updated single race table in Round ${roundNum} with ${resultsArray.length} rows.`);
 } else {
-  console.error('Error: JSON data must contain either a "results" array or a "races" array.');
+  console.error('Error: JSON data must contain either a "results", "standings", or "races" array.');
   process.exit(1);
 }
 

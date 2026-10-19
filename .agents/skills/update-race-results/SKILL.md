@@ -100,17 +100,22 @@ When populating tables manually or reviewing script output, adhere to these LeeO
    - **P3:** `<td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p3">3</span></td>`
    - **P4+:** `<td class="standings__cell--pos"><span class="race-night__pos">4</span></td>`
 
-2. **Driver Name & Country Tag:**
+2. **Driver Name Formatting & Country Tag:**
+   - **Driver Name Rule:** Always format driver names with the **full first name** and **only initials for the surname and any middle names** (e.g. `Glenn Farbrother` → `Glenn F`, `Tom J Baker` → `Tom J B`, `Danial B Cook` → `Danial B C`). Strip any trailing duplicate-account digits from iRacing member exports (e.g. `Shaun Tucker2` → `Shaun T`, `Alex Mendoza2` → `Alex M`).
    ```html
    <th scope="row">
      <span class="standings__driver">
        <span class="standings__dot" style="--dot:#f5b942"></span>
-       <span>Driver Name<span class="standings__sub">Country</span></span>
+       <span>Glenn F<span class="standings__sub">United Kingdom</span></span>
      </span>
    </th>
    ```
 
-3. **Fastest Lap Indicator:**
+3. **Column Title Preservation:**
+   - Keep existing HTML table column headers intact (`Pos`, `Driver`, `#`, `Car`, `Car Class`, `Start`, `Interval`, `Avg Lap Time`, `Best Lap`, `Laps`, `Inc`, `Champ Pts`, `Agg Pts`).
+   - Only map incoming data fields that match existing column titles; do not create extra columns (such as `status`).
+
+4. **Fastest Lap Indicator:**
    Highlight the overall fastest lap in purple:
    ```html
    <td class="standings__cell--num">
@@ -118,7 +123,7 @@ When populating tables manually or reviewing script output, adhere to these LeeO
    </td>
    ```
 
-4. **Points:**
+5. **Points:**
    Championship points must include the bold green class `.standings__points`:
    ```html
    <td class="standings__cell--num standings__points">25</td>
