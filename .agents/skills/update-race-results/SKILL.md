@@ -168,3 +168,30 @@ Whenever race results are updated for a completed round, you **MUST** ensure tha
      - `terms.html`
      - `thank-you.html`
 
+---
+
+## 7. Mandatory Pre-Push Audit & Quality Gate Rule
+
+**MANDATORY AUDIT PROCEDURE BEFORE ANY `git push`:**
+When all website updates (race results, standings, next race dates, spotlights, and schedules) are finished, you **MUST** execute the following three audits and create a report on any issues before `git push` occurs:
+
+1. **Security Audit (`security-audit`):**
+   - Scan dependencies for known vulnerabilities.
+   - Verify no hardcoded secrets, credentials, or private API keys exist in source files.
+   - Check Content-Security-Policy (CSP), iframe/script restrictions, and XSS mitigations across templates.
+2. **Accessibility Audit (`accessibility-audit`):**
+   - Verify semantic HTML landmark structure (`<header>`, `<main>`, `<nav>`, `<footer>`, `<table>`).
+   - Audit ARIA attributes, roles, and labels (`aria-label`, `aria-expanded`, `aria-hidden`, `.sr-only` table captions).
+   - Check keyboard navigation, focus indicators, and `<details>` collapsible functionality.
+   - Verify compliant color contrast ratios for driver dots, badges, and table text.
+3. **GDPR & Privacy Compliance Audit (`gdpr-compliance`):**
+   - Audit data collection on forms (such as `application.html`) for proper consent mechanisms.
+   - Verify that user privacy notices and links to `privacy.html` and `terms.html` are visible and accessible.
+   - Check that personal information (driver names, emails, contact info) adheres to data minimization standards.
+
+### Output & Enforcement:
+- Generate a comprehensive **Pre-Push Quality & Compliance Audit Report** summarizing status, findings, and severity ratings across Security, Accessibility, and GDPR.
+- Remediate any blocking issues before pushing changes.
+- **Never perform `git push` until all three audits have run and the report is documented.**
+
+
