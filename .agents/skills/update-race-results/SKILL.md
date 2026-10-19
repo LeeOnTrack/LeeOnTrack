@@ -137,3 +137,34 @@ If the race result includes updated championship aggregate standings:
 1. Locate `<table class="standings__table standings__table--champ">` in `index.html`.
 2. Update the driver rankings, points, and dot colors.
 3. Keep the "Show more standings" `<details>` element functional for drivers outside the top 8.
+
+---
+
+## 6. Pre-Completion Next Race Verification Rule
+
+**MANDATORY CHECK BEFORE COMPLETING:**
+Whenever race results are updated for a completed round, you **MUST** ensure that all Next Race dates and spotlight information across the entire website reflect the upcoming round (normally the following Sunday):
+
+1. **Verify Matching Next Race & Schedule Dates (`index.html`):**
+   - Cross-check that the Next Race message at line 33 of `index.html`:
+     ```html
+     <p class="next-race-message">
+       <span class="next-race-message__label">Next Race:</span>
+       <span class="next-race-message__date">Sunday 25th October 2026, 19:00 UK</span>
+     </p>
+     ```
+     strictly matches the next upcoming round listed in the Season Schedule at line 357+ (`.race-night__card--season` / `.race-round-item--next`).
+2. **Synchronize the Desktop Next Race Banner:**
+   - Update `<span class="next-race-banner__date">` in the hero banner on `index.html` (e.g. `SUNDAY 25th OCTOBER 2026, 19:00 UK`).
+3. **Update "This Weekend's Race" Spotlight (`#this-weekend` on `index.html`):**
+   - Update the spotlight card with the upcoming round's details: round number, track name, car badge, format badge, date, time, and session format (e.g., Round 2 Summit Point Full, Mazda MX-5, Double Header).
+4. **Synchronize Global Header Message Across All Site Pages:**
+   - Ensure `<span class="next-race-message__date">` in `<header class="site-header">` is updated to the next round's date on all pages:
+     - `index.html`
+     - `race-info.html`
+     - `application.html`
+     - `gallery.html`
+     - `privacy.html`
+     - `terms.html`
+     - `thank-you.html`
+
