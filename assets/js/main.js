@@ -254,6 +254,13 @@
     });
   }
 
+  // Prevent clicking links inside checkbox labels from toggling the checkbox
+  document.querySelectorAll('.application__check a').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.stopPropagation();
+    });
+  });
+
   // Application form handling for Google Apps Script backend
   const applicationForm = document.querySelector('.application__form');
   if (applicationForm) {
@@ -306,6 +313,17 @@
             params.append(key, value);
           }
 
+          // Ensure active membership policy confirmation is explicitly included in payload
+          const activePolicyCheckbox = applicationForm.querySelector('[name="Active Membership Policy"], #activeMembershipPolicy');
+          if (activePolicyCheckbox && activePolicyCheckbox.checked) {
+            if (!params.has('Active Membership Policy')) {
+              params.append('Active Membership Policy', 'on');
+            }
+            if (!params.has('activeMembershipPolicy')) {
+              params.append('activeMembershipPolicy', 'on');
+            }
+          }
+
           // Use mode: 'no-cors' so Google's 302 redirect doesn't trigger a browser CORS block
           await fetch(scriptUrl, {
             method: 'POST',
@@ -334,4 +352,100 @@
       }
     });
   }
+
+  // Policy acknowledgement form handling for current members
+  const policyAckForm = document.getElementById('policyAckForm');
+  if (policyAckForm) {
+    const submitBtn = policyAckForm.querySelector('#submitBtn') || policyAckForm.querySelector('.application__submit');
+    const statusMsg = document.getElementById('acknowledgement-status');
+    const successCard = document.getElementById('acknowledgementSuccess');
+    const confirmedDriverSpan = document.getElementById('confirmedDriverName');
+
+    policyAckForm.addEventListener('submit', async function (event) {
+      const scriptUrl = policyAckForm.getAttribute('action');
+
+      if (!scriptUrl || scriptUrl.indexOf('YOUR_APPS_SCRIPT_WEB_APP_URL') !== -1) {
+        event.preventDefault();
+        if (statusMsg) {
+          statusMsg.hidden = false;
+          statusMsg.className = 'application__status application__status--error';
+          statusMsg.innerHTML = '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> The acknowledgement backend is being configured. Please confirm directly to <a href="mailto:leeontrack5@gmail.com" style="color: inherit; text-decoration: underline; font-weight: 700;">leeontrack5@gmail.com</a>.';
+          statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        return;
+      }
+
+      if (scriptUrl.indexOf('script.google.com') !== -1) {
+        event.preventDefault();
+
+        if (!policyAckForm.checkValidity()) {
+          policyAckForm.reportValidity();
+          return;
+        }
+
+        const trapField = policyAckForm.querySelector('[name="league_ref"]');
+        if (trapField && trapField.value.trim() !== '') {
+          policyAckForm.style.display = 'none';
+          if (successCard) successCard.style.display = 'block';
+          return;
+        }
+
+        const driverNameInput = policyAckForm.querySelector('#driverName');
+        const driverName = driverNameInput ? driverNameInput.value.trim() : 'Driver';
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'Recording Confirmation... <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>';
+        }
+        if (statusMsg) {
+          statusMsg.hidden = true;
+        }
+
+        try {
+          const formData = new FormData(policyAckForm);
+          const params = new URLSearchParams();
+          for (const [key, value] of formData.entries()) {
+            params.append(key, value);
+          }
+
+          // Ensure policy confirmation is explicitly present
+          if (!params.has('Active Membership Policy')) {
+            params.append('Active Membership Policy', 'on');
+          }
+
+          await fetch(scriptUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            body: params.toString(),
+            mode: 'no-cors'
+          });
+
+          // Show immediate in-place confirmation
+          policyAckForm.style.display = 'none';
+          if (confirmedDriverSpan) {
+            confirmedDriverSpan.textContent = driverName;
+          }
+          if (successCard) {
+            successCard.style.display = 'block';
+            successCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        } catch (err) {
+          console.error('Acknowledgement failed:', err);
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'CONFIRM POLICY ACCEPTANCE <i class="fa-solid fa-check" aria-hidden="true"></i>';
+          }
+          if (statusMsg) {
+            statusMsg.hidden = false;
+            statusMsg.className = 'application__status application__status--error';
+            statusMsg.innerHTML = '<i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> Something went wrong recording your acknowledgement. Please check your connection or contact Lee and Naven directly.';
+            statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }
+      }
+    });
+  }
+
 })();
