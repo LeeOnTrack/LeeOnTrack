@@ -262,7 +262,7 @@
   });
 
   // Application form handling for Google Apps Script backend
-  const applicationForm = document.querySelector('.application__form');
+  const applicationForm = document.getElementById('applicationForm');
   if (applicationForm) {
     const submitBtn = applicationForm.querySelector('.application__submit');
     const statusMsg = document.getElementById('application-status');
