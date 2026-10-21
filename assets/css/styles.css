@@ -385,7 +385,7 @@ a:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url('../images/hero/hero.png');
+  background-image: url('../images/hero/hero.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -414,7 +414,7 @@ a:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url('../images/hero/hero.png');
+  background-image: url('../images/hero/hero.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1914,7 +1914,7 @@ a:focus-visible {
   }
 
   .hero__bg {
-    background-image: url('../images/hero/hero_desk.png');
+    background-image: url('../images/hero/hero_desk.webp');
     background-position: center;
     background-size: 100% 100%;
   }
