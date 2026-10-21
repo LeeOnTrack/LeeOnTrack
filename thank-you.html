@@ -16,7 +16,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260930-1">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261021-2">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -25,7 +25,7 @@
       <a class="logo" href="index.html">Lee<span class="on-red">OnTrack</span></a>
       <p class="next-race-message">
         <span class="next-race-message__label">Next Race:</span>
-        <span class="next-race-message__date">Sunday 25th October 2026, 19:00 UK</span>
+        <span class="next-race-message__date">Sunday 25th October 2026, 18:30 UK</span>
       </p>
       <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
         <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -43,11 +43,13 @@
                 <li><a href="index.html#league">League Overview</a></li>
                 <li><a href="index.html#gallery">Gallery</a></li>
                 <li><a href="index.html#code-of-conduct">Code of Conduct</a></li>
+                <li><a href="message-board.html">Messages<span class="nav-message-indicator" aria-label="New message available" title="New message available"></span></a></li>
                 <li><a href="application.html">Join</a></li>
               </ul>
             </details>
           </li>
           <li><a href="index.html#race-night">Race Night</a></li>
+          <li><a href="message-board.html">Messages<span class="nav-message-indicator" aria-label="New message available" title="New message available"></span></a></li>
           <li><a class="nav-cta" href="application.html">Join</a></li>
         </ul>
       </nav>
@@ -84,6 +86,7 @@
             <li><a href="index.html#race-night">Race Night</a></li>
             <li><a href="index.html#gallery">Gallery</a></li>
             <li><a href="index.html#code-of-conduct">Code of Conduct</a></li>
+            <li><a href="message-board.html">Messages</a></li>
             <li><a href="application.html">Join</a></li>
           </ul>
         </nav>
@@ -98,6 +101,7 @@
         </nav>
         <div class="footer__legal">
           <ul>
+            <li><a href="message-board.html">Messages</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Use</a></li>
           </ul>
@@ -121,13 +125,55 @@
     </div>
   </div>
 
-  <dialog id="promo-modal" class="promo-modal" aria-modal="true" aria-label="New session announcement">
-    <form class="promo-modal__close-form" method="dialog">
-      <button class="promo-modal__close" type="submit" aria-label="Close announcement">×</button>
-    </form>
-    <img class="promo-modal__image" src="assets/images/modal_1.jpg" alt="New sports car championship starts 13th September" loading="eager">
+  <!-- ============================================== -->
+  <!-- NEW MESSAGE POPUP MODAL                        -->
+  <!-- When a new message is posted, update           -->
+  <!-- data-message-id so visitors see it on visit.   -->
+  <!-- ============================================== -->
+  <dialog id="message-modal" class="message-modal message-modal--important" closedby="any" aria-modal="true" aria-labelledby="message-modal-heading" data-message-id="msg-sunday-time-change-20261021">
+    <div class="message-modal__inner">
+      <div class="message-modal__header">
+        <span class="message-modal__badge message-modal__badge--important">
+          <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Important Announcement
+        </span>
+        <form class="message-modal__close-form" method="dialog">
+          <button class="message-modal__close" type="submit" aria-label="Close announcement">×</button>
+        </form>
+      </div>
+
+      <div class="message-modal__body">
+        <h2 id="message-modal-heading" class="message-modal__title">🏁 SUNDAY RACE NIGHT TIME CHANGE 🕡</h2>
+        <p class="message-modal__date">
+          <i class="fa-regular fa-calendar-days" aria-hidden="true"></i> Posted: 21st October 2026
+        </p>
+
+        <div class="message-modal__highlight-box">
+          <p>
+            <strong>New Start Time: 6:30pm UK (18:30 UK)</strong> starting this Sunday, accommodating international drivers as British Summer Time ends.
+          </p>
+        </div>
+
+        <p class="message-modal__summary">
+          Please update your diaries and check what 6:30pm UK time means in your local time zone!
+        </p>
+      </div>
+
+      <div class="message-modal__actions">
+        <a class="button message-modal__read-btn" href="message-board.html#msg-sunday-time-change">
+          Read Full Message <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <button class="button button--secondary message-modal__dont-show-btn" type="button" id="message-modal-dont-show">
+          Don't Show Again
+        </button>
+      </div>
+    </div>
   </dialog>
 
-  <script src="assets/js/main.js"></script>
+
+
+
+
+
+  <script src="assets/js/main.js?v=20261021-2"></script>
 </body>
 </html>

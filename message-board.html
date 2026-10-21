@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LeeOnTrack Official Message Board - Latest announcements, schedule updates, race night notices and driver bulletins.">
+  <meta name="author" content="LeeOnTrack">
+  <meta property="og:title" content="LeeOnTrack | Message Board">
+  <meta property="og:description" content="LeeOnTrack Official Message Board - Latest announcements, schedule updates, race night notices and driver bulletins.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.leeontrack.co.uk/message-board.html">
+  <meta property="og:image" content="https://www.leeontrack.co.uk/assets/images/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Message Board | LeeOnTrack League Racing</title>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' https://cdnjs.cloudflare.com; font-src https://cdnjs.cloudflare.com; img-src 'self' data:; script-src 'self'; connect-src 'self'; form-action 'self';">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261021-2">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Lee<span class="on-red">OnTrack</span></a>
+      <p class="next-race-message">
+        <span class="next-race-message__label">Next Race:</span>
+        <span class="next-race-message__date">Sunday 25th October 2026, 18:30 UK</span>
+      </p>
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav id="nav-menu" class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li class="site-nav__item--submenu">
+            <details class="site-nav__details">
+              <summary class="site-nav__summary">League</summary>
+              <ul class="site-nav__submenu">
+                <li><a href="index.html#league">League Overview</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#code-of-conduct">Code of Conduct</a></li>
+                <li><a href="message-board.html" aria-current="page">Messages<span class="nav-message-indicator" aria-label="New message available" title="New message available"></span></a></li>
+                <li><a href="application.html">Join</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="index.html#race-night">Race Night</a></li>
+          <li><a href="message-board.html" aria-current="page" style="color: var(--accent);">Messages<span class="nav-message-indicator" aria-label="New message available" title="New message available"></span></a></li>
+          <li><a class="nav-cta" href="application.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <section class="section">
+      <div class="container">
+        <!-- Breadcrumb / Back link -->
+        <a class="application__back" href="index.html#race-night">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          Back to Race Night
+        </a>
+
+        <!-- Header -->
+        <div class="message-board-hero">
+          <p class="hero__eyebrow">Driver Bulletins &amp; League Notices</p>
+          <h1>Official <span class="on-red">Message Board</span></h1>
+          <p>Important schedule updates, race night start time adjustments, and official league communications from Lee &amp; Naven.</p>
+        </div>
+
+        <!-- Toolbar: Legend & Filters -->
+        <div class="message-board-toolbar" role="region" aria-label="Message board legend and filters">
+          <div class="message-board-legend">
+            <span class="message-board-legend__title">Message Types:</span>
+            <span class="message-board-legend__item">
+              <span class="message-board-legend__dot message-board-legend__dot--important" aria-hidden="true"></span>
+              <strong>Red:</strong> Important / Urgent
+            </span>
+            <span class="message-board-legend__item">
+              <span class="message-board-legend__dot message-board-legend__dot--info" aria-hidden="true"></span>
+              <strong>Green:</strong> Informational
+            </span>
+          </div>
+
+          <div class="message-board-filters" role="group" aria-label="Filter messages by category">
+            <button type="button" class="message-filter-btn is-active" data-filter="all" aria-pressed="true">
+              All Messages
+            </button>
+            <button type="button" class="message-filter-btn message-filter-btn--important" data-filter="important" aria-pressed="false">
+              Important
+            </button>
+            <button type="button" class="message-filter-btn message-filter-btn--info" data-filter="info" aria-pressed="false">
+              Informational
+            </button>
+          </div>
+        </div>
+
+        <!-- Messages List -->
+        <div class="message-cards-list" id="messages-container">
+
+          <!-- ============================================== -->
+          <!-- MESSAGE 1: RACE NIGHT TIME CHANGE (IMPORTANT)   -->
+          <!-- ============================================== -->
+          <article class="message-card message-card--important" id="msg-sunday-time-change" data-category="important">
+            <header class="message-card__header">
+              <span class="message-card__badge message-card__badge--important">
+                <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Important Notice
+              </span>
+              <time class="message-card__date" datetime="2026-10-21">
+                <i class="fa-regular fa-calendar-days" aria-hidden="true"></i> Posted: Wednesday 21st October 2026
+              </time>
+            </header>
+
+            <h2 class="message-card__title">🏁 LEEONTRACK – SUNDAY RACE NIGHT TIME CHANGE 🕡</h2>
+
+            <div class="message-card__body">
+              <p>With the UK clocks changing as British Summer Time ends, our Sunday night league will move to a <strong>6:30pm UK start time</strong>, starting this Sunday.</p>
+
+              <p>This time will remain in place until the next UK clock change.</p>
+
+              <p>The revised start time is intended to better accommodate our international drivers, including those in the US and countries ahead of GMT, while helping those two or more hours ahead of the UK avoid a late finish.</p>
+
+              <div class="message-card__callout">
+                <p>
+                  📅 <strong>Please update your diaries</strong> and check what 6:30pm UK time means in your local time zone, as clock changes can happen on different dates around the world.
+                </p>
+              </div>
+
+              <p class="message-card__closing">See you on track this Sunday at 6:30pm UK time! 🏎️🏁</p>
+
+              <div class="message-card__signoff">
+                <p class="message-card__author">Lee &amp; Naven</p>
+                <p class="message-card__role">LeeOnTrack League Organisers</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ============================================== -->
+          <!-- MESSAGE 2: WELCOME NOTICEBOARD (INFORMATIONAL) -->
+          <!-- ============================================== -->
+          <article class="message-card message-card--info" id="msg-welcome-noticeboard" data-category="info">
+            <header class="message-card__header">
+              <span class="message-card__badge message-card__badge--info">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Informational Notice
+              </span>
+              <time class="message-card__date" datetime="2026-10-18">
+                <i class="fa-regular fa-calendar-days" aria-hidden="true"></i> Posted: Sunday 18th October 2026
+              </time>
+            </header>
+
+            <h2 class="message-card__title">📢 WELCOME TO THE NEW LEEONTRACK MESSAGE BOARD</h2>
+
+            <div class="message-card__body">
+              <p>Welcome to our new official League Message Board! This page is the central hub for driver bulletins, schedule updates, track notices, and general league information throughout Season 2.</p>
+
+              <div class="message-card__callout">
+                <p>
+                  <i class="fa-solid fa-lightbulb" aria-hidden="true"></i> <strong>Color System:</strong> Cards with <span style="color: #ff6666; font-weight: 700;">Red Borders</span> denote important or urgent notices requiring driver action (e.g., race time changes or mandatory briefings). Cards with <span style="color: var(--accent); font-weight: 700;">Green Borders</span> represent general informational updates and league news.
+                </p>
+              </div>
+
+              <p>Whenever a new message is posted to this board, a notification popup will alert visitors upon their first visit so no one misses crucial updates.</p>
+
+              <div class="message-card__signoff">
+                <p class="message-card__author">Lee &amp; Naven</p>
+                <p class="message-card__role">LeeOnTrack League Organisers</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Quick actions -->
+        <div class="message-board-actions">
+          <a class="button" href="race-info.html">
+            <i class="fa-solid fa-flag-checkered" aria-hidden="true"></i>
+            Race Schedule &amp; Results
+          </a>
+          <a class="button button--secondary" href="index.html#home">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            Back to Home
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="footer__brand-name" href="index.html">Lee<span class="on-red">OnTrack</span></a>
+          <p>iRacing league racing.</p>
+          <img class="footer__logo" src="assets/images/lot-logo.svg" alt="LeeOnTrack logo" loading="lazy" width="150">
+        </div>
+        <nav class="footer__nav" aria-label="Footer">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#league">League</a></li>
+            <li><a href="index.html#race-night">Race Night</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="index.html#code-of-conduct">Code of Conduct</a></li>
+            <li><a href="message-board.html">Messages</a></li>
+            <li><a href="application.html">Join</a></li>
+          </ul>
+        </nav>
+        <nav class="socials" aria-label="Social media">
+          <ul>
+            <li><a class="socials__link" href="https://discord.gg/DKzfz8Q8Pd" aria-label="LeeOnTrack on Discord"
+                target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord" aria-hidden="true"></i></a>
+            </li>
+            <li><a class="socials__link" href="https://www.facebook.com/profile.php?id=61584474686132"
+                aria-label="LeeOnTrack on Facebook" target="_blank" rel="noopener noreferrer"><i
+                  class="fa-brands fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a class="socials__link" href="https://www.youtube.com/@LeeOnTrack-j9v"
+                aria-label="LeeOnTrack on YouTube" target="_blank" rel="noopener noreferrer"><i
+                  class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
+            <li><a class="socials__link" href="https://www.tiktok.com/@leeontrack?_r=1&_t=ZN-93EGUP48d8g"
+                aria-label="LeeOnTrack on TikTok" target="_blank" rel="noopener noreferrer"><i
+                  class="fa-brands fa-tiktok" aria-hidden="true"></i></a></li>
+            <li><a class="socials__link" href="mailto:leeontrack5@gmail.com" aria-label="Email LeeOnTrack"><i
+                  class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
+          </ul>
+        </nav>
+        <div class="footer__legal">
+          <ul>
+            <li><a href="message-board.html">Messages</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+          </ul>
+          <p>&copy; 2026 Lee<span class="on-red">OnTrack</span>. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="assets/js/main.js?v=20261021-2"></script>
+</body>
+
+</html>

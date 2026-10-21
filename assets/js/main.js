@@ -42,6 +42,38 @@
     });
   }
 
+  // Close navigation dropdown (<details class="site-nav__details">) when clicking outside, clicking an option, or pressing Escape
+  const navDetailsList = document.querySelectorAll('.site-nav__details');
+  if (navDetailsList.length > 0) {
+    document.addEventListener('click', function (event) {
+      navDetailsList.forEach(function (details) {
+        if (details.open && !details.contains(event.target)) {
+          details.open = false;
+        }
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        navDetailsList.forEach(function (details) {
+          if (details.open) {
+            details.open = false;
+            const summary = details.querySelector('summary');
+            if (summary) summary.focus();
+          }
+        });
+      }
+    });
+
+    navDetailsList.forEach(function (details) {
+      details.addEventListener('click', function (event) {
+        if (event.target.closest('a')) {
+          details.open = false;
+        }
+      });
+    });
+  }
+
   let ticking = false;
 
   function onScroll() {
@@ -253,6 +285,154 @@
       }
     });
   }
+
+  /* ==========================================================================
+     UNREAD MESSAGE NAVIGATION INDICATOR & POPUP MODAL
+     ========================================================================== */
+  const messageModal = document.getElementById('message-modal');
+  const activeMessageId = messageModal
+    ? (messageModal.getAttribute('data-message-id') || 'msg-sunday-time-change-20261021')
+    : 'msg-sunday-time-change-20261021';
+  const messageStorageKey = 'lot_dismissed_msg_' + activeMessageId;
+
+  function updateNavMessageIndicators() {
+    let hasDismissed = false;
+    try {
+      hasDismissed = localStorage.getItem(messageStorageKey) === 'true';
+    } catch (e) {}
+
+    const indicators = document.querySelectorAll('.nav-message-indicator');
+    indicators.forEach(function (ind) {
+      ind.hidden = hasDismissed;
+    });
+  }
+
+  // Update indicators across header and navigation
+  updateNavMessageIndicators();
+
+  if (messageModal) {
+    // If visitor is already on the message board, do not pop up the announcement modal
+    const isMessageBoardPage = window.location.pathname.indexOf('message-board') !== -1 ||
+                               window.location.pathname.indexOf('messages') !== -1;
+
+    let hasDismissed = false;
+    try {
+      hasDismissed = localStorage.getItem(messageStorageKey) === 'true';
+    } catch (e) {
+      // Storage may be unavailable in private browsing
+    }
+
+    if (!isMessageBoardPage && !hasDismissed && typeof messageModal.showModal === 'function') {
+      // Short delay after load so page paints smoothly
+      setTimeout(function () {
+        if (!messageModal.open) {
+          try {
+            messageModal.showModal();
+          } catch (err) {
+            // Browser policy handling
+          }
+        }
+      }, 600);
+    }
+
+    // "Don't show again" button
+    const dontShowBtn = document.getElementById('message-modal-dont-show');
+    if (dontShowBtn) {
+      dontShowBtn.addEventListener('click', function () {
+        try {
+          localStorage.setItem(messageStorageKey, 'true');
+        } catch (e) {}
+        messageModal.close();
+        updateNavMessageIndicators();
+      });
+    }
+
+    // "Read Full Message" button / link
+    const readBtn = messageModal.querySelector('.message-modal__read-btn');
+    if (readBtn) {
+      readBtn.addEventListener('click', function () {
+        messageModal.close();
+      });
+    }
+
+    // Light-dismiss fallback for browsers without native <dialog closedby>
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+      messageModal.addEventListener('click', function (event) {
+        if (event.target !== messageModal) return;
+        const rect = messageModal.getBoundingClientRect();
+        const isInside = (
+          rect.top <= event.clientY &&
+          event.clientY <= rect.top + rect.height &&
+          rect.left <= event.clientX &&
+          event.clientX <= rect.left + rect.width
+        );
+        if (!isInside) {
+          messageModal.close();
+        }
+      });
+    }
+  }
+
+  /* ==========================================================================
+     MESSAGE BOARD FILTERING & ANCHOR HIGHLIGHTING
+     ========================================================================== */
+  const messageFilters = document.querySelectorAll('.message-filter-btn');
+  const messageCards = document.querySelectorAll('.message-card');
+
+  if (messageFilters.length > 0 && messageCards.length > 0) {
+    messageFilters.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const filter = btn.getAttribute('data-filter');
+
+        messageFilters.forEach(function (b) {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        messageCards.forEach(function (card) {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = '';
+            card.classList.add('animate-fade-in');
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  // Highlight card when targeted via URL hash (e.g. #msg-sunday-time-change)
+  function highlightTargetMessage() {
+    if (!window.location.hash) return;
+    try {
+      const targetCard = document.querySelector(window.location.hash);
+      if (targetCard && targetCard.classList.contains('message-card')) {
+        targetCard.classList.add('is-highlighted');
+        const rect = targetCard.getBoundingClientRect();
+        // Only scroll if the card is not already visible near the top
+        if (rect.top > 350 || rect.top < 0) {
+          setTimeout(function () {
+            targetCard.scrollIntoView({
+              behavior: reducedMotion.matches ? 'auto' : 'smooth',
+              block: 'start'
+            });
+          }, 150);
+        }
+        setTimeout(function () {
+          targetCard.classList.remove('is-highlighted');
+        }, 4000);
+      }
+    } catch (e) {}
+  }
+
+  if (window.location.hash) {
+    highlightTargetMessage();
+  }
+  window.addEventListener('hashchange', highlightTargetMessage);
+
 
   // Prevent clicking links inside checkbox labels from toggling the checkbox
   document.querySelectorAll('.application__check a').forEach(function (link) {
