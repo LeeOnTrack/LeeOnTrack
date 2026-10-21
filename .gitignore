@@ -34,8 +34,7 @@ code.gs
 .devin/
 .windsurf/
 .windsurfrules
-.agents/*
-!.agents/skills/
+.agents/
 
 # Local test files
 website-test.txt
@@ -48,4 +47,3 @@ aria-edits.txt
 *.md
 !README.md
 !BEGINNER_GUIDE.md
-!.agents/**/*.md
