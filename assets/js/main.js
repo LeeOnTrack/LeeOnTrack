@@ -293,17 +293,30 @@
   const activeMessageId = messageModal
     ? (messageModal.getAttribute('data-message-id') || 'msg-sunday-time-change-20261021')
     : 'msg-sunday-time-change-20261021';
-  const messageStorageKey = 'lot_dismissed_msg_' + activeMessageId;
+  const modalSeenKey = 'lot_modal_seen_' + activeMessageId;
+  const messagesVisitedKey = 'lot_messages_visited_' + activeMessageId;
+  const legacyDismissedKey = 'lot_dismissed_msg_' + activeMessageId;
+
+  const isMessageBoardPage = window.location.pathname.indexOf('message-board') !== -1 ||
+                             window.location.pathname.indexOf('messages') !== -1;
+
+  // When visiting the message board, mark messages as read and modal as seen
+  if (isMessageBoardPage) {
+    try {
+      localStorage.setItem(messagesVisitedKey, 'true');
+      localStorage.setItem(modalSeenKey, 'true');
+    } catch (e) {}
+  }
 
   function updateNavMessageIndicators() {
-    let hasDismissed = false;
+    let hasVisited = false;
     try {
-      hasDismissed = localStorage.getItem(messageStorageKey) === 'true';
+      hasVisited = localStorage.getItem(messagesVisitedKey) === 'true';
     } catch (e) {}
 
     const indicators = document.querySelectorAll('.nav-message-indicator');
     indicators.forEach(function (ind) {
-      ind.hidden = hasDismissed;
+      ind.hidden = hasVisited;
     });
   }
 
@@ -311,18 +324,21 @@
   updateNavMessageIndicators();
 
   if (messageModal) {
-    // If visitor is already on the message board, do not pop up the announcement modal
-    const isMessageBoardPage = window.location.pathname.indexOf('message-board') !== -1 ||
-                               window.location.pathname.indexOf('messages') !== -1;
-
-    let hasDismissed = false;
+    let hasSeenModal = false;
     try {
-      hasDismissed = localStorage.getItem(messageStorageKey) === 'true';
+      hasSeenModal = localStorage.getItem(modalSeenKey) === 'true' ||
+                     localStorage.getItem(legacyDismissedKey) === 'true';
     } catch (e) {
       // Storage may be unavailable in private browsing
     }
 
-    if (!isMessageBoardPage && !hasDismissed && typeof messageModal.showModal === 'function') {
+    // Modal pops up only once across the entire site
+    if (!isMessageBoardPage && !hasSeenModal && typeof messageModal.showModal === 'function') {
+      // Mark as seen immediately so reloads or navigating will never pop it up again
+      try {
+        localStorage.setItem(modalSeenKey, 'true');
+      } catch (e) {}
+
       // Short delay after load so page paints smoothly
       setTimeout(function () {
         if (!messageModal.open) {
@@ -335,19 +351,23 @@
       }, 600);
     }
 
-    // "Don't show again" button
-    const dontShowBtn = document.getElementById('message-modal-dont-show');
-    if (dontShowBtn) {
-      dontShowBtn.addEventListener('click', function () {
-        try {
-          localStorage.setItem(messageStorageKey, 'true');
-        } catch (e) {}
+    // Modal "Close" button
+    const closeBtn = document.getElementById('message-modal-close-btn') ||
+                     document.getElementById('message-modal-dont-show');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
         messageModal.close();
-        updateNavMessageIndicators();
       });
     }
 
-    // "Read Full Message" button / link
+    // Ensure closing via any method (Escape, backdrop, form submit, button) marks modal as seen
+    messageModal.addEventListener('close', function () {
+      try {
+        localStorage.setItem(modalSeenKey, 'true');
+      } catch (e) {}
+    });
+
+    // "Go to Messages" button / link
     const readBtn = messageModal.querySelector('.message-modal__read-btn');
     if (readBtn) {
       readBtn.addEventListener('click', function () {

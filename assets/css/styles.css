@@ -3400,6 +3400,7 @@ a:focus-visible {
   gap: 0.5rem;
 }
 
+.message-modal__close-btn,
 .message-modal__dont-show-btn {
   font-size: 0.85rem;
   padding: 0.75rem 1.25rem;
@@ -3407,6 +3408,8 @@ a:focus-visible {
   border-color: var(--border);
 }
 
+.message-modal__close-btn:hover,
+.message-modal__close-btn:focus-visible,
 .message-modal__dont-show-btn:hover,
 .message-modal__dont-show-btn:focus-visible {
   color: var(--text);
