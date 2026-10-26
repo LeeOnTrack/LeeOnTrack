@@ -17,19 +17,31 @@ No frameworks, build tools, or server-side code are used. This makes the site ea
 ## Folder structure
 
 ```text
-lot/
-├── index.html        # Main page
-├── privacy.html      # Privacy policy
-├── terms.html        # Terms and conditions
+LeeOnTrack/
+├── index.html                  # Main home page & Season 2 championship overview
+├── race-info.html              # Season 2 race results & full standings
+├── message-board.html          # Community announcements & updates
+├── gallery.html                # High-resolution race image gallery
+├── rules.html                  # Sporting regulations & code of conduct
+├── application.html            # Driver registration & application form
+├── policy-acknowledgement.html # Driver agreement confirmation
+├── privacy.html                # Privacy policy & GDPR statement
+├── terms.html                  # Terms and conditions
+├── 404.html                    # 404 Not Found fallback page
 ├── assets/
 │   ├── css/
-│   │   └── styles.css    # Styling and design system
+│   │   ├── styles.css          # Core stylesheet & design system
+│   │   └── messages.css        # Message board styles
 │   ├── js/
-│   │   └── main.js       # Small interactive features
-│   ├── images/           # Images, logos and favicon
-│   └── icons/            # Icons
-├── .gitignore        # Files to ignore
-└── README.md         # This file
+│   │   ├── main.js             # Navigation, lightbox & UI interactivity
+│   │   └── messages.js         # Message board interactivity
+│   └── images/                 # Compressed WebP assets & brand icons
+│       ├── gallery/            # Race event photography (.webp)
+│       ├── hero/               # Optimized hero images (.webp)
+│       └── logo.png / .webp    # Brand badges
+├── CNAME                       # Custom domain configuration (www.leeontrack.co.uk)
+├── .gitignore                  # Git ignore rules
+└── README.md                   # This documentation file
 ```
 
 ## How to run it locally
@@ -83,15 +95,16 @@ Social media links are in the footer and hero of `index.html`. They currently us
 - **Discord:** `https://discord.gg/DKzfz8Q8Pd`
 - **Facebook:** `https://www.facebook.com/profile.php?id=61584474686132`
 - **YouTube:** `https://www.youtube.com/@LeeOnTrack-j9v`
-- **TikTok:** `https://www.tiktok.com/@leeontrack?_r=1&_t=ZN-93EGUP48d8g`
+- **TikTok:** `https://www.tiktok.com/@leeontrack`
 
-Replace these placeholder URLs with the real LeeOnTrack social media URLs. The icons are provided by [Font Awesome](https://fontawesome.com/) via a CDN link in `index.html`.
+The icons are provided by [Font Awesome](https://fontawesome.com/) via a CDN link in `index.html`.
 
 ## How to deploy to GitHub Pages
 
-This site uses the repository already connected to GitHub (`https://github.com/locobean/lot.git`). To publish:
+This site is hosted via GitHub Pages from the repository (`https://github.com/LeeOnTrack/LeeOnTrack.git`). To publish:
 
 1. Push your changes to the `main` branch.
 2. In the GitHub repository settings, go to **Pages**.
-3. Under **Source**, select **Deploy from a branch** and choose `main` with the `/(root)` folder.
-4. Save. The site will be available at `https://locobean.github.io/lot/`.
+3. Under **Build and deployment**, ensure **Source** is set to **Deploy from a branch** with branch `main` and folder `/(root)`.
+4. The site is live with custom domain at [https://www.leeontrack.co.uk](https://www.leeontrack.co.uk).
+
