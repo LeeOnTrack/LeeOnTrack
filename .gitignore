@@ -47,3 +47,9 @@ aria-edits.txt
 *.md
 !README.md
 !BEGINNER_GUIDE.md
+
+# Race results and raw data JSON files
+*.json
+!package.json
+!package-lock.json
+!manifest.json
