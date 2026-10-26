@@ -53,3 +53,16 @@ aria-edits.txt
 !package.json
 !package-lock.json
 !manifest.json
+
+# Raw / uncompressed image sources (only optimized webp, svg favicon, and og:image logo.png are tracked)
+assets/images/hero/hero.png
+assets/images/hero/hero_desk.png
+assets/images/rig.png
+assets/images/pit-stop.png
+assets/images/lot-logo.svg
+assets/images/modal_1.jpg
+assets/images/modal_1.webp
+*.psd
+*.raw
+*.tiff
+
