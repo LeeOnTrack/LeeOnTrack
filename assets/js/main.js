@@ -648,4 +648,53 @@
     });
   }
 
+  // Discount code copy functionality
+  const copyButtons = document.querySelectorAll('.discount-copy-btn');
+  copyButtons.forEach(function (button) {
+    button.addEventListener('click', async function () {
+      const code = button.getAttribute('data-code') || 'LeeOnTrack';
+      let copied = false;
+
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(code);
+          copied = true;
+        } catch (err) {
+          console.warn('Clipboard write failed, using fallback:', err);
+        }
+      }
+
+      if (!copied) {
+        // Fallback using textarea selection
+        const textarea = document.createElement('textarea');
+        textarea.value = code;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        try {
+          document.execCommand('copy');
+          copied = true;
+        } catch (fallbackErr) {
+          console.error('Fallback copy failed:', fallbackErr);
+        }
+        document.body.removeChild(textarea);
+      }
+
+      if (copied) {
+        const originalHtml = button.innerHTML;
+        button.classList.add('is-copied');
+        button.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Copied!';
+        button.setAttribute('aria-label', 'Code ' + code + ' copied to clipboard');
+
+        setTimeout(function () {
+          button.classList.remove('is-copied');
+          button.innerHTML = originalHtml;
+          button.setAttribute('aria-label', 'Copy discount code ' + code);
+        }, 2500);
+      }
+    });
+  });
+
 })();
