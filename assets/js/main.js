@@ -140,9 +140,37 @@
 
   const consentBanner = document.getElementById('consent-banner');
   const consentKey = 'lot-consent';
+  const gaMeasurementId = 'G-YBL2PV2B7X';
   let consent = null;
+  let gaLoaded = false;
+
+  function loadGoogleAnalytics() {
+    if (gaLoaded || window['ga-disable-' + gaMeasurementId]) {
+      return;
+    }
+    gaLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = window.gtag || gtag;
+    window.gtag('js', new Date());
+    window.gtag('config', gaMeasurementId, { anonymize_ip: true });
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaMeasurementId;
+    document.head.appendChild(script);
+  }
 
   function applyConsent(choice) {
+    if (choice === 'accept') {
+      window['ga-disable-' + gaMeasurementId] = false;
+      loadGoogleAnalytics();
+    } else if (choice === 'reject') {
+      window['ga-disable-' + gaMeasurementId] = true;
+    }
+
     document.querySelectorAll('[data-consent="analytics"]').forEach(function (el) {
       if (choice === 'accept') {
         if (el.dataset.src) {
@@ -683,15 +711,38 @@
       }
 
       if (copied) {
-        const originalHtml = button.innerHTML;
+        if (!button.dataset.originalHtml) {
+          button.dataset.originalHtml = button.innerHTML;
+        }
+        const originalHtml = button.dataset.originalHtml;
+        const copiedText = button.getAttribute('data-copied-text') || 'Copied!';
         button.classList.add('is-copied');
-        button.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Copied!';
+        button.textContent = '';
+        const checkIcon = document.createElement('i');
+        checkIcon.className = 'fa-solid fa-check';
+        checkIcon.setAttribute('aria-hidden', 'true');
+        button.appendChild(checkIcon);
+        button.appendChild(document.createTextNode(' ' + copiedText));
         button.setAttribute('aria-label', 'Code ' + code + ' copied to clipboard');
 
-        setTimeout(function () {
+        // Announce to assistive tech (button label changes are not reliably announced)
+        let live = document.getElementById('copy-live-region');
+        if (!live) {
+          live = document.createElement('div');
+          live.id = 'copy-live-region';
+          live.className = 'sr-only';
+          live.setAttribute('role', 'status');
+          live.setAttribute('aria-live', 'polite');
+          document.body.appendChild(live);
+        }
+        live.textContent = 'Discount code ' + code + ' copied to clipboard';
+
+        clearTimeout(button._copyTimer);
+        button._copyTimer = setTimeout(function () {
           button.classList.remove('is-copied');
           button.innerHTML = originalHtml;
           button.setAttribute('aria-label', 'Copy discount code ' + code);
+          live.textContent = '';
         }, 2500);
       }
     });

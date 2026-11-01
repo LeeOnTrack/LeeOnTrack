@@ -1,24 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YBL2PV2B7X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-YBL2PV2B7X');
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="LeeOnTrack privacy policy - how we collect, use and protect your information.">
   <title>Privacy Policy | LeeOnTrack</title>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'self'; style-src 'self' https://cdnjs.cloudflare.com; font-src https://cdnjs.cloudflare.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'self'; style-src 'self' https://cdnjs.cloudflare.com; font-src https://cdnjs.cloudflare.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; form-action 'self';">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261021-2">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261101">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -46,14 +37,14 @@
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="index.html#code-of-conduct">Code of Conduct</a></li>
                 <li><a href="partners.html">Partners &amp; Gear</a></li>
-                <li><a href="message-board.html">Messages<span class="nav-message-indicator" aria-label="New message available" title="New message available"></span></a></li>
+                <li><a href="message-board.html">Messages<span class="nav-message-indicator" aria-hidden="true" title="New message available"></span><span class="sr-only"> (new message available)</span></a></li>
                 <li><a href="application.html">Join</a></li>
               </ul>
             </details>
           </li>
           <li><a href="race-info.html">Race Night</a></li>
           <li><a href="partners.html">Partners</a></li>
-          <li><a href="message-board.html">Messages<span class="nav-message-indicator" aria-label="New message available" title="New message available"></span></a></li>
+          <li><a href="message-board.html">Messages<span class="nav-message-indicator" aria-hidden="true" title="New message available"></span><span class="sr-only"> (new message available)</span></a></li>
           <li><a class="nav-cta" href="application.html">Join</a></li>
         </ul>
       </nav>
@@ -69,7 +60,7 @@
         <h1>PRIVACY POLICY</h1>
         <p>HOW WE PROTECT YOUR INFORMATION</p>
 
-        <p><strong>Last Updated:</strong> September 21, 2026</p>
+        <p><strong>Last Updated:</strong> November 1, 2026</p>
 
         <h2>Introduction</h2>
         <p>This Privacy Policy explains how Lee<span class="on-red">OnTrack</span> collects, uses, and protects your personal information when you visit our website or apply to join our sim racing league. We are committed to protecting your privacy and ensuring your personal information is handled responsibly.</p>
@@ -80,7 +71,7 @@
           <li><strong>Contact Information:</strong> Name, email address, Discord username (when provided voluntarily)</li>
           <li><strong>iRacing Information:</strong> iRacing name and membership number (required for league participation)</li>
           <li><strong>Application Details:</strong> Information provided in league applications</li>
-          <li><strong>Technical Information:</strong> IP address, browser type, device information (collected automatically for website analytics)</li>
+          <li><strong>Technical Information:</strong> Anonymised IP address, browser type, device information, and pages visited (collected only if you accept optional analytics cookies)</li>
         </ul>
 
         <h2>How We Collect Information</h2>
@@ -125,18 +116,25 @@
           <li><strong>Active League Members:</strong> Personal information is retained while you are an active member of the league and for 2 years after your last participation</li>
           <li><strong>Application Data:</strong> Rejected applications are retained for 1 year for administrative purposes</li>
           <li><strong>Race Results & Standings:</strong> Public race results and championship standings are retained indefinitely for historical and statistical purposes, though personal identifiers may be removed upon request</li>
-          <li><strong>Technical Data:</strong> IP addresses and technical information are retained for 6 months for security and analytics purposes</li>
+          <li><strong>Technical Data:</strong> Analytics data (where you have consented to Google Analytics) is retained in accordance with our Google Analytics data-retention settings (up to 14 months)</li>
           <li><strong>Consent Records:</strong> Cookie consent preferences are retained until you withdraw consent or clear your browser data</li>
         </ul>
         <p>You may request deletion of your personal information at any time by contacting us using the details below. Where we are required by law to retain certain information, we will inform you of this when you make a deletion request.</p>
 
         <h2>Cookies and Local Storage</h2>
-        <p>Our website uses local storage to remember your preferences, such as cookie consent choices. We do not use tracking cookies or advertising trackers. You can control your browser's cookie settings through your browser preferences.</p>
+        <p>Our website uses browser <code>localStorage</code> for strictly necessary preferences, including remembering your cookie consent choice (<code>lot-consent</code>) and whether you have dismissed site announcements. No tracking or analytics cookies are set unless you explicitly click <strong>Accept</strong> on our cookie banner.</p>
+        <p>If you accept analytics cookies, we load <strong>Google Analytics 4</strong> (<code>G-YBL2PV2B7X</code>) with IP anonymisation enabled to help us understand aggregate visitor traffic and improve the website. If you click <strong>Reject</strong> (or make no choice), Google Analytics is not loaded. You can withdraw or change your choice at any time by clearing site data for <code>leeontrack.co.uk</code> in your browser settings.</p>
+
+        <h2>Affiliate Links &amp; Hardware Partners</h2>
+        <p>LeeOnTrack participates in the <strong>Pimax</strong> affiliate programme. Outbound links to Pimax (including links on our <a href="partners.html">Partners &amp; Gear</a> page, our home and race-info pages, and our <code>leeontrack.co.uk/go/*</code> redirect links) include affiliate referral parameters (powered by GoAffPro). We do not pass any personal information about you to Pimax. If you click an affiliate link, Pimax and its affiliate platform may set cookies or log referral parameters on their own domain to attribute any resulting purchase and apply the community discount code <strong>LeeOnTrack</strong>, in accordance with Pimax's own privacy and cookie policies.</p>
 
         <h2>Third-Party Services</h2>
-        <p>Our website may contain links to third-party services, including:</p>
+        <p>Our website uses or links to the following third-party services:</p>
         <ul>
-          <li><strong>Google Apps Script &amp; Google Sheets:</strong> We use Google Apps Script to process league application forms. When you submit an application, your personal information is securely stored in a private Google Sheet accessible only to LeeOnTrack organisers. Google's data handling is governed by the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</li>
+          <li><strong>Google Apps Script &amp; Google Sheets:</strong> We use Google Apps Script to process league application and policy acknowledgement forms. When you submit a form, your personal information is securely stored in a private Google Sheet accessible only to LeeOnTrack organisers. Google's data handling is governed by the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</li>
+          <li><strong>Google Analytics:</strong> Optional website analytics loaded only with your consent, governed by the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</li>
+          <li><strong>Pimax &amp; GoAffPro:</strong> Official hardware affiliate partner when you follow our partner or <code>/go/*</code> referral links.</li>
+          <li><strong>Cloudflare (cdnjs):</strong> Delivers the Font Awesome icon stylesheet with Subresource Integrity verification.</li>
           <li><strong>YouTube:</strong> For video content</li>
           <li><strong>TikTok:</strong> For social media content</li>
           <li><strong>Discord:</strong> For community communication</li>
@@ -244,7 +242,7 @@
 
   <div class="consent-banner" id="consent-banner" role="region" aria-label="Cookie consent" hidden>
     <div class="container">
-      <p class="consent-banner__text">This site does not use tracking cookies. We only load essential icons and fonts needed to display the site.</p>
+      <p class="consent-banner__text">We use optional Google Analytics cookies to understand visitor traffic and improve the league website. Analytics only load if you accept. See our <a href="privacy.html">Privacy Policy</a>.</p>
       <div class="consent-banner__actions">
         <button class="button" type="button" data-consent="accept">Accept</button>
         <button class="button button--secondary" type="button" data-consent="reject">Reject</button>
@@ -301,6 +299,6 @@
 
 
 
-  <script src="assets/js/main.js?v=20261021-2"></script>
+  <script src="assets/js/main.js?v=20261101"></script>
 </body>
 </html>
