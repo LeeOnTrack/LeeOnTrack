@@ -1,3 +1,23 @@
+# Allow social preview scrapers to read Open Graph tags on /go/ short links
+User-agent: facebookexternalhit
+Allow: /go/
+
+User-agent: Facebot
+Allow: /go/
+
+User-agent: Twitterbot
+Allow: /go/
+
+User-agent: Discordbot
+Allow: /go/
+
+User-agent: WhatsApp
+Allow: /go/
+
+User-agent: Slackbot
+Allow: /go/
+
+# Keep search engines out of affiliate redirect endpoints
 User-agent: *
 Allow: /
 Disallow: /go/
