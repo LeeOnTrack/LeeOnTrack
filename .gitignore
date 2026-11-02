@@ -55,6 +55,7 @@ aria-edits.txt
 !manifest.json
 
 # Raw / uncompressed image sources (only optimized webp, svg favicon, and og:image logo.png are tracked)
+assets/images/Pimax_Product Images/
 assets/images/hero/hero.png
 assets/images/hero/hero_desk.png
 assets/images/rig.png
