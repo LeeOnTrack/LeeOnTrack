@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /data/
+Disallow: /go/
 
 Sitemap: https://www.leeontrack.co.uk/sitemap.xml
