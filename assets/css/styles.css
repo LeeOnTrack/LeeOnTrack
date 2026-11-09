@@ -809,12 +809,44 @@ a:focus-visible {
 }
 
 .standings__table--champ {
-  table-layout: fixed;
+  display: block;
+  width: 100%;
   min-width: 22rem;
 }
 
+.standings__table--champ thead,
+.standings__table--champ tbody {
+  display: block;
+  width: 100%;
+}
+
+.standings__table--champ tr {
+  display: grid;
+  grid-template-columns: 4rem 1fr 1fr;
+  align-items: center;
+  width: 100%;
+}
+
+.standings__table--champ th,
+.standings__table--champ td,
 .standings__table--champ .standings__cell--pos {
-  width: 4rem;
+  width: auto;
+}
+
+.standings > .accordion__item {
+  border-inline: none;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+.standings > .accordion__item > .accordion__content {
+  padding-inline: 0;
+}
+
+.standings > .accordion__item > .accordion__content > .race-night__meta {
+  max-width: 54rem;
+  margin-inline: auto;
+  padding-inline: var(--space-sm);
 }
 
 .standings__table th,
