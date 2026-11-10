@@ -385,7 +385,7 @@ a:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url('../images/hero/hero.webp');
+  background-image: url('../images/hero/hero-1200w.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -398,6 +398,16 @@ a:focus-visible {
   inset: 0;
   background-color: var(--bg);
   opacity: 0.6;
+}
+
+/* Tablet hero: full-resolution mobile artwork (desktop swaps to hero_desk.webp at 64rem).
+   Breakpoints must match the <link rel="preload" media> queries in index.html. */
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  /* .join__bg shares the file so tablets download only one hero image */
+  .hero__bg,
+  .join__bg {
+    background-image: url('../images/hero/hero.webp');
+  }
 }
 
 #join {
@@ -414,7 +424,7 @@ a:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url('../images/hero/hero.webp');
+  background-image: url('../images/hero/hero-1200w.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -909,6 +919,19 @@ a:focus-visible {
   border-radius: 50%;
   background-color: var(--dot, var(--accent));
 }
+
+/* Driver dot palette. Classes replace inline style="--dot:..." so the strict CSP
+   (style-src 'self') is never violated. Suffix = hex, emitted by update_results.js. */
+.standings__dot--f5b942 { --dot: #f5b942; }
+.standings__dot--9ece6a { --dot: #9ece6a; }
+.standings__dot--f7768e { --dot: #f7768e; }
+.standings__dot--ff9e64 { --dot: #ff9e64; }
+.standings__dot--bb9af7 { --dot: #bb9af7; }
+.standings__dot--b4f9f8 { --dot: #b4f9f8; }
+.standings__dot--73daca { --dot: #73daca; }
+.standings__dot--7aa2f7 { --dot: #7aa2f7; }
+.standings__dot--e0aaff { --dot: #e0aaff; }
+.standings__dot--2ac3de { --dot: #2ac3de; }
 
 .standings__driver .standings__dot + span {
   display: inline-flex;
@@ -4440,4 +4463,133 @@ a:focus-visible {
   .bio-hub__link:focus-visible {
     transform: none;
   }
+}
+
+/* ==========================================================================
+   CSP-safe utilities: replace former inline style="" attributes.
+   !important on spacing utilities mirrors the precedence inline styles had.
+   ========================================================================== */
+.u-mt-0 { margin-top: 0 !important; }
+.u-mt-md { margin-top: var(--space-md) !important; }
+.u-mt-xl { margin-top: var(--space-xl) !important; }
+.u-mb-sm { margin-bottom: var(--space-sm) !important; }
+.u-mb-xl { margin-bottom: var(--space-xl) !important; }
+.u-text-accent { color: var(--accent); }
+.u-text-accent-bold { color: var(--accent); font-weight: 700; }
+.u-text-danger-bold { color: #ff6666; font-weight: 700; }
+
+.car-badge--accent {
+  border-color: rgba(40, 229, 100, 0.5);
+  color: var(--accent);
+}
+
+/* Policy acknowledgement page */
+.policy-notice__list--tight { margin-bottom: var(--space-sm) !important; }
+
+.policy-notice__note {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.policy-notice__link {
+  color: var(--accent);
+  text-decoration: underline;
+  margin-left: 0.25rem;
+}
+
+.ack-success {
+  text-align: center;
+  padding: var(--space-lg);
+  border-color: var(--accent);
+  margin-top: var(--space-md);
+}
+
+/* Ensure the hidden attribute wins over display set by component classes
+   (main.js toggles .hidden instead of inline style.display). */
+[hidden] { display: none !important; }
+
+.ack-success__icon {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.ack-success__title {
+  color: var(--accent);
+  margin-bottom: var(--space-xs);
+}
+
+.ack-success__thanks {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+}
+
+.ack-success__text {
+  color: var(--muted);
+  margin-bottom: var(--space-md);
+}
+
+.button--icon { gap: 0.5rem; }
+
+/* Inline links inside JS-rendered status messages (main.js) */
+.application__status a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* Off-screen helper for the clipboard copy fallback textarea (main.js) */
+.clipboard-helper {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Legacy redirect stubs (messages.html, rules.html) */
+.redirect-stub {
+  background-color: #050806;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.redirect-stub__card {
+  background-color: #121a14;
+  border: 1px solid #223529;
+  border-radius: 8px;
+  padding: 32px;
+  max-width: 520px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.redirect-stub__title {
+  color: #28e564;
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+
+.redirect-stub__text {
+  color: #c8d1cb;
+  margin: 0 0 24px;
+  line-height: 1.6;
+}
+
+.redirect-stub__link {
+  display: inline-block;
+  background-color: #28e564;
+  color: #050806;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }

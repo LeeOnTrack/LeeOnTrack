@@ -14,14 +14,12 @@
   <meta name="twitter:card" content="summary_large_image">
   <title>Message Board | LeeOnTrack League Racing</title>
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; object-src 'none'; base-uri 'self'; style-src 'self' https://cdnjs.cloudflare.com; font-src https://cdnjs.cloudflare.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; form-action 'self';">
+    content="default-src 'self'; object-src 'none'; base-uri 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; form-action 'self';">
   <link rel="canonical" href="https://www.leeontrack.co.uk/message-board.html">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261109b">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css?v=6.5.2" media="print" data-defer-css>
+  <noscript><link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css?v=6.5.2"></noscript>
+  <link rel="stylesheet" href="assets/css/styles.min.css?v=ac4b4f52ab">
 </head>
 
 <body>
@@ -57,7 +55,7 @@
           </li>
           <li><a href="race-info.html">Race Night</a></li>
           <li><a href="partners.html">Partners</a></li>
-          <li><a href="message-board.html" aria-current="page" style="color: var(--accent);">Messages<span class="nav-message-indicator" aria-hidden="true" title="New message available"></span><span class="sr-only"> (new message available)</span></a></li>
+          <li><a href="message-board.html" aria-current="page" class="u-text-accent">Messages<span class="nav-message-indicator" aria-hidden="true" title="New message available"></span><span class="sr-only"> (new message available)</span></a></li>
           <li><a class="nav-cta" href="application.html">Join</a></li>
         </ul>
       </nav>
@@ -167,7 +165,7 @@
 
               <div class="message-card__callout">
                 <p>
-                  <i class="fa-solid fa-lightbulb" aria-hidden="true"></i> <strong>Color System:</strong> Cards with <span style="color: #ff6666; font-weight: 700;">Red Borders</span> denote important or urgent notices requiring driver action (e.g., race time changes or mandatory briefings). Cards with <span style="color: var(--accent); font-weight: 700;">Green Borders</span> represent general informational updates and league news.
+                  <i class="fa-solid fa-lightbulb" aria-hidden="true"></i> <strong>Color System:</strong> Cards with <span class="u-text-danger-bold">Red Borders</span> denote important or urgent notices requiring driver action (e.g., race time changes or mandatory briefings). Cards with <span class="u-text-accent-bold">Green Borders</span> represent general informational updates and league news.
                 </p>
               </div>
 
@@ -204,7 +202,7 @@
         <div class="footer__brand">
           <a class="footer__brand-name" href="index.html">Lee<span class="on-red">OnTrack</span></a>
           <p>iRacing league racing.</p>
-          <img class="footer__logo" src="assets/images/lot-logo.webp" alt="LeeOnTrack logo" loading="lazy" width="150" height="94">
+          <img class="footer__logo" src="assets/images/lot-logo-300w.webp" srcset="assets/images/lot-logo-150w.webp 150w, assets/images/lot-logo-300w.webp 300w, assets/images/lot-logo-450w.webp 450w, assets/images/lot-logo.webp 600w" sizes="13rem" alt="LeeOnTrack logo" loading="lazy" width="150" height="94">
         </div>
         <nav class="footer__nav" aria-label="Footer">
           <ul>
@@ -264,7 +262,7 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=20261101"></script>
+  <script src="assets/js/main.min.js?v=5f6667d877" defer></script>
 </body>
 
 </html>

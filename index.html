@@ -37,14 +37,14 @@
   }
   </script>
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; object-src 'none'; base-uri 'self'; style-src 'self' https://cdnjs.cloudflare.com; font-src https://cdnjs.cloudflare.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; form-action 'self';">
+    content="default-src 'self'; object-src 'none'; base-uri 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; form-action 'self';">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="preload" as="image" href="assets/images/hero/hero_desk.webp" fetchpriority="high">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261109b">
+  <link rel="preload" as="image" href="assets/images/hero/hero-1200w.webp" media="(max-width: 39.99rem)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/hero/hero.webp" media="(min-width: 40rem) and (max-width: 63.99rem)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/hero/hero_desk.webp" media="(min-width: 64rem)" fetchpriority="high">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css?v=6.5.2" media="print" data-defer-css>
+  <noscript><link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css?v=6.5.2"></noscript>
+  <link rel="stylesheet" href="assets/css/styles.min.css?v=ac4b4f52ab">
 </head>
 
 <body>
@@ -171,12 +171,12 @@
         <h2>About Lee<span class="on-red">OnTrack</span></h2>
         <div class="grid grid--cards">
           <div class="card">
-            <img class="card__logo" src="assets/images/lot-logo.webp" alt="" loading="lazy" aria-hidden="true" width="150" height="94">
+            <img class="card__logo" src="assets/images/lot-logo-300w.webp" srcset="assets/images/lot-logo-150w.webp 150w, assets/images/lot-logo-300w.webp 300w, assets/images/lot-logo-450w.webp 450w, assets/images/lot-logo.webp 600w" sizes="8rem" alt="" loading="lazy" aria-hidden="true" width="150" height="94">
             <h3>Lee Heard</h3>
             <p>League Organiser &amp; Website Owner</p>
           </div>
           <div class="card">
-            <img class="card__logo" src="assets/images/lot-logo.webp" alt="" loading="lazy" aria-hidden="true" width="150" height="94">
+            <img class="card__logo" src="assets/images/lot-logo-300w.webp" srcset="assets/images/lot-logo-150w.webp 150w, assets/images/lot-logo-300w.webp 300w, assets/images/lot-logo-450w.webp 450w, assets/images/lot-logo.webp 600w" sizes="8rem" alt="" loading="lazy" aria-hidden="true" width="150" height="94">
             <h3>Naven Chettiar</h3>
             <p>League Organiser</p>
           </div>
@@ -278,7 +278,7 @@
                MY RIG IMAGE
                Image: assets/images/rig.webp
           ======================================== -->
-          <img class="rig__media" src="assets/images/rig.webp" alt="Lee's sim racing rig" width="1536" height="1024"
+          <img class="rig__media" src="assets/images/rig-800w.webp" srcset="assets/images/rig-480w.webp 480w, assets/images/rig-800w.webp 800w, assets/images/rig-1200w.webp 1200w, assets/images/rig.webp 1536w" sizes="(min-width: 48rem) 45rem, 92vw" alt="Lee's sim racing rig" width="1536" height="1024"
             loading="lazy" decoding="async">
           <div class="accordion">
             <details class="accordion__item">
@@ -335,21 +335,21 @@
         <div class="grid grid--cards">
           <article id="gt3" class="card">
             <div class="card__media" role="img" aria-label="GT3 class image">
-              <img src="assets/images/pit-stop.webp" alt="" width="1184" height="864" loading="lazy" decoding="async">
+              <img src="assets/images/pit-stop-800w.webp" srcset="assets/images/pit-stop-400w.webp 400w, assets/images/pit-stop-800w.webp 800w, assets/images/pit-stop.webp 1184w" sizes="(min-width: 64rem) 24rem, (min-width: 40rem) 45vw, 92vw" alt="" width="1184" height="864" loading="lazy" decoding="async">
             </div>
             <h3>GT3</h3>
             <p>Fast racing, strategy and pit stops.</p>
           </article>
           <article id="gr86" class="card">
             <div class="card__media" role="img" aria-label="GR86 class image">
-              <img src="assets/images/pit-stop.webp" alt="" width="1184" height="864" loading="lazy" decoding="async">
+              <img src="assets/images/pit-stop-800w.webp" srcset="assets/images/pit-stop-400w.webp 400w, assets/images/pit-stop-800w.webp 800w, assets/images/pit-stop.webp 1184w" sizes="(min-width: 64rem) 24rem, (min-width: 40rem) 45vw, 92vw" alt="" width="1184" height="864" loading="lazy" decoding="async">
             </div>
             <h3>GR86</h3>
             <p>Momentum racing and close battles.</p>
           </article>
           <article id="mx5" class="card">
             <div class="card__media" role="img" aria-label="MX-5 class image">
-              <img src="assets/images/pit-stop.webp" alt="" width="1184" height="864" loading="lazy" decoding="async">
+              <img src="assets/images/pit-stop-800w.webp" srcset="assets/images/pit-stop-400w.webp 400w, assets/images/pit-stop-800w.webp 800w, assets/images/pit-stop.webp 1184w" sizes="(min-width: 64rem) 24rem, (min-width: 40rem) 45vw, 92vw" alt="" width="1184" height="864" loading="lazy" decoding="async">
             </div>
             <h3>MX-5</h3>
             <p>Door-to-door racing and racecraft.</p>
@@ -400,7 +400,7 @@
                   <dt>Format</dt>
                   <dd>45-minute race</dd>
                   <dt>Driver Rating</dt>
-                  <dd><span class="car-badge" style="border-color: rgba(40, 229, 100, 0.5); color: var(--accent);">🟢 Under 2000 iRating</span></dd>
+                  <dd><span class="car-badge car-badge--accent">🟢 Under 2000 iRating</span></dd>
                   <dt>Briefing</dt>
                   <dd>Pre-race briefing on Discord (10 mins before lobby opens)</dd>
                 </dl>
@@ -486,50 +486,42 @@
                   <tbody>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p1">1</span></td>
-                      <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                            style="--dot:#f5b942"></span>Lucy S</span></th>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--f5b942"></span>Lucy S</span></th>
                       <td class="standings__cell--num standings__points">246</td>
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p2">2</span></td>
-                      <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                            style="--dot:#9ece6a"></span>Daniel T</span></th>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--9ece6a"></span>Daniel T</span></th>
                       <td class="standings__cell--num standings__points">228</td>
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p3">3</span></td>
-                      <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                            style="--dot:#f7768e"></span>Lee H</span></th>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--f7768e"></span>Lee H</span></th>
                       <td class="standings__cell--num standings__points">218</td>
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">4</span></td>
-                      <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                            style="--dot:#ff9e64"></span>Fil W</span></th>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--ff9e64"></span>Fil W</span></th>
                       <td class="standings__cell--num standings__points">212</td>
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">5</span></td>
-                      <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                            style="--dot:#bb9af7"></span>Neil B</span></th>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--bb9af7"></span>Neil B</span></th>
                       <td class="standings__cell--num standings__points">206</td>
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">6</span></td>
-                      <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                            style="--dot:#b4f9f8"></span>Scott L</span></th>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--b4f9f8"></span>Scott L</span></th>
                       <td class="standings__cell--num standings__points">204</td>
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">7</span></td>
-                      <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                            style="--dot:#f5b942"></span>Glenn F</span></th>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--f5b942"></span>Glenn F</span></th>
                       <td class="standings__cell--num standings__points">190</td>
                     </tr>
                     <tr>
                       <td class="standings__cell--pos"><span class="race-night__pos">8</span></td>
-                      <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                            style="--dot:#73daca"></span>Tom J B</span></th>
+                      <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--73daca"></span>Tom J B</span></th>
                       <td class="standings__cell--num standings__points">174</td>
                     </tr>
                   </tbody>
@@ -542,80 +534,67 @@
                       <tbody>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">9</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#b4f9f8"></span>Sasha B</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--b4f9f8"></span>Sasha B</span></th>
                           <td class="standings__cell--num standings__points">170</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">10</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#7aa2f7"></span>Naven C</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--7aa2f7"></span>Naven C</span></th>
                           <td class="standings__cell--num standings__points">142</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">11</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#e0aaff"></span>Kevin L</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--e0aaff"></span>Kevin L</span></th>
                           <td class="standings__cell--num standings__points">141</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">12</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#bb9af7"></span>Paul B</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--bb9af7"></span>Paul B</span></th>
                           <td class="standings__cell--num standings__points">126</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">13</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#ff9e64"></span>Thomas W</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--ff9e64"></span>Thomas W</span></th>
                           <td class="standings__cell--num standings__points">117</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">14</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#2ac3de"></span>Danial B C</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--2ac3de"></span>Danial B C</span></th>
                           <td class="standings__cell--num standings__points">87</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">15</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#7aa2f7"></span>Alex M</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--7aa2f7"></span>Alex M</span></th>
                           <td class="standings__cell--num standings__points">76</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">16</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#7aa2f7"></span>Kyle S</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--7aa2f7"></span>Kyle S</span></th>
                           <td class="standings__cell--num standings__points">74</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">17</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#e0aaff"></span>Shaun T</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--e0aaff"></span>Shaun T</span></th>
                           <td class="standings__cell--num standings__points">67</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">18</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#73daca"></span>Scott E</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--73daca"></span>Scott E</span></th>
                           <td class="standings__cell--num standings__points">65</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">19</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#e0aaff"></span>Alex H</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--e0aaff"></span>Alex H</span></th>
                           <td class="standings__cell--num standings__points">39</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">20</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#f7768e"></span>Rafal K</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--f7768e"></span>Rafal K</span></th>
                           <td class="standings__cell--num standings__points">35</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">21</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#9ece6a"></span>Charlie L</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--9ece6a"></span>Charlie L</span></th>
                           <td class="standings__cell--num standings__points">33</td>
                         </tr>
                       </tbody>
@@ -624,10 +603,10 @@
                 </details>
 
                 <!-- SEASON 1 ARCHIVE ACCORDION -->
-                <details class="accordion__item" style="margin-top: var(--space-md);">
+                <details class="accordion__item u-mt-md">
                   <summary>🏆 Season 1 Archive — Final Standings</summary>
                   <div class="accordion__content">
-                    <p class="race-night__meta" style="margin-bottom: var(--space-sm);">Sports Cars Championship — 2026 S1 Final Classification</p>
+                    <p class="race-night__meta u-mb-sm">Sports Cars Championship — 2026 S1 Final Classification</p>
                     <table class="standings__table standings__table--champ">
                       <caption class="sr-only">Season 1 Archive — Final Championship Standings</caption>
                       <thead>
@@ -640,122 +619,102 @@
                       <tbody>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p1">1</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#f5b942"></span>Naven C</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--f5b942"></span>Naven C</span></th>
                           <td class="standings__cell--num standings__points">146</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p2">2</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#9ece6a"></span>Sasha B</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--9ece6a"></span>Sasha B</span></th>
                           <td class="standings__cell--num standings__points">93</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p3">3</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#e0aaff"></span>Shaun T</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--e0aaff"></span>Shaun T</span></th>
                           <td class="standings__cell--num standings__points">56</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">4</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#7aa2f7"></span>Fil W</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--7aa2f7"></span>Fil W</span></th>
                           <td class="standings__cell--num standings__points">49</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">4</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#b4f9f8"></span>Neil B</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--b4f9f8"></span>Neil B</span></th>
                           <td class="standings__cell--num standings__points">49</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">6</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#f7768e"></span>Lee H</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--f7768e"></span>Lee H</span></th>
                           <td class="standings__cell--num standings__points">46</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">6</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#73daca"></span>Scott L</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--73daca"></span>Scott L</span></th>
                           <td class="standings__cell--num standings__points">46</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">8</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#73daca"></span>Daniel T</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--73daca"></span>Daniel T</span></th>
                           <td class="standings__cell--num standings__points">45</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">9</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#bb9af7"></span>Rafal K</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--bb9af7"></span>Rafal K</span></th>
                           <td class="standings__cell--num standings__points">30</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">10</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#ff9e64"></span>Scott E</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--ff9e64"></span>Scott E</span></th>
                           <td class="standings__cell--num standings__points">19</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">11</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#9ece6a"></span>Tom J B</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--9ece6a"></span>Tom J B</span></th>
                           <td class="standings__cell--num standings__points">18</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">12</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#2ac3de"></span>Danial C</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--2ac3de"></span>Danial C</span></th>
                           <td class="standings__cell--num standings__points">16</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">13</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#b4f9f8"></span>Erick I</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--b4f9f8"></span>Erick I</span></th>
                           <td class="standings__cell--num standings__points">12</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">14</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#ff9e64"></span>Alex M</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--ff9e64"></span>Alex M</span></th>
                           <td class="standings__cell--num standings__points">11</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">15</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#7aa2f7"></span>Chris B</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--7aa2f7"></span>Chris B</span></th>
                           <td class="standings__cell--num standings__points">10</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">15</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#b4f9f8"></span>Paul B</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--b4f9f8"></span>Paul B</span></th>
                           <td class="standings__cell--num standings__points">10</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">15</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#f7768e"></span>Tony G</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--f7768e"></span>Tony G</span></th>
                           <td class="standings__cell--num standings__points">10</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">18</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#e0aaff"></span>Kevin L</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--e0aaff"></span>Kevin L</span></th>
                           <td class="standings__cell--num standings__points">8</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">19</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#73daca"></span>Myles G</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--73daca"></span>Myles G</span></th>
                           <td class="standings__cell--num standings__points">7</td>
                         </tr>
                         <tr>
                           <td class="standings__cell--pos"><span class="race-night__pos">20</span></td>
-                          <th scope="row"><span class="standings__driver"><span class="standings__dot"
-                                style="--dot:#ff9e64"></span>Charlie L</span></th>
+                          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--ff9e64"></span>Charlie L</span></th>
                           <td class="standings__cell--num standings__points">0</td>
                         </tr>
                       </tbody>
@@ -1286,7 +1245,7 @@ FOOTER SECTION
         <div class="footer__brand">
           <a class="footer__brand-name" href="#home">Lee<span class="on-red">OnTrack</span></a>
           <p>iRacing league racing.</p>
-          <img class="footer__logo" src="assets/images/lot-logo.webp" alt="LeeOnTrack logo" loading="lazy" width="150" height="94">
+          <img class="footer__logo" src="assets/images/lot-logo-300w.webp" srcset="assets/images/lot-logo-150w.webp 150w, assets/images/lot-logo-300w.webp 300w, assets/images/lot-logo-450w.webp 450w, assets/images/lot-logo.webp 600w" sizes="13rem" alt="LeeOnTrack logo" loading="lazy" width="150" height="94">
         </div>
         <nav class="footer__nav" aria-label="Footer">
           <ul>
@@ -1405,7 +1364,7 @@ FOOTER SECTION
 
 
 
-  <script src="assets/js/main.js?v=20261101"></script>
+  <script src="assets/js/main.min.js?v=5f6667d877" defer></script>
 </body>
 
 </html>

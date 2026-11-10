@@ -1,4 +1,11 @@
 (function () {
+  // Non-critical stylesheets (Font Awesome) load as media="print" so they don't block
+  // first paint, then are switched on here. An inline onload= handler would be blocked
+  // by the strict CSP (script-src 'self'); <noscript> covers JS-disabled visitors.
+  document.querySelectorAll('link[data-defer-css]').forEach(function (link) {
+    link.media = 'all';
+  });
+
   const toggle = document.querySelector('.nav-toggle');
   const menu = document.getElementById('nav-menu');
   const header = document.querySelector('.site-header');
@@ -442,10 +449,10 @@
         messageCards.forEach(function (card) {
           const category = card.getAttribute('data-category');
           if (filter === 'all' || category === filter) {
-            card.style.display = '';
+            card.hidden = false;
             card.classList.add('animate-fade-in');
           } else {
-            card.style.display = 'none';
+            card.hidden = true;
           }
         });
       });
@@ -504,7 +511,7 @@
         if (statusMsg) {
           statusMsg.hidden = false;
           statusMsg.className = 'application__status application__status--error';
-          statusMsg.innerHTML = '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> The application backend is being configured. Please email your details directly to <a href="mailto:leeontrack5@gmail.com" style="color: inherit; text-decoration: underline; font-weight: 700;">leeontrack5@gmail.com</a>.';
+          statusMsg.innerHTML = '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> The application backend is being configured. Please email your details directly to <a href="mailto:leeontrack5@gmail.com">leeontrack5@gmail.com</a>.';
           statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
         return;
@@ -573,7 +580,7 @@
           if (statusMsg) {
             statusMsg.hidden = false;
             statusMsg.className = 'application__status application__status--error';
-            statusMsg.innerHTML = '<i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> Something went wrong submitting your application. Please check your connection or email your details directly to <a href="mailto:leeontrack5@gmail.com" style="color: inherit; text-decoration: underline; font-weight: 700;">leeontrack5@gmail.com</a>.';
+            statusMsg.innerHTML = '<i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> Something went wrong submitting your application. Please check your connection or email your details directly to <a href="mailto:leeontrack5@gmail.com">leeontrack5@gmail.com</a>.';
             statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
         }
@@ -597,7 +604,7 @@
         if (statusMsg) {
           statusMsg.hidden = false;
           statusMsg.className = 'application__status application__status--error';
-          statusMsg.innerHTML = '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> The acknowledgement backend is being configured. Please confirm directly to <a href="mailto:leeontrack5@gmail.com" style="color: inherit; text-decoration: underline; font-weight: 700;">leeontrack5@gmail.com</a>.';
+          statusMsg.innerHTML = '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> The acknowledgement backend is being configured. Please confirm directly to <a href="mailto:leeontrack5@gmail.com">leeontrack5@gmail.com</a>.';
           statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
         return;
@@ -613,8 +620,8 @@
 
         const trapField = policyAckForm.querySelector('[name="league_ref"]');
         if (trapField && trapField.value.trim() !== '') {
-          policyAckForm.style.display = 'none';
-          if (successCard) successCard.style.display = 'block';
+          policyAckForm.hidden = true;
+          if (successCard) successCard.hidden = false;
           return;
         }
 
@@ -651,12 +658,12 @@
           });
 
           // Show immediate in-place confirmation
-          policyAckForm.style.display = 'none';
+          policyAckForm.hidden = true;
           if (confirmedDriverSpan) {
             confirmedDriverSpan.textContent = driverName;
           }
           if (successCard) {
-            successCard.style.display = 'block';
+            successCard.hidden = false;
             successCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
         } catch (err) {
@@ -696,8 +703,7 @@
         // Fallback using textarea selection
         const textarea = document.createElement('textarea');
         textarea.value = code;
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
+        textarea.className = 'clipboard-helper';
         document.body.appendChild(textarea);
         textarea.focus();
         textarea.select();
