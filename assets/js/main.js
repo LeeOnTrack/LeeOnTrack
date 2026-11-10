@@ -148,6 +148,10 @@
   const consentBanner = document.getElementById('consent-banner');
   const consentKey = 'lot-consent';
   const gaMeasurementId = 'G-YBL2PV2B7X';
+  // Registrable domain for analytics cookies. Set explicitly because gtag's default
+  // cookie_domain 'auto' probes '.co.uk' first, which browsers reject (public suffix)
+  // and log as console errors. Any other host (localhost, previews) uses host-only cookies.
+  const gaCookieDomain = 'leeontrack.co.uk';
   let consent = null;
   let gaLoaded = false;
 
@@ -162,7 +166,12 @@
     }
     window.gtag = window.gtag || gtag;
     window.gtag('js', new Date());
-    window.gtag('config', gaMeasurementId, { anonymize_ip: true });
+    const host = window.location.hostname;
+    const onSiteDomain = host === gaCookieDomain || host.endsWith('.' + gaCookieDomain);
+    window.gtag('config', gaMeasurementId, {
+      anonymize_ip: true,
+      cookie_domain: onSiteDomain ? gaCookieDomain : 'none'
+    });
 
     const script = document.createElement('script');
     script.async = true;
