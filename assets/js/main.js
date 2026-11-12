@@ -444,15 +444,18 @@
       // Storage may be unavailable in private browsing
     }
 
-    // Modal pops up only once across the entire site
+    // Modal pops up only once across the entire site, triggered on first user interaction
+    // so initial hero paint and LCP remain unobstructed on cold visits.
     if (!isMessageBoardPage && !hasSeenModal && typeof messageModal.showModal === 'function') {
-      // Mark as seen immediately so reloads or navigating will never pop it up again
-      try {
-        localStorage.setItem(modalSeenKey, 'true');
-      } catch (e) {}
-
-      // Short delay after load so page paints smoothly
-      setTimeout(function () {
+      const interactionEvents = ['scroll', 'pointerdown', 'keydown'];
+      const listenerOpts = { passive: true };
+      const showMessageOnInteraction = function () {
+        interactionEvents.forEach(function (evtName) {
+          window.removeEventListener(evtName, showMessageOnInteraction, listenerOpts);
+        });
+        try {
+          localStorage.setItem(modalSeenKey, 'true');
+        } catch (e) {}
         if (!messageModal.open) {
           try {
             messageModal.showModal();
@@ -460,7 +463,11 @@
             // Browser policy handling
           }
         }
-      }, 600);
+      };
+
+      interactionEvents.forEach(function (evtName) {
+        window.addEventListener(evtName, showMessageOnInteraction, listenerOpts);
+      });
     }
 
     // Modal "Close" button

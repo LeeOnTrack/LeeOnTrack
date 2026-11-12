@@ -25,6 +25,7 @@ const crypto = require('crypto');
 const ROOT = path.resolve(__dirname, '..');
 const CSS_SRC = 'assets/css/styles.css';
 const CSS_OUT = 'assets/css/styles.min.css';
+const PAGES_CSS_DIR = 'assets/css/pages';
 const JS_SRC = 'assets/js/main.js';
 const JS_OUT = 'assets/js/main.min.js';
 /** Folders never scanned for HTML (old copies, tooling, VCS). */
@@ -149,26 +150,45 @@ function build(srcRel, outRel, minifier) {
   return contentHash(min);
 }
 
+/** Builds assets/css/pages/*.css modules into *.min.css and returns { refRegex, outRel, hash } rules. */
+function buildPageCssModules() {
+  const dir = path.join(ROOT, PAGES_CSS_DIR);
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir)
+    .filter((name) => name.endsWith('.css') && !name.endsWith('.min.css'))
+    .sort()
+    .map((name) => {
+      const base = name.slice(0, -4);
+      const srcRel = `${PAGES_CSS_DIR}/${name}`;
+      const outRel = `${PAGES_CSS_DIR}/${base}.min.css`;
+      const hash = build(srcRel, outRel, minifyCss);
+      const refRegex = new RegExp(`assets/css/pages/${base}(?:\\.min)?\\.css(?:\\?v=[0-9a-z]+)?`, 'g');
+      return { refRegex, replacement: `${outRel}?v=${hash}` };
+    });
+}
+
 function main() {
   const cssHash = build(CSS_SRC, CSS_OUT, minifyCss);
   const jsHash = build(JS_SRC, JS_OUT, minifyJs);
+  const pageRules = buildPageCssModules();
 
   // Matches both the source and .min names, with or without an existing ?v=.
-  const cssRef = /assets\/css\/styles(?:\.min)?\.css(?:\?v=[0-9a-z]+)?/g;
-  const jsRef = /assets\/js\/main(?:\.min)?\.js(?:\?v=[0-9a-z]+)?/g;
+  const rules = [
+    { refRegex: /assets\/css\/styles(?:\.min)?\.css(?:\?v=[0-9a-z]+)?/g, replacement: `assets/css/styles.min.css?v=${cssHash}` },
+    { refRegex: /assets\/js\/main(?:\.min)?\.js(?:\?v=[0-9a-z]+)?/g, replacement: `assets/js/main.min.js?v=${jsHash}` },
+    ...pageRules,
+  ];
 
   let updated = 0;
   for (const file of findHtml(ROOT)) {
     const html = fs.readFileSync(file, 'utf8');
-    const next = html
-      .replace(cssRef, `assets/css/styles.min.css?v=${cssHash}`)
-      .replace(jsRef, `assets/js/main.min.js?v=${jsHash}`);
+    const next = rules.reduce((acc, rule) => acc.replace(rule.refRegex, rule.replacement), html);
     if (next !== html) {
       fs.writeFileSync(file, next, 'utf8');
       updated++;
     }
   }
-  console.log(`HTML references updated in ${updated} file(s) (css v=${cssHash}, js v=${jsHash}).`);
+  console.log(`HTML references updated in ${updated} file(s) (css v=${cssHash}, js v=${jsHash}, page modules=${pageRules.length}).`);
 }
 
 if (require.main === module) main();
