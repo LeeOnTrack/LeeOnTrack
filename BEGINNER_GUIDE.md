@@ -99,9 +99,8 @@ In the same `#race-night` section, find the second card. It shows the championsh
       <tbody>
         <tr>
           <td class="standings__cell--pos"><span class="race-night__pos race-night__pos--p1">1</span></td>
-          <td><span class="standings__driver"><span class="standings__dot" style="--dot:#f5b942"></span>Naven C</span></td>
+          <th scope="row"><span class="standings__driver"><span class="standings__dot standings__dot--f5b942"></span>Naven C</span></th>
           <td class="standings__cell--num standings__points">36</td>
-          <td class="standings__cell--num">1</td>
         </tr>
         ...
       </tbody>
@@ -115,7 +114,7 @@ Each driver is one `<tr>...</tr>` row. The columns, in order, are:
 - **Position chip** — the number inside `<span class="race-night__pos ...">`. Keep `race-night__pos--p1`, `--p2` and `--p3` on the top 3 rows for the gold, silver and bronze chips.
 - **Driver name** — the text after `standings__dot` span, e.g. `Naven C`
 - **Points** — the cell with `standings__points`
-- **Wins** — the last cell in the row
+- **Driver dot colour** — use a palette class from `assets/css/styles.css` (e.g. `standings__dot--f5b942`). Do not use inline `style=` attributes, as they are blocked by the Content Security Policy.
 
 To update a driver, only change the numbers and the name between the `>` and `<` tags. To add or remove a driver, copy or delete a whole `<tr>...</tr>` block.
 

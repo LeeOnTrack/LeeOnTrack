@@ -1,4 +1,105 @@
+/**
+ * LeeOnTrack Main Site Script
+ *
+ * Table of Contents:
+ *   1. Configuration & Safe DOM Helpers
+ *   2. Redirect Stubs & Deferred Stylesheets
+ *   3. Navigation & Scroll UI
+ *   4. Gallery Lightbox Modal
+ *   5. GDPR Cookie Consent & Google Analytics
+ *   6. Accordions, Results Nav & Unread Message Modal
+ *   7. Message Board Filtering & Hash Highlighting
+ *   8. Application & Policy Acknowledgement Forms (Apps Script)
+ *   9. Partner Discount Code Copy
+ */
 (function () {
+  'use strict';
+
+  /* ==========================================================================
+     1. CONFIGURATION & SAFE DOM HELPERS
+     ========================================================================== */
+  const CONFIG = {
+    GA_MEASUREMENT_ID: 'G-YBL2PV2B7X',
+    // Registrable domain for analytics cookies. Set explicitly because gtag's
+    // default 'auto' probes '.co.uk' first, which browsers reject and log.
+    GA_COOKIE_DOMAIN: 'leeontrack.co.uk',
+    CONSENT_KEY: 'lot-consent',
+    DEFAULT_MESSAGE_ID: 'msg-sunday-time-change-20261021',
+    SUPPORT_EMAIL: 'leeontrack5@gmail.com',
+    DEFAULT_DISCOUNT_CODE: 'LeeOnTrack',
+    COPY_RESET_DELAY_MS: 2500
+  };
+
+  /**
+   * Builds a decorative Font Awesome <i> icon element using safe DOM creation.
+   */
+  function createIcon(iconClasses) {
+    const icon = document.createElement('i');
+    icon.className = iconClasses;
+    icon.setAttribute('aria-hidden', 'true');
+    return icon;
+  }
+
+  /**
+   * Updates a button label with optional leading/trailing icons using safe DOM nodes.
+   */
+  function setButtonContent(button, label, options) {
+    if (!button) return;
+    const opts = options || {};
+    const nodes = [];
+    if (opts.leadingIcon) {
+      nodes.push(createIcon(opts.leadingIcon), document.createTextNode(' '));
+    }
+    nodes.push(document.createTextNode(label));
+    if (opts.trailingIcon) {
+      nodes.push(document.createTextNode(' '), createIcon(opts.trailingIcon));
+    }
+    button.replaceChildren.apply(button, nodes);
+  }
+
+  /**
+   * Displays an accessible error status banner with optional support mailto link.
+   */
+  function showFormError(statusEl, iconClass, messageText, emailAddress, reducedMotionQuery) {
+    if (!statusEl) return;
+    statusEl.hidden = false;
+    statusEl.className = 'application__status application__status--error';
+
+    const nodes = [
+      createIcon(iconClass),
+      document.createTextNode(' ' + messageText)
+    ];
+
+    if (emailAddress) {
+      const link = document.createElement('a');
+      link.href = 'mailto:' + emailAddress;
+      link.textContent = emailAddress;
+      nodes.push(link, document.createTextNode('.'));
+    }
+
+    statusEl.replaceChildren.apply(statusEl, nodes);
+    statusEl.scrollIntoView({
+      behavior: reducedMotionQuery && reducedMotionQuery.matches ? 'auto' : 'smooth',
+      block: 'nearest'
+    });
+  }
+
+  /* ==========================================================================
+     2. REDIRECT STUBS & DEFERRED STYLESHEETS
+     ========================================================================== */
+  // Handles redirect stub pages (messages.html, rules.html, /go/*) without inline <script>.
+  const redirectTarget = document.documentElement.getAttribute('data-redirect-url');
+  if (redirectTarget) {
+    const preserveHash = document.documentElement.getAttribute('data-preserve-hash') === 'true';
+    const defaultHash = document.documentElement.getAttribute('data-default-hash') || '';
+    const currentHash = window.location.hash && window.location.hash.startsWith('#')
+      ? window.location.hash
+      : '';
+    const hashSuffix = preserveHash ? (currentHash || defaultHash) : '';
+    window.location.replace(redirectTarget + hashSuffix);
+    return;
+  }
+
   // Non-critical stylesheets (Font Awesome) load as media="print" so they don't block
   // first paint, then are switched on here. An inline onload= handler would be blocked
   // by the strict CSP (script-src 'self'); <noscript> covers JS-disabled visitors.
@@ -146,12 +247,9 @@
   }
 
   const consentBanner = document.getElementById('consent-banner');
-  const consentKey = 'lot-consent';
-  const gaMeasurementId = 'G-YBL2PV2B7X';
-  // Registrable domain for analytics cookies. Set explicitly because gtag's default
-  // cookie_domain 'auto' probes '.co.uk' first, which browsers reject (public suffix)
-  // and log as console errors. Any other host (localhost, previews) uses host-only cookies.
-  const gaCookieDomain = 'leeontrack.co.uk';
+  const consentKey = CONFIG.CONSENT_KEY;
+  const gaMeasurementId = CONFIG.GA_MEASUREMENT_ID;
+  const gaCookieDomain = CONFIG.GA_COOKIE_DOMAIN;
   let consent = null;
   let gaLoaded = false;
 
@@ -300,43 +398,13 @@
     });
   });
 
-  const promoModal = document.getElementById('promo-modal');
-  const promoKey = 'lot-promo-seen';
-  // Set to true to show the promo modal on a visitor's first visit.
-  const promoEnabled = false;
-
-  if (promoModal) {
-    try {
-      const hasSeen = localStorage.getItem(promoKey);
-      if (promoEnabled && !hasSeen) {
-        promoModal.showModal();
-      }
-    } catch (e) {
-      // Storage may be unavailable in private browsing.
-    }
-
-    promoModal.addEventListener('click', function (event) {
-      if (event.target === promoModal) {
-        promoModal.close();
-      }
-    });
-
-    promoModal.addEventListener('close', function () {
-      try {
-        localStorage.setItem(promoKey, '1');
-      } catch (e) {
-        // Storage may be unavailable in private browsing.
-      }
-    });
-  }
-
   /* ==========================================================================
      UNREAD MESSAGE NAVIGATION INDICATOR & POPUP MODAL
      ========================================================================== */
   const messageModal = document.getElementById('message-modal');
   const activeMessageId = messageModal
-    ? (messageModal.getAttribute('data-message-id') || 'msg-sunday-time-change-20261021')
-    : 'msg-sunday-time-change-20261021';
+    ? (messageModal.getAttribute('data-message-id') || CONFIG.DEFAULT_MESSAGE_ID)
+    : CONFIG.DEFAULT_MESSAGE_ID;
   const modalSeenKey = 'lot_modal_seen_' + activeMessageId;
   const messagesVisitedKey = 'lot_messages_visited_' + activeMessageId;
   const legacyDismissedKey = 'lot_dismissed_msg_' + activeMessageId;
@@ -517,12 +585,13 @@
       // Check if URL is configured or still placeholder
       if (!scriptUrl || scriptUrl.indexOf('YOUR_APPS_SCRIPT_WEB_APP_URL') !== -1) {
         event.preventDefault();
-        if (statusMsg) {
-          statusMsg.hidden = false;
-          statusMsg.className = 'application__status application__status--error';
-          statusMsg.innerHTML = '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> The application backend is being configured. Please email your details directly to <a href="mailto:leeontrack5@gmail.com">leeontrack5@gmail.com</a>.';
-          statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
+        showFormError(
+          statusMsg,
+          'fa-solid fa-triangle-exclamation',
+          'The application backend is being configured. Please email your details directly to ',
+          CONFIG.SUPPORT_EMAIL,
+          reducedMotion
+        );
         return;
       }
 
@@ -544,7 +613,7 @@
 
         if (submitBtn) {
           submitBtn.disabled = true;
-          submitBtn.innerHTML = 'Submitting Application... <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>';
+          setButtonContent(submitBtn, 'Submitting Application...', { trailingIcon: 'fa-solid fa-spinner fa-spin' });
         }
         if (statusMsg) {
           statusMsg.hidden = true;
@@ -584,14 +653,15 @@
           console.error('Submission failed:', err);
           if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.innerHTML = 'SUBMIT APPLICATION <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>';
+            setButtonContent(submitBtn, 'SUBMIT APPLICATION', { trailingIcon: 'fa-solid fa-paper-plane' });
           }
-          if (statusMsg) {
-            statusMsg.hidden = false;
-            statusMsg.className = 'application__status application__status--error';
-            statusMsg.innerHTML = '<i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> Something went wrong submitting your application. Please check your connection or email your details directly to <a href="mailto:leeontrack5@gmail.com">leeontrack5@gmail.com</a>.';
-            statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
+          showFormError(
+            statusMsg,
+            'fa-solid fa-circle-exclamation',
+            'Something went wrong submitting your application. Please check your connection or email your details directly to ',
+            CONFIG.SUPPORT_EMAIL,
+            reducedMotion
+          );
         }
       }
     });
@@ -610,12 +680,13 @@
 
       if (!scriptUrl || scriptUrl.indexOf('YOUR_APPS_SCRIPT_WEB_APP_URL') !== -1) {
         event.preventDefault();
-        if (statusMsg) {
-          statusMsg.hidden = false;
-          statusMsg.className = 'application__status application__status--error';
-          statusMsg.innerHTML = '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> The acknowledgement backend is being configured. Please confirm directly to <a href="mailto:leeontrack5@gmail.com">leeontrack5@gmail.com</a>.';
-          statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
+        showFormError(
+          statusMsg,
+          'fa-solid fa-triangle-exclamation',
+          'The acknowledgement backend is being configured. Please confirm directly to ',
+          CONFIG.SUPPORT_EMAIL,
+          reducedMotion
+        );
         return;
       }
 
@@ -639,7 +710,7 @@
 
         if (submitBtn) {
           submitBtn.disabled = true;
-          submitBtn.innerHTML = 'Recording Confirmation... <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>';
+          setButtonContent(submitBtn, 'Recording Confirmation...', { trailingIcon: 'fa-solid fa-spinner fa-spin' });
         }
         if (statusMsg) {
           statusMsg.hidden = true;
@@ -679,14 +750,15 @@
           console.error('Acknowledgement failed:', err);
           if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.innerHTML = 'CONFIRM POLICY ACCEPTANCE <i class="fa-solid fa-check" aria-hidden="true"></i>';
+            setButtonContent(submitBtn, 'CONFIRM POLICY ACCEPTANCE', { trailingIcon: 'fa-solid fa-check' });
           }
-          if (statusMsg) {
-            statusMsg.hidden = false;
-            statusMsg.className = 'application__status application__status--error';
-            statusMsg.innerHTML = '<i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> Something went wrong recording your acknowledgement. Please check your connection or contact Lee and Naven directly.';
-            statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
+          showFormError(
+            statusMsg,
+            'fa-solid fa-circle-exclamation',
+            'Something went wrong recording your acknowledgement. Please check your connection or contact Lee and Naven directly.',
+            null,
+            reducedMotion
+          );
         }
       }
     });
@@ -696,7 +768,7 @@
   const copyButtons = document.querySelectorAll('.discount-copy-btn');
   copyButtons.forEach(function (button) {
     button.addEventListener('click', async function () {
-      const code = button.getAttribute('data-code') || 'LeeOnTrack';
+      const code = button.getAttribute('data-code') || CONFIG.DEFAULT_DISCOUNT_CODE;
       let copied = false;
 
       if (navigator.clipboard && window.isSecureContext) {
@@ -726,18 +798,14 @@
       }
 
       if (copied) {
-        if (!button.dataset.originalHtml) {
-          button.dataset.originalHtml = button.innerHTML;
+        if (!button._originalNodes) {
+          button._originalNodes = Array.from(button.childNodes, function (node) {
+            return node.cloneNode(true);
+          });
         }
-        const originalHtml = button.dataset.originalHtml;
         const copiedText = button.getAttribute('data-copied-text') || 'Copied!';
         button.classList.add('is-copied');
-        button.textContent = '';
-        const checkIcon = document.createElement('i');
-        checkIcon.className = 'fa-solid fa-check';
-        checkIcon.setAttribute('aria-hidden', 'true');
-        button.appendChild(checkIcon);
-        button.appendChild(document.createTextNode(' ' + copiedText));
+        setButtonContent(button, copiedText, { leadingIcon: 'fa-solid fa-check' });
         button.setAttribute('aria-label', 'Code ' + code + ' copied to clipboard');
 
         // Announce to assistive tech (button label changes are not reliably announced)
@@ -755,10 +823,15 @@
         clearTimeout(button._copyTimer);
         button._copyTimer = setTimeout(function () {
           button.classList.remove('is-copied');
-          button.innerHTML = originalHtml;
+          button.replaceChildren.apply(
+            button,
+            button._originalNodes.map(function (node) {
+              return node.cloneNode(true);
+            })
+          );
           button.setAttribute('aria-label', 'Copy discount code ' + code);
           live.textContent = '';
-        }, 2500);
+        }, CONFIG.COPY_RESET_DELAY_MS);
       }
     });
   });

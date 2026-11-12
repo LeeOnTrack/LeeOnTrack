@@ -1,3 +1,23 @@
+/* ==========================================================================
+   LeeOnTrack Master Stylesheet
+   Source file for human editing — run `node tools/minify.js` after changes
+   so assets/css/styles.min.css and HTML cache-busting hashes stay in sync.
+
+   Table of Contents:
+     1. Design Tokens & Base Typography (:root, *, h1-h3)
+     2. Header, Mobile Nav & Desktop Dropdown
+     3. Hero, Join Backdrop & Racing Banner
+     4. Cards, Grids, About & Standings Tables
+     5. Gallery, Rig Showcase, Footer & Accordions
+     6. Responsive Media Queries (40rem / 48rem / 64rem)
+     7. GDPR Consent Banner & Application Forms
+     8. Race Night Spotlight, Schedule & Season Archive
+     9. Message Board & Announcement Modal
+    10. Partners & Pimax Gear Page
+    11. Bio Links Hub (/links/)
+    12. CSP-Safe Utilities & Redirect Stubs
+   ========================================================================== */
+
 :root {
   --bg: #050806;
   --surface: #0d130f;
@@ -487,13 +507,6 @@ a:focus-visible {
   gap: var(--space-sm);
 }
 
-.racing-banner__logo {
-  display: block;
-  width: clamp(3.5rem, 10vw, 10rem);
-  height: auto;
-  flex-shrink: 0;
-}
-
 .racing-banner__text {
   display: flex;
   flex-direction: column;
@@ -792,10 +805,6 @@ a:focus-visible {
   color: var(--muted);
 }
 
-.race-night__schedule li {
-  margin-bottom: var(--space-sm);
-}
-
 .race-night__meta {
   margin: var(--space-sm) 0 var(--space-md);
   color: var(--muted);
@@ -1012,10 +1021,6 @@ a:focus-visible {
 
 .accordion__content .standings {
   margin-top: var(--space-sm);
-}
-
-.accordion__item {
-  scroll-margin-top: 6rem;
 }
 
 /* Mobile/tablet: sticky table headers — rows scroll under the
@@ -1532,6 +1537,7 @@ a:focus-visible {
 }
 
 .accordion__item {
+  scroll-margin-top: 6rem;
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -2086,56 +2092,6 @@ a:focus-visible {
   }
 }
 
-.promo-modal {
-  width: min(90vw, 26rem);
-  max-height: 90vh;
-  padding: var(--space-md);
-  background-color: var(--card);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-}
-
-.promo-modal::backdrop {
-  background-color: rgba(5, 8, 6, 0.9);
-}
-
-.promo-modal__close-form {
-  margin: 0 0 var(--space-sm);
-  text-align: right;
-}
-
-.promo-modal__close {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 0;
-  background-color: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  font-size: 1.5rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.promo-modal__close:hover,
-.promo-modal__close:focus-visible {
-  background-color: var(--surface);
-  color: var(--accent);
-}
-
-.promo-modal__image {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 75vh;
-  object-fit: contain;
-  border-radius: var(--radius);
-}
-
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -2495,10 +2451,6 @@ a:focus-visible {
   background-color: rgba(245, 185, 66, 0.15);
   color: #f5b942;
   border-color: #f5b942;
-}
-
-.race-featured__title-wrap {
-  margin-bottom: var(--space-md);
 }
 
 .race-round-tag {
@@ -3790,16 +3742,6 @@ a:focus-visible {
   gap: var(--space-xs);
 }
 
-.partner-card__discount-note {
-  font-size: 0.8rem;
-  color: var(--accent);
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin: 0;
-}
-
 .partner-card__button {
   width: 100%;
   display: inline-flex;
@@ -4135,7 +4077,7 @@ a:focus-visible {
     transform: none;
   }
 }
-/* Partner card media (image or placeholder) */
+/* Partner card media */
 .partner-card__media {
   position: relative;
   aspect-ratio: 16 / 10;
@@ -4154,8 +4096,7 @@ a:focus-visible {
   transition: transform 0.4s ease;
 }
 
-.partner-card:hover .partner-card__media img,
-.partner-card:hover .partner-card__placeholder i {
+.partner-card:hover .partner-card__media img {
   transform: scale(1.06);
 }
 
@@ -4167,45 +4108,12 @@ a:focus-visible {
   margin: 0;
 }
 
-.partner-card__placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  padding: 2.5rem var(--space-sm) var(--space-sm);
-  text-align: center;
-  background:
-    radial-gradient(circle at 50% 40%, rgba(40, 229, 100, 0.18), transparent 60%),
-    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0 2px, transparent 2px 14px),
-    linear-gradient(160deg, #0d130f, #050806);
-}
-
-.partner-card__placeholder i {
-  font-size: 2.75rem;
-  color: var(--accent);
-  filter: drop-shadow(0 0 12px rgba(40, 229, 100, 0.45));
-  transition: transform 0.4s ease;
-}
-
-.partner-card__placeholder span {
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .partner-card__media img,
-  .partner-card__placeholder i {
+  .partner-card__media img {
     transition: none;
   }
 
-  .partner-card:hover .partner-card__media img,
-  .partner-card:hover .partner-card__placeholder i {
+  .partner-card:hover .partner-card__media img {
     transform: none;
   }
 }
@@ -4545,6 +4453,40 @@ a:focus-visible {
   position: fixed;
   opacity: 0;
   pointer-events: none;
+}
+
+/* Affiliate redirect pages (/go/*) */
+.go-redirect {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #050806;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.go-redirect a {
+  color: var(--accent);
+}
+
+.go-redirect__logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.go-redirect__logo span {
+  color: var(--accent);
+}
+
+.go-redirect small {
+  display: block;
+  margin: 1rem auto 0;
+  color: #9fb3a6;
+  max-width: 28rem;
 }
 
 /* Legacy redirect stubs (messages.html, rules.html) */
