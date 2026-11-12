@@ -269,6 +269,13 @@ a:focus-visible {
   width: 100%;
   margin-top: var(--space-sm);
   padding: 0.5rem 1.25rem;
+  color: var(--bg);
+}
+
+.site-nav a.nav-cta:hover,
+.site-nav a.nav-cta:focus-visible {
+  background-color: transparent;
+  color: var(--accent);
 }
 
 .next-race-message {
